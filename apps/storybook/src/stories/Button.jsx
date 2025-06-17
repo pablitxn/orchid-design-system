@@ -32,7 +32,7 @@ Button.propTypes = {
   backgroundColor: PropTypes.string,
   /** How large should the button be? */
   size: PropTypes.oneOf(['small', 'medium', 'large']),
-  /** Button contents */
+  /** Index contents */
   label: PropTypes.string.isRequired,
   /** Optional click handler */
   onClick: PropTypes.func,

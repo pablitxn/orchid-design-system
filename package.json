@@ -2,34 +2,22 @@
   "name": "orchid-design-system",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {
-    "@chromatic-com/storybook": "^4.0.0",
-    "@storybook/addon-a11y": "^9.0.11",
-    "@storybook/addon-docs": "^9.0.11",
-    "@storybook/addon-vitest": "^9.0.11",
-    "@storybook/react-vite": "^9.0.11",
-    "@vitest/browser": "^3.2.4",
-    "@vitest/coverage-v8": "^3.2.4",
-    "playwright": "^1.53.0",
-    "prop-types": "^15.8.1",
-    "storybook": "^9.0.11",
-    "vitest": "^3.2.4"
-  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "type-check": "turbo run type-check",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo run build --filter=./packages/* && changeset publish"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/orchid-labs-xyz/orchid-design-system.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/orchid-labs-xyz/orchid-design-system/issues"
-  },
-  "homepage": "https://github.com/orchid-labs-xyz/orchid-design-system#readme",
-  "description": ""
+  "devDependencies": {
+    "@changesets/cli": "^2.29.4",
+    "turbo": "^2.5.4",
+    "typescript": "^5.8.3"
+  }
 }
