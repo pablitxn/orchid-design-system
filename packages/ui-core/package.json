@@ -4,98 +4,6 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "types": "./src/index.ts",
-  "exports": {
-    ".": {
-      "types": "./src/index.ts",
-      "import": "./src/index.ts",
-      "require": "./src/index.ts"
-    },
-    "./accordion": {
-      "types": "./src/components/accordion/index.tsx",
-      "import": "./src/components/accordion/index.tsx",
-      "require": "./src/components/accordion/index.tsx"
-    },
-    "./alert-dialog": {
-      "types": "./src/components/alert-dialog/index.tsx",
-      "import": "./src/components/alert-dialog/index.tsx",
-      "require": "./src/components/alert-dialog/index.tsx"
-    },
-    "./alert": {
-      "types": "./src/components/alert/index.tsx",
-      "import": "./src/components/alert/index.tsx",
-      "require": "./src/components/alert/index.tsx"
-    },
-    "./avatar": {
-      "types": "./src/components/avatar/index.tsx",
-      "import": "./src/components/avatar/index.tsx",
-      "require": "./src/components/avatar/index.tsx"
-    },
-    "./badge": {
-      "types": "./src/components/badge/index.tsx",
-      "import": "./src/components/badge/index.tsx",
-      "require": "./src/components/badge/index.tsx"
-    },
-    "./dialog": {
-      "types": "./src/components/dialog/index.tsx",
-      "import": "./src/components/dialog/index.tsx",
-      "require": "./src/components/dialog/index.tsx"
-    },
-    "./dropdown-menu": {
-      "types": "./src/components/dropdown-menu/index.tsx",
-      "import": "./src/components/dropdown-menu/index.tsx",
-      "require": "./src/components/dropdown-menu/index.tsx"
-    },
-    "./label": {
-      "types": "./src/components/label/index.tsx",
-      "import": "./src/components/label/index.tsx",
-      "require": "./src/components/label/index.tsx"
-    },
-    "./progress": {
-      "types": "./src/components/progress/index.tsx",
-      "import": "./src/components/progress/index.tsx",
-      "require": "./src/components/progress/index.tsx"
-    },
-    "./radio-group": {
-      "types": "./src/components/radio-group/index.tsx",
-      "import": "./src/components/radio-group/index.tsx",
-      "require": "./src/components/radio-group/index.tsx"
-    },
-    "./scroll-area": {
-      "types": "./src/components/scroll-area/index.tsx",
-      "import": "./src/components/scroll-area/index.tsx",
-      "require": "./src/components/scroll-area/index.tsx"
-    },
-    "./select": {
-      "types": "./src/components/select/index.tsx",
-      "import": "./src/components/select/index.tsx",
-      "require": "./src/components/select/index.tsx"
-    },
-    "./slider": {
-      "types": "./src/components/slider/index.tsx",
-      "import": "./src/components/slider/index.tsx",
-      "require": "./src/components/slider/index.tsx"
-    },
-    "./slot": {
-      "types": "./src/components/slot/index.tsx",
-      "import": "./src/components/slot/index.tsx",
-      "require": "./src/components/slot/index.tsx"
-    },
-    "./switch": {
-      "types": "./src/components/switch/index.tsx",
-      "import": "./src/components/switch/index.tsx",
-      "require": "./src/components/switch/index.tsx"
-    },
-    "./tabs": {
-      "types": "./src/components/tabs/index.tsx",
-      "import": "./src/components/tabs/index.tsx",
-      "require": "./src/components/tabs/index.tsx"
-    },
-    "./tooltip": {
-      "types": "./src/components/tooltip/index.tsx",
-      "import": "./src/components/tooltip/index.tsx",
-      "require": "./src/components/tooltip/index.tsx"
-    }
-  },
   "files": [
     "src"
   ],
@@ -106,6 +14,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@orchid-design-system/skins": "^1.0.0",
     "@radix-ui/react-accordion": "^1.2.11",
     "@radix-ui/react-alert-dialog": "^1.1.14",
     "@radix-ui/react-avatar": "^1.1.10",
@@ -120,18 +29,16 @@
     "@radix-ui/react-slot": "^1.2.3",
     "@radix-ui/react-switch": "^1.2.5",
     "@radix-ui/react-tabs": "^1.1.12",
-    "@radix-ui/react-tooltip": "^1.2.7"
+    "@radix-ui/react-tooltip": "^1.2.7",
+    "@tailwindcss/vite": "^4.1.10",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^4.1.10"
   },
   "devDependencies": {
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "tsup": "^8.0.0",
+    "@types/node": "22.13.5",
+    "@types/react": "18.3.5",
+    "@types/react-dom": "18.3.0",
     "typescript": "^5.8.3"
-  },
-  "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
   }
 }

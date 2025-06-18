@@ -1,5 +1,10 @@
 {
   "name": "@orchid-design-system/components",
   "version": "1.0.0",
-  "main": "index.js"
+  "main": "index.js",
+  "dependencies": {
+    "@orchid-design-system/skins": "^1.0.0",
+    "@tailwindcss/vite": "^4.1.10",
+    "tailwindcss": "^4.1.10"
+  }
 }

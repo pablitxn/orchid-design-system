@@ -10,3 +10,7 @@
 node_modules/
 .claude/
 .idea/
+.turbo/
+dist/
+tsconfig.build.json
+tsconfig.stories.tsbuildinfo
