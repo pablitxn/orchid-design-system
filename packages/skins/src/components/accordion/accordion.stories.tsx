@@ -29,6 +29,7 @@ export const Single: Story = {
     type: 'single',
     collapsible: true,
     className: 'w-[400px]',
+    skin: "neobrutalism"
   },
   render: (args) => (
     <Accordion {...args}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../../packages/skins/src/styles/globals.css';
+import '../src/index.css';
 
 /** @type { import('@storybook/react').Preview } */
 const preview = {

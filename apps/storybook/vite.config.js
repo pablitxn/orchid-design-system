@@ -5,11 +5,28 @@ import path from 'path';
 export default defineConfig({
   plugins: [react()],
   resolve: {
-    alias: {
-      '@orchid-design-system/ui-core': path.resolve(__dirname, '../../packages/ui-core/src'),
-      '@orchid-design-system/skins': path.resolve(__dirname, '../../packages/skins/src'),
-      '@orchid-design-system/components': path.resolve(__dirname, '../../packages/components/src'),
-    },
+    alias: [
+      {
+        find: /^@orchid-design-system\/ui-core\/(.*)$/,
+        replacement: path.resolve(__dirname, '../../packages/ui-core/src/components/$1/index.tsx'),
+      },
+      {
+        find: '@orchid-design-system/ui-core',
+        replacement: path.resolve(__dirname, '../../packages/ui-core/src/index.ts'),
+      },
+      {
+        find: '@orchid-design-system/skins',
+        replacement: path.resolve(__dirname, '../../packages/skins/src'),
+      },
+      {
+        find: '@orchid-design-system/components',
+        replacement: path.resolve(__dirname, '../../packages/components/src'),
+      },
+      {
+        find: '@',
+        replacement: path.resolve(__dirname, '../../packages/skins/src'),
+      },
+    ],
   },
   optimizeDeps: {
     include: ['react', 'react-dom'],

@@ -27,12 +27,29 @@ const config = {
     // Ensure proper module resolution for monorepo
     config.resolve = {
       ...config.resolve,
-      alias: {
-        ...config.resolve?.alias,
-        '@orchid-design-system/ui-core': resolve(projectRoot, 'packages/ui-core/src'),
-        '@orchid-design-system/skins': resolve(projectRoot, 'packages/skins/src'),
-        '@orchid-design-system/components': resolve(projectRoot, 'packages/components/src'),
-      }
+      alias: [
+        ...(Array.isArray(config.resolve?.alias) ? config.resolve.alias : []),
+        {
+          find: /^@orchid-design-system\/ui-core\/(.*)$/,
+          replacement: resolve(projectRoot, 'packages/ui-core/src/components/$1/index.tsx'),
+        },
+        {
+          find: '@orchid-design-system/ui-core',
+          replacement: resolve(projectRoot, 'packages/ui-core/src/index.ts'),
+        },
+        {
+          find: '@orchid-design-system/skins',
+          replacement: resolve(projectRoot, 'packages/skins/src'),
+        },
+        {
+          find: '@orchid-design-system/components',
+          replacement: resolve(projectRoot, 'packages/components/src'),
+        },
+        {
+          find: '@',
+          replacement: resolve(projectRoot, 'packages/skins/src'),
+        },
+      ]
     };
     
     // Ensure Vite can process files from workspace packages
@@ -56,6 +73,12 @@ const config = {
         'clsx',
         'tailwind-merge'
       ],
+    };
+    
+    // Add CSS configuration
+    config.css = {
+      ...config.css,
+      postcss: resolve(__dirname, '../postcss.config.js'),
     };
     
     return config;

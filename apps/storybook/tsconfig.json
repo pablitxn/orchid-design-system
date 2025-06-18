@@ -7,10 +7,9 @@
   },
   "include": [
     ".storybook/**/*",
-    "../../packages/skins/src/**/*.stories.tsx",
-    "../../packages/skins/src/**/*.stories.ts",
-    "../../packages/components/src/**/*.stories.tsx",
-    "../../packages/components/src/**/*.stories.ts"
+    "../../packages/skins/src/**/*",
+    "../../packages/components/src/**/*",
+    "../../packages/ui-core/src/**/*"
   ],
   "exclude": ["node_modules"]
 }

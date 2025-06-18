@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { cn } from '../orchid-webapp/src/lib/utils';
+import { cn } from '@/lib/utils';
 
 const Index = React.forwardRef<HTMLTableElement, React.HTMLAttributes<HTMLTableElement>>(
   ({ className, ...props }, ref) => (
