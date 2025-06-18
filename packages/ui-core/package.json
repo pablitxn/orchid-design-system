@@ -14,7 +14,6 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@orchid-design-system/skins": "^1.0.0",
     "@radix-ui/react-accordion": "^1.2.11",
     "@radix-ui/react-alert-dialog": "^1.1.14",
     "@radix-ui/react-avatar": "^1.1.10",
@@ -31,11 +30,17 @@
     "@radix-ui/react-tabs": "^1.1.12",
     "@radix-ui/react-tooltip": "^1.2.7",
     "@tailwindcss/vite": "^4.1.10",
+    "@vitejs/plugin-react-swc": "^3.10.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "tailwindcss": "^4.1.10"
+    "rollup-plugin-visualizer": "^6.0.3",
+    "tailwindcss": "^4.1.10",
+    "tw-animate-css": "^1.3.4",
+    "vite-tsconfig-paths": "^5.1.4"
   },
   "devDependencies": {
+    "@orchid-design-system/skins": "^1.0.0",
+    "@testing-library/react": "^16.3.0",
     "@types/node": "22.13.5",
     "@types/react": "18.3.5",
     "@types/react-dom": "18.3.0",
