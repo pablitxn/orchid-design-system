@@ -1,20 +1,20 @@
 import * as React from 'react';
-import * as ShadcnBadge from './shadcn';
-import * as NeobrutalismBadge from './neobrutalism';
+import { Badge as ShadcnBadgeComponent, type BadgeProps as ShadcnBadgeProps } from './shadcn';
+import { Badge as NeobrutalismBadgeComponent, type BadgeProps as NeobrutalismBadgeProps } from './neobrutalism';
 import { type SkinType, type WithSkinProps } from '../../lib/utils';
 
 // Union type of all possible badge props across skins
 type BadgeProps = 
-  | (ShadcnBadge.BadgeProps & WithSkinProps & { skin?: 'shadcn' })
-  | (NeobrutalismBadge.BadgeProps & WithSkinProps & { skin: 'neobrutalism' });
+  | (ShadcnBadgeProps & WithSkinProps & { skin?: 'shadcn' })
+  | (NeobrutalismBadgeProps & WithSkinProps & { skin: 'neobrutalism' });
 
 export const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(
   ({ skin = 'shadcn', ...props }, ref) => {
     if (skin === 'neobrutalism') {
-      return <NeobrutalismBadge.Badge ref={ref} {...props as NeobrutalismBadge.BadgeProps} />;
+      return <NeobrutalismBadgeComponent ref={ref} {...props as NeobrutalismBadgeProps} />;
     }
     
-    return <ShadcnBadge.Badge ref={ref} {...props as ShadcnBadge.BadgeProps} />;
+    return <ShadcnBadgeComponent ref={ref} {...props as ShadcnBadgeProps} />;
   }
 );
 Badge.displayName = 'Badge';

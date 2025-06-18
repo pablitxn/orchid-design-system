@@ -1,6 +1,6 @@
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
-import { Badge as BadgeCore } from '@orchid-design-system/ui-core';
+import BadgeCore from '@orchid-design-system/ui-core/badge';
 import { Slot } from "@radix-ui/react-slot"
 
 import { cn } from "@/lib/utils"
