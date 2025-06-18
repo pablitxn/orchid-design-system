@@ -1,108 +1,107 @@
 {
   "name": "@orchid-design-system/ui-core",
   "version": "1.0.0",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "types": "./src/index.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "types": "./src/index.ts",
+      "import": "./src/index.ts",
+      "require": "./src/index.ts"
     },
     "./accordion": {
-      "types": "./dist/components/accordion/index.d.ts",
-      "import": "./dist/components/accordion/index.mjs",
-      "require": "./dist/components/accordion/index.js"
+      "types": "./src/components/accordion/index.tsx",
+      "import": "./src/components/accordion/index.tsx",
+      "require": "./src/components/accordion/index.tsx"
     },
     "./alert-dialog": {
-      "types": "./dist/components/alert-dialog/index.d.ts",
-      "import": "./dist/components/alert-dialog/index.mjs",
-      "require": "./dist/components/alert-dialog/index.js"
+      "types": "./src/components/alert-dialog/index.tsx",
+      "import": "./src/components/alert-dialog/index.tsx",
+      "require": "./src/components/alert-dialog/index.tsx"
     },
     "./alert": {
-      "types": "./dist/components/alert/index.d.ts",
-      "import": "./dist/components/alert/index.mjs",
-      "require": "./dist/components/alert/index.js"
+      "types": "./src/components/alert/index.tsx",
+      "import": "./src/components/alert/index.tsx",
+      "require": "./src/components/alert/index.tsx"
     },
     "./avatar": {
-      "types": "./dist/components/avatar/index.d.ts",
-      "import": "./dist/components/avatar/index.mjs",
-      "require": "./dist/components/avatar/index.js"
+      "types": "./src/components/avatar/index.tsx",
+      "import": "./src/components/avatar/index.tsx",
+      "require": "./src/components/avatar/index.tsx"
     },
     "./badge": {
-      "types": "./dist/components/badge/index.d.ts",
-      "import": "./dist/components/badge/index.mjs",
-      "require": "./dist/components/badge/index.js"
+      "types": "./src/components/badge/index.tsx",
+      "import": "./src/components/badge/index.tsx",
+      "require": "./src/components/badge/index.tsx"
     },
     "./dialog": {
-      "types": "./dist/components/dialog/index.d.ts",
-      "import": "./dist/components/dialog/index.mjs",
-      "require": "./dist/components/dialog/index.js"
+      "types": "./src/components/dialog/index.tsx",
+      "import": "./src/components/dialog/index.tsx",
+      "require": "./src/components/dialog/index.tsx"
     },
     "./dropdown-menu": {
-      "types": "./dist/components/dropdown-menu/index.d.ts",
-      "import": "./dist/components/dropdown-menu/index.mjs",
-      "require": "./dist/components/dropdown-menu/index.js"
+      "types": "./src/components/dropdown-menu/index.tsx",
+      "import": "./src/components/dropdown-menu/index.tsx",
+      "require": "./src/components/dropdown-menu/index.tsx"
     },
     "./label": {
-      "types": "./dist/components/label/index.d.ts",
-      "import": "./dist/components/label/index.mjs",
-      "require": "./dist/components/label/index.js"
+      "types": "./src/components/label/index.tsx",
+      "import": "./src/components/label/index.tsx",
+      "require": "./src/components/label/index.tsx"
     },
     "./progress": {
-      "types": "./dist/components/progress/index.d.ts",
-      "import": "./dist/components/progress/index.mjs",
-      "require": "./dist/components/progress/index.js"
+      "types": "./src/components/progress/index.tsx",
+      "import": "./src/components/progress/index.tsx",
+      "require": "./src/components/progress/index.tsx"
     },
     "./radio-group": {
-      "types": "./dist/components/radio-group/index.d.ts",
-      "import": "./dist/components/radio-group/index.mjs",
-      "require": "./dist/components/radio-group/index.js"
+      "types": "./src/components/radio-group/index.tsx",
+      "import": "./src/components/radio-group/index.tsx",
+      "require": "./src/components/radio-group/index.tsx"
     },
     "./scroll-area": {
-      "types": "./dist/components/scroll-area/index.d.ts",
-      "import": "./dist/components/scroll-area/index.mjs",
-      "require": "./dist/components/scroll-area/index.js"
+      "types": "./src/components/scroll-area/index.tsx",
+      "import": "./src/components/scroll-area/index.tsx",
+      "require": "./src/components/scroll-area/index.tsx"
     },
     "./select": {
-      "types": "./dist/components/select/index.d.ts",
-      "import": "./dist/components/select/index.mjs",
-      "require": "./dist/components/select/index.js"
+      "types": "./src/components/select/index.tsx",
+      "import": "./src/components/select/index.tsx",
+      "require": "./src/components/select/index.tsx"
     },
     "./slider": {
-      "types": "./dist/components/slider/index.d.ts",
-      "import": "./dist/components/slider/index.mjs",
-      "require": "./dist/components/slider/index.js"
+      "types": "./src/components/slider/index.tsx",
+      "import": "./src/components/slider/index.tsx",
+      "require": "./src/components/slider/index.tsx"
     },
     "./slot": {
-      "types": "./dist/components/slot/index.d.ts",
-      "import": "./dist/components/slot/index.mjs",
-      "require": "./dist/components/slot/index.js"
+      "types": "./src/components/slot/index.tsx",
+      "import": "./src/components/slot/index.tsx",
+      "require": "./src/components/slot/index.tsx"
     },
     "./switch": {
-      "types": "./dist/components/switch/index.d.ts",
-      "import": "./dist/components/switch/index.mjs",
-      "require": "./dist/components/switch/index.js"
+      "types": "./src/components/switch/index.tsx",
+      "import": "./src/components/switch/index.tsx",
+      "require": "./src/components/switch/index.tsx"
     },
     "./tabs": {
-      "types": "./dist/components/tabs/index.d.ts",
-      "import": "./dist/components/tabs/index.mjs",
-      "require": "./dist/components/tabs/index.js"
+      "types": "./src/components/tabs/index.tsx",
+      "import": "./src/components/tabs/index.tsx",
+      "require": "./src/components/tabs/index.tsx"
     },
     "./tooltip": {
-      "types": "./dist/components/tooltip/index.d.ts",
-      "import": "./dist/components/tooltip/index.mjs",
-      "require": "./dist/components/tooltip/index.js"
+      "types": "./src/components/tooltip/index.tsx",
+      "import": "./src/components/tooltip/index.tsx",
+      "require": "./src/components/tooltip/index.tsx"
     }
   },
   "files": [
-    "dist",
     "src"
   ],
   "scripts": {
-    "build": "tsup --no-dts && tsc -p tsconfig.build.json",
-    "dev": "tsup --watch --no-dts",
+    "build": "tsc --noEmit",
+    "dev": "tsc --noEmit --watch",
     "lint": "eslint \"src/**/*.ts*\"",
     "type-check": "tsc --noEmit"
   },

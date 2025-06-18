@@ -27,7 +27,7 @@ export interface BadgeProps
 }
 
 const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(
-  ({ className, variant, asChild = false, ...props }, ref) => {
+  ({ className, variant, asChild = false, children, ...props }, ref) => {
     if (asChild) {
       return (
         <Slot
@@ -35,7 +35,9 @@ const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(
           data-slot="badge"
           className={cn(badgeVariants({ variant }), className)}
           {...props}
-        />
+        >
+          {children}
+        </Slot>
       )
     }
 
@@ -45,7 +47,9 @@ const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(
         data-slot="badge"
         className={cn(badgeVariants({ variant }), className)}
         {...props}
-      />
+      >
+        {children}
+      </BadgeCore>
     )
   }
 )

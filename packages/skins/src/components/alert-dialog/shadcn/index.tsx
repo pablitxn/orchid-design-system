@@ -1,6 +1,6 @@
 "use client"
 import * as React from "react"
-import AlertDialog from "@orchid-design-system/ui-core/components/alert-dialog"
+import AlertDialog from "@orchid-design-system/ui-core/alert-dialog"
 
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/button/shadcn"

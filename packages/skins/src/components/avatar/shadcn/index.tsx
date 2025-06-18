@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import AvatarPrimitive from '@orchid-design-system/ui-core/components/avatar';
+import AvatarPrimitive from '@orchid-design-system/ui-core/avatar';
 
 import { cn } from '@/lib/utils';
 

@@ -1,7 +1,24 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Badge } from './index';
+import type { BadgeProps as ShadcnBadgeProps } from './shadcn';
+import type { BadgeProps as NeobrutalismBadgeProps } from './neobrutalism';
 
-const meta: Meta<typeof Badge> = {
+// Define separate story types for each skin
+type ShadcnStory = StoryObj<{
+  skin?: 'shadcn';
+  variant?: ShadcnBadgeProps['variant'];
+  children: React.ReactNode;
+  className?: string;
+}>;
+
+type NeobrutalismStory = StoryObj<{
+  skin: 'neobrutalism';
+  variant?: NeobrutalismBadgeProps['variant'];
+  children: React.ReactNode;
+  className?: string;
+}>;
+
+const meta = {
   title: 'Components/Badge',
   component: Badge,
   parameters: {
@@ -9,82 +26,93 @@ const meta: Meta<typeof Badge> = {
   },
   tags: ['autodocs'],
   argTypes: {
+    skin: {
+      control: 'select',
+      options: ['shadcn', 'neobrutalism'] as const,
+      description: 'The skin/theme variant of the badge',
+    },
     variant: {
       control: 'select',
-      options: ['default', 'secondary', 'destructive', 'outline'],
-      description: 'The visual style variant of the badge',
+      options: ['default', 'secondary', 'destructive', 'outline', 'neutral'],
+      description: 'The visual style variant of the badge (available options depend on skin)',
     },
     children: {
       control: 'text',
       description: 'The content of the badge',
     },
   },
-};
+} satisfies Meta<typeof Badge>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Default: ShadcnStory = {
   args: {
+    skin: 'shadcn',
     children: 'Badge',
   },
 };
 
-export const Secondary: Story = {
+export const Secondary: ShadcnStory = {
   args: {
+    skin: 'shadcn',
     variant: 'secondary',
     children: 'Secondary',
   },
 };
 
-export const Destructive: Story = {
+export const Destructive: ShadcnStory = {
   args: {
+    skin: 'shadcn',
     variant: 'destructive',
     children: 'Destructive',
   },
 };
 
-export const Outline: Story = {
+export const Outline: ShadcnStory = {
   args: {
+    skin: 'shadcn',
     variant: 'outline',
     children: 'Outline',
   },
 };
 
-export const AllVariants: Story = {
+export const AllVariants = {
+  args: {} as any,
   render: () => (
     <div className="flex flex-wrap gap-4">
-      <Badge>Default</Badge>
-      <Badge variant="secondary">Secondary</Badge>
-      <Badge variant="destructive">Destructive</Badge>
-      <Badge variant="outline">Outline</Badge>
+      <Badge skin="shadcn">Default</Badge>
+      <Badge skin="shadcn" variant="secondary">Secondary</Badge>
+      <Badge skin="shadcn" variant="destructive">Destructive</Badge>
+      <Badge skin="shadcn" variant="outline">Outline</Badge>
     </div>
   ),
 };
 
-export const StatusBadges: Story = {
+export const StatusBadges = {
+  args: {} as any,
   render: () => (
     <div className="flex flex-wrap gap-4">
-      <Badge className="bg-green-100 text-green-800 hover:bg-green-200">
+      <Badge skin="shadcn" className="bg-green-100 text-green-800 hover:bg-green-200">
         Active
       </Badge>
-      <Badge className="bg-yellow-100 text-yellow-800 hover:bg-yellow-200">
+      <Badge skin="shadcn" className="bg-yellow-100 text-yellow-800 hover:bg-yellow-200">
         Pending
       </Badge>
-      <Badge className="bg-red-100 text-red-800 hover:bg-red-200">
+      <Badge skin="shadcn" className="bg-red-100 text-red-800 hover:bg-red-200">
         Inactive
       </Badge>
-      <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-200">
+      <Badge skin="shadcn" className="bg-blue-100 text-blue-800 hover:bg-blue-200">
         New
       </Badge>
     </div>
   ),
 };
 
-export const WithIcons: Story = {
+export const WithIcons = {
+  args: {} as any,
   render: () => (
     <div className="flex flex-wrap gap-4">
-      <Badge>
+      <Badge skin="shadcn">
         <svg
           className="mr-1 h-3 w-3"
           fill="currentColor"
@@ -98,7 +126,7 @@ export const WithIcons: Story = {
         </svg>
         Verified
       </Badge>
-      <Badge variant="secondary">
+      <Badge skin="shadcn" variant="secondary">
         <svg
           className="mr-1 h-3 w-3"
           fill="none"
@@ -114,7 +142,7 @@ export const WithIcons: Story = {
         </svg>
         Pending
       </Badge>
-      <Badge variant="destructive">
+      <Badge skin="shadcn" variant="destructive">
         <svg
           className="mr-1 h-3 w-3"
           fill="currentColor"
@@ -132,14 +160,32 @@ export const WithIcons: Story = {
   ),
 };
 
-export const Sizes: Story = {
+export const Sizes = {
+  args: {} as any,
   render: () => (
     <div className="flex items-center gap-4">
-      <Badge className="text-xs px-2 py-0.5">Extra Small</Badge>
-      <Badge className="text-sm px-2.5 py-0.5">Small</Badge>
-      <Badge>Default</Badge>
-      <Badge className="text-base px-3 py-1">Large</Badge>
-      <Badge className="text-lg px-4 py-1.5">Extra Large</Badge>
+      <Badge skin="shadcn" className="text-xs px-2 py-0.5">Extra Small</Badge>
+      <Badge skin="shadcn" className="text-sm px-2.5 py-0.5">Small</Badge>
+      <Badge skin="shadcn">Default</Badge>
+      <Badge skin="shadcn" className="text-base px-3 py-1">Large</Badge>
+      <Badge skin="shadcn" className="text-lg px-4 py-1.5">Extra Large</Badge>
+    </div>
+  ),
+};
+
+export const NeobrutalismVariant: NeobrutalismStory = {
+  args: {
+    skin: 'neobrutalism',
+    children: 'Neobrutalism Badge',
+  },
+};
+
+export const NeobrutalismAllVariants = {
+  args: {} as any,
+  render: () => (
+    <div className="flex flex-wrap gap-4">
+      <Badge skin="neobrutalism">Default</Badge>
+      <Badge skin="neobrutalism" variant="neutral">Neutral</Badge>
     </div>
   ),
 };

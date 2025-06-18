@@ -1,40 +1,27 @@
 import * as ShadcnAvatar from './shadcn';
 import * as NeobrutalismAvatar from './neobrutalism';
+import { getSkinComponent, type SkinType, type WithSkinProps } from '../../lib/utils';
 
-export type SkinType = 'shadcn' | 'neobrutalism';
+const avatarComponents = {
+  shadcn: ShadcnAvatar,
+  neobrutalism: NeobrutalismAvatar
+} as const;
 
-const getSkin = (): SkinType => {
-  // This can be configured via environment variable, context, or any other method
-  const skin = process.env.ORCHID_SKIN || 'shadcn';
-  return skin as SkinType;
+type AvatarProps = React.ComponentProps<typeof ShadcnAvatar.Avatar> & WithSkinProps;
+type AvatarImageProps = React.ComponentProps<typeof ShadcnAvatar.AvatarImage> & WithSkinProps;
+type AvatarFallbackProps = React.ComponentProps<typeof ShadcnAvatar.AvatarFallback> & WithSkinProps;
+
+export const Avatar = ({ skin = 'shadcn', ...props }: AvatarProps) => {
+  const components = getSkinComponent(avatarComponents, skin);
+  return <components.Avatar {...props} />;
 };
 
-export const Avatar = (props: React.ComponentProps<typeof ShadcnAvatar.Avatar>) => {
-  const skin = getSkin();
-  
-  if (skin === 'neobrutalism') {
-    return <NeobrutalismAvatar.Avatar {...props} />;
-  }
-  
-  return <ShadcnAvatar.Avatar {...props} />;
+export const AvatarImage = ({ skin = 'shadcn', ...props }: AvatarImageProps) => {
+  const components = getSkinComponent(avatarComponents, skin);
+  return <components.AvatarImage {...props} />;
 };
 
-export const AvatarImage = (props: React.ComponentProps<typeof ShadcnAvatar.AvatarImage>) => {
-  const skin = getSkin();
-  
-  if (skin === 'neobrutalism') {
-    return <NeobrutalismAvatar.AvatarImage {...props} />;
-  }
-  
-  return <ShadcnAvatar.AvatarImage {...props} />;
-};
-
-export const AvatarFallback = (props: React.ComponentProps<typeof ShadcnAvatar.AvatarFallback>) => {
-  const skin = getSkin();
-  
-  if (skin === 'neobrutalism') {
-    return <NeobrutalismAvatar.AvatarFallback {...props} />;
-  }
-  
-  return <ShadcnAvatar.AvatarFallback {...props} />;
+export const AvatarFallback = ({ skin = 'shadcn', ...props }: AvatarFallbackProps) => {
+  const components = getSkinComponent(avatarComponents, skin);
+  return <components.AvatarFallback {...props} />;
 };

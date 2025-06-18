@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
+  },
+  "include": [
+    ".storybook/**/*",
+    "../../packages/skins/src/**/*.stories.tsx",
+    "../../packages/skins/src/**/*.stories.ts",
+    "../../packages/components/src/**/*.stories.tsx",
+    "../../packages/components/src/**/*.stories.ts"
+  ],
+  "exclude": ["node_modules"]
+}

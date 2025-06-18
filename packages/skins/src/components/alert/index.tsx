@@ -1,40 +1,27 @@
 import * as ShadcnAlert from './shadcn';
 import * as NeobrutalismAlert from './neobrutalism';
+import { getSkinComponent, type SkinType, type WithSkinProps } from '../../lib/utils';
 
-export type SkinType = 'shadcn' | 'neobrutalism';
+const alertComponents = {
+  shadcn: ShadcnAlert,
+  neobrutalism: NeobrutalismAlert
+} as const;
 
-const getSkin = (): SkinType => {
-  // This can be configured via environment variable, context, or any other method
-  const skin = process.env.ORCHID_SKIN || 'shadcn';
-  return skin as SkinType;
+type AlertProps = React.ComponentProps<typeof ShadcnAlert.Alert> & WithSkinProps;
+type AlertTitleProps = React.ComponentProps<typeof ShadcnAlert.AlertTitle> & WithSkinProps;
+type AlertDescriptionProps = React.ComponentProps<typeof ShadcnAlert.AlertDescription> & WithSkinProps;
+
+export const Alert = ({ skin = 'shadcn', ...props }: AlertProps) => {
+  const components = getSkinComponent(alertComponents, skin);
+  return <components.Alert {...props} />;
 };
 
-export const Alert = (props: React.ComponentProps<typeof ShadcnAlert.Alert>) => {
-  const skin = getSkin();
-  
-  if (skin === 'neobrutalism') {
-    return <NeobrutalismAlert.Alert {...props} />;
-  }
-  
-  return <ShadcnAlert.Alert {...props} />;
+export const AlertTitle = ({ skin = 'shadcn', ...props }: AlertTitleProps) => {
+  const components = getSkinComponent(alertComponents, skin);
+  return <components.AlertTitle {...props} />;
 };
 
-export const AlertTitle = (props: React.ComponentProps<typeof ShadcnAlert.AlertTitle>) => {
-  const skin = getSkin();
-  
-  if (skin === 'neobrutalism') {
-    return <NeobrutalismAlert.AlertTitle {...props} />;
-  }
-  
-  return <ShadcnAlert.AlertTitle {...props} />;
-};
-
-export const AlertDescription = (props: React.ComponentProps<typeof ShadcnAlert.AlertDescription>) => {
-  const skin = getSkin();
-  
-  if (skin === 'neobrutalism') {
-    return <NeobrutalismAlert.AlertDescription {...props} />;
-  }
-  
-  return <ShadcnAlert.AlertDescription {...props} />;
+export const AlertDescription = ({ skin = 'shadcn', ...props }: AlertDescriptionProps) => {
+  const components = getSkinComponent(alertComponents, skin);
+  return <components.AlertDescription {...props} />;
 };
