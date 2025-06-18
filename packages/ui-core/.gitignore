@@ -3,3 +3,4 @@ dist/
 node_modules/
 tsconfig.build.json
 tsconfig.stories.tsbuildinfo
+tsconfig.tsbuildinfo
