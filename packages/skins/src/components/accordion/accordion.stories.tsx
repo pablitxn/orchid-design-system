@@ -18,40 +18,66 @@ const meta: Meta<typeof Accordion> = {
       control: 'boolean',
       description: 'Whether the accordion items can be collapsed',
     },
+    skin: {
+      control: 'radio',
+      options: ['shadcn', 'neobrutalism'],
+      description: 'Visual theme variant',
+    },
   },
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Single: Story = {
+const AccordionExample = ({ skin, ...props }: any) => (
+  <Accordion skin={skin} {...props}>
+    <AccordionItem value="item-1">
+      <AccordionTrigger>Is it accessible?</AccordionTrigger>
+      <AccordionContent>
+        Yes. It adheres to the WAI-ARIA design pattern.
+      </AccordionContent>
+    </AccordionItem>
+    <AccordionItem value="item-2">
+      <AccordionTrigger>Is it styled?</AccordionTrigger>
+      <AccordionContent>
+        Yes. It comes with default styles that matches the other components' aesthetic.
+      </AccordionContent>
+    </AccordionItem>
+    <AccordionItem value="item-3">
+      <AccordionTrigger>Is it animated?</AccordionTrigger>
+      <AccordionContent>
+        Yes. It's animated by default, but you can disable it if you prefer.
+      </AccordionContent>
+    </AccordionItem>
+  </Accordion>
+);
+
+export const Default: Story = {
   args: {
     type: 'single',
     collapsible: true,
     className: 'w-[400px]',
-    skin: "neobrutalism"
+    skin: 'shadcn',
+  },
+  render: AccordionExample,
+};
+
+export const BothSkins: Story = {
+  args: {
+    type: 'single',
+    collapsible: true,
   },
   render: (args) => (
-    <Accordion {...args}>
-      <AccordionItem value="item-1">
-        <AccordionTrigger>Is it accessible?</AccordionTrigger>
-        <AccordionContent>
-          Yes. It adheres to the WAI-ARIA design pattern.
-        </AccordionContent>
-      </AccordionItem>
-      <AccordionItem value="item-2">
-        <AccordionTrigger>Is it styled?</AccordionTrigger>
-        <AccordionContent>
-          Yes. It comes with default styles that matches the other components' aesthetic.
-        </AccordionContent>
-      </AccordionItem>
-      <AccordionItem value="item-3">
-        <AccordionTrigger>Is it animated?</AccordionTrigger>
-        <AccordionContent>
-          Yes. It's animated by default, but you can disable it if you prefer.
-        </AccordionContent>
-      </AccordionItem>
-    </Accordion>
+    <div className="flex flex-col gap-8">
+      <div>
+        <h3 className="mb-4 text-lg font-semibold">Shadcn Skin</h3>
+        <AccordionExample {...args} skin="shadcn" className="w-[400px]" />
+      </div>
+      <div>
+        <h3 className="mb-4 text-lg font-semibold">Neobrutalism Skin</h3>
+        <AccordionExample {...args} skin="neobrutalism" className="w-[400px]" />
+      </div>
+    </div>
   ),
 };
 
@@ -59,6 +85,7 @@ export const Multiple: Story = {
   args: {
     type: 'multiple',
     className: 'w-[400px]',
+    skin: 'shadcn',
   },
   render: (args) => (
     <Accordion {...args}>
