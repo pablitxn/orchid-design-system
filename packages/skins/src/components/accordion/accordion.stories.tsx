@@ -9,15 +9,6 @@ const meta: Meta<typeof Accordion> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    type: {
-      control: 'radio',
-      options: ['single', 'multiple'],
-      description: 'Whether only one item can be opened at a time',
-    },
-    collapsible: {
-      control: 'boolean',
-      description: 'Whether the accordion items can be collapsed',
-    },
     skin: {
       control: 'radio',
       options: ['shadcn', 'neobrutalism'],
@@ -54,8 +45,6 @@ const AccordionExample = ({ skin, ...props }: any) => (
 
 export const Default: Story = {
   args: {
-    type: 'single',
-    collapsible: true,
     className: 'w-[400px]',
     skin: 'shadcn',
   },
@@ -63,10 +52,7 @@ export const Default: Story = {
 };
 
 export const BothSkins: Story = {
-  args: {
-    type: 'single',
-    collapsible: true,
-  },
+  args: {},
   render: (args) => (
     <div className="flex flex-col gap-8">
       <div>
@@ -83,7 +69,6 @@ export const BothSkins: Story = {
 
 export const Multiple: Story = {
   args: {
-    type: 'multiple',
     className: 'w-[400px]',
     skin: 'shadcn',
   },

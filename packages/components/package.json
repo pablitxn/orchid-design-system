@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
+    "@tailwindcss/postcss": "^4.1.10",
     "@tailwindcss/vite": "^4.1.10",
     "@vitejs/plugin-react-swc": "^3.10.2",
     "rollup-plugin-visualizer": "^6.0.3",

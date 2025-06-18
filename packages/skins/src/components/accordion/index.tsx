@@ -1,33 +1,35 @@
+import { ComponentProps } from 'react';
 import * as ShadcnAccordion from './shadcn';
 import * as NeobrutalismAccordion from './neobrutalism';
-import { getSkinComponent, type SkinType, type WithSkinProps } from '../../lib/utils';
+import { getSkinComponent, type WithSkinProps } from '@/lib/utils';
+import { SKINS, DEFAULT_SKIN } from '@/lib/constants';
 
 const accordionComponents = {
-  shadcn: ShadcnAccordion,
-  neobrutalism: NeobrutalismAccordion
+  [SKINS.SHADCN]: ShadcnAccordion,
+  [SKINS.NEOBRUTALISM]: NeobrutalismAccordion,
 } as const;
 
-type AccordionProps = React.ComponentProps<typeof ShadcnAccordion.Accordion> & WithSkinProps;
-type AccordionItemProps = React.ComponentProps<typeof ShadcnAccordion.AccordionItem> & WithSkinProps;
-type AccordionTriggerProps = React.ComponentProps<typeof ShadcnAccordion.AccordionTrigger> & WithSkinProps;
-type AccordionContentProps = React.ComponentProps<typeof ShadcnAccordion.AccordionContent> & WithSkinProps;
+type AccordionProps = ComponentProps<typeof ShadcnAccordion.Accordion> & WithSkinProps;
+type AccordionItemProps = ComponentProps<typeof ShadcnAccordion.AccordionItem> & WithSkinProps;
+type AccordionTriggerProps = ComponentProps<typeof ShadcnAccordion.AccordionTrigger> & WithSkinProps;
+type AccordionContentProps = ComponentProps<typeof ShadcnAccordion.AccordionContent> & WithSkinProps;
 
-export const Accordion = ({ skin = 'shadcn', ...props }: AccordionProps) => {
+export const Accordion = ({ skin = DEFAULT_SKIN, ...props }: AccordionProps) => {
   const components = getSkinComponent(accordionComponents, skin);
   return <components.Accordion {...props} />;
 };
 
-export const AccordionItem = ({ skin = 'shadcn', ...props }: AccordionItemProps) => {
+export const AccordionItem = ({ skin = DEFAULT_SKIN, ...props }: AccordionItemProps) => {
   const components = getSkinComponent(accordionComponents, skin);
   return <components.AccordionItem {...props} />;
 };
 
-export const AccordionTrigger = ({ skin = 'shadcn', ...props }: AccordionTriggerProps) => {
+export const AccordionTrigger = ({ skin = DEFAULT_SKIN, ...props }: AccordionTriggerProps) => {
   const components = getSkinComponent(accordionComponents, skin);
   return <components.AccordionTrigger {...props} />;
 };
 
-export const AccordionContent = ({ skin = 'shadcn', ...props }: AccordionContentProps) => {
+export const AccordionContent = ({ skin = DEFAULT_SKIN, ...props }: AccordionContentProps) => {
   const components = getSkinComponent(accordionComponents, skin);
   return <components.AccordionContent {...props} />;
 };

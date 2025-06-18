@@ -1,5 +1,7 @@
 import React from 'react';
-import '../src/index.css';
+import '../src/styles/index.css';
+// Import styles from the skins package
+import '@orchid-design-system/skins/styles.css';
 
 /** @type { import('@storybook/react').Preview } */
 const preview = {

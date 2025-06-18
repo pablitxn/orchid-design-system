@@ -1,3 +1,7 @@
+// Import styles - this ensures they're included in the build
+import './assets/styles/globals.css';
+
+// Export all components
 export * from './components/accordion';
 export * from './components/alert-dialog';
 export * from './components/alert';
@@ -22,4 +26,7 @@ export * from './components/tabs';
 export * from './components/textarea';
 export * from './components/tooltip';
 
+// Export utilities
 export { cn } from './lib/utils';
+export type { SkinType, WithSkinProps } from './lib/utils';
+export { SKINS, DEFAULT_SKIN } from './lib/constants';

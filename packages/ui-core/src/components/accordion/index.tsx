@@ -106,6 +106,7 @@ AccordionContent.displayName = 'Accordion.Content';
 
 // Create compound component
 const Accordion = Object.assign(AccordionRoot, {
+  Root: AccordionRoot,
   Item: AccordionItem,
   Header: AccordionHeader,
   Trigger: AccordionTrigger,

@@ -1,8 +1,6 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
-@custom-variant dark (&:is(.dark *));
-
 /* Base Theme Variables */
 :root {
   /* Default Theme: Ocean */
@@ -203,39 +201,14 @@
   --ring: 196 181 253; /* Light purple */
 }
 
-@theme inline {
-  --color-background: rgb(var(--background));
-  --color-foreground: rgb(var(--foreground));
-  --color-card: rgb(var(--card));
-  --color-card-foreground: rgb(var(--card-foreground));
-  --color-popover: rgb(var(--popover));
-  --color-popover-foreground: rgb(var(--popover-foreground));
-  --color-primary: rgb(var(--primary));
-  --color-primary-foreground: rgb(var(--primary-foreground));
-  --color-secondary: rgb(var(--secondary));
-  --color-secondary-foreground: rgb(var(--secondary-foreground));
-  --color-muted: rgb(var(--muted));
-  --color-muted-foreground: rgb(var(--muted-foreground));
-  --color-accent: rgb(var(--accent));
-  --color-accent-foreground: rgb(var(--accent-foreground));
-  --color-destructive: rgb(var(--destructive));
-  --color-destructive-foreground: rgb(var(--destructive-foreground));
-  --color-border: rgb(var(--border));
-  --color-input: rgb(var(--input));
-  --color-ring: rgb(var(--ring));
-  --color-chart-1: rgb(var(--chart-1));
-  --color-chart-2: rgb(var(--chart-2));
-  --color-chart-3: rgb(var(--chart-3));
-  --color-chart-4: rgb(var(--chart-4));
-  --color-chart-5: rgb(var(--chart-5));
-}
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: rgb(var(--border));
   }
   body {
-    @apply bg-background text-foreground;
+    background-color: rgb(var(--background));
+    color: rgb(var(--foreground));
   }
 }
 
@@ -348,15 +321,25 @@
   }
   
   .custom-scrollbar::-webkit-scrollbar-thumb {
-    @apply bg-muted-foreground/20 rounded-full;
+    background-color: rgb(var(--muted-foreground) / 0.2);
+    border-radius: 9999px;
   }
   
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    @apply bg-muted-foreground/30;
+    background-color: rgb(var(--muted-foreground) / 0.3);
   }
   
   /* Smooth transitions */
   .transition-smooth {
     @apply transition-all duration-200 ease-in-out;
   }
+}
+
+/* Neobrutalism specific variables */
+:root {
+  --main: 0 0 0; /* Black */
+  --main-foreground: 255 255 255; /* White */
+  --secondary-background: 255 255 255; /* White */
+  --radius-base: 0.5rem;
+  --font-weight-normal: 500;
 }

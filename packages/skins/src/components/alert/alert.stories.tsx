@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Alert, AlertTitle, AlertDescription } from './index';
-import { Terminal, CheckCircle2, AlertCircle, Info, AlertTriangle, XCircle } from 'lucide-react';
+import { Terminal, CheckCircle2, AlertCircle, InfoIcon, AlertTriangle, XCircle } from 'lucide-react';
 
 const meta: Meta<typeof Alert> = {
   title: 'Components/Alert',
@@ -93,7 +93,7 @@ export const Info: Story = {
   },
   render: (args) => (
     <Alert {...args}>
-      <Info className="h-4 w-4" />
+      <InfoIcon className="h-4 w-4" />
       <AlertTitle>Update available</AlertTitle>
       <AlertDescription>
         A new version of the application is available. Refresh to update.
@@ -134,7 +134,7 @@ export const LongContent: Story = {
   },
   render: (args) => (
     <Alert {...args}>
-      <Info className="h-4 w-4" />
+      <InfoIcon className="h-4 w-4" />
       <AlertTitle>Important Notice</AlertTitle>
       <AlertDescription>
         This is a longer alert message that demonstrates how the component handles multiple lines of text. The layout should remain clean and readable even with extended content. Icons should stay properly aligned at the top.
