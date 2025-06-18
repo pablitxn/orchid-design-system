@@ -1,12 +1,9 @@
-import Layout from './components/Layout.tsx';
-import { Index as ShadcnButton } from '@orchid-design-system/neobrutalism/src/components/button/shadcn';
-import { Button as NeoBrutalismButton } from '@orchid-design-system/neobrutalism/src/components/button/neobrutalism';
-import { Alert } from '@orchid-design-system/neobrutalism/src';
+import { Alert, Button } from '@orchid-design-system/skins';
 
 
 function App() {
   return (
-    <Layout>
+    <>
       <section id="buttons">
         <h2 className="text-xl font-semibold mb-4">Buttons</h2>
 
@@ -14,22 +11,22 @@ function App() {
           <div>
             <h3 className="text-lg font-medium mb-3">Shadcn Theme</h3>
             <div className="flex flex-wrap gap-3">
-              <ShadcnButton>Default</ShadcnButton>
-              <ShadcnButton variant="secondary">Secondary</ShadcnButton>
-              <ShadcnButton variant="destructive">Destructive</ShadcnButton>
-              <ShadcnButton variant="outline">Outline</ShadcnButton>
-              <ShadcnButton variant="ghost">Ghost</ShadcnButton>
-              <ShadcnButton variant="link">Link</ShadcnButton>
+              <Button skin="shadcn">Default</Button>
+              <Button skin="shadcn" variant="secondary">Secondary</Button>
+              <Button skin="shadcn" variant="destructive">Destructive</Button>
+              <Button skin="shadcn" variant="outline">Outline</Button>
+              <Button skin="shadcn" variant="ghost">Ghost</Button>
+              <Button skin="shadcn" variant="link">Link</Button>
             </div>
           </div>
 
           <div>
             <h3 className="text-lg font-medium mb-3">Neobrutalism Theme</h3>
             <div className="flex flex-wrap gap-3">
-              <NeoBrutalismButton>Default</NeoBrutalismButton>
-              <NeoBrutalismButton variant="neutral">Neutral</NeoBrutalismButton>
-              <NeoBrutalismButton variant="noShadow">No Shadow</NeoBrutalismButton>
-              <NeoBrutalismButton variant="reverse">Reverse</NeoBrutalismButton>
+              <Button skin="neobrutalism">Default</Button>
+              <Button skin="neobrutalism" variant="neutral">Neutral</Button>
+              <Button skin="neobrutalism" variant="noShadow">No Shadow</Button>
+              <Button skin="neobrutalism" variant="reverse">Reverse</Button>
             </div>
           </div>
         </div>
@@ -42,13 +39,31 @@ function App() {
           <div>
             <h3 className="text-lg font-medium mb-3">Shadcn Theme</h3>
             <div className="space-y-3">
-              <Alert>
+              <Alert skin="shadcn">
                 <div>
                   <h4 className="font-medium">Default Alert</h4>
                   <p className="text-sm">This is a default alert message.</p>
                 </div>
               </Alert>
-              <Alert variant="destructive">
+              <Alert skin="shadcn" variant="destructive">
+                <div>
+                  <h4 className="font-medium">Error Alert</h4>
+                  <p className="text-sm">This is an error alert message.</p>
+                </div>
+              </Alert>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-medium mb-3">Neobrutalism Theme</h3>
+            <div className="space-y-3">
+              <Alert skin="neobrutalism">
+                <div>
+                  <h4 className="font-medium">Default Alert</h4>
+                  <p className="text-sm">This is a default alert message.</p>
+                </div>
+              </Alert>
+              <Alert skin="neobrutalism" variant="destructive">
                 <div>
                   <h4 className="font-medium">Error Alert</h4>
                   <p className="text-sm">This is an error alert message.</p>
@@ -58,8 +73,7 @@ function App() {
           </div>
         </div>
       </section>
-
-    </Layout>
+    </>
   );
 }
 

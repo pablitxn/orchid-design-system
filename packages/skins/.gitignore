@@ -1,5 +1,5 @@
 .turbo/
 dist/
 node_modules/
-tsconfig.build.json
 tsconfig.stories.tsbuildinfo
+tsconfig.build.tsbuildinfo

@@ -1,5 +1,5 @@
 {
-  "name": "@orchid-design-system/neobrutalism",
+  "name": "@orchid-design-system/skins",
   "version": "1.0.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
