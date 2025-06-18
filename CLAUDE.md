@@ -39,8 +39,11 @@ This is a **monorepo design system** built with:
 ```
 packages/
 ├── ui-core/          # Core Radix UI primitive components
-├── skins/            # Theme variants (currently neobrutalism)
+├── skins/            # Theme variants (shadcn & neobrutalism)
 └── components/       # Additional custom components
+
+apps/
+└── storybook/        # Storybook application (port 6006)
 ```
 
 ### Component Organization
@@ -71,3 +74,10 @@ component-name/
 2. Each component exports both shadcn and neobrutalism variants
 3. Stories are written alongside components for Storybook documentation
 4. Changes are tracked using changesets for proper versioning
+
+## Key Files and Utilities
+
+- `packages/skins/neobrutalism/src/lib/utils.ts` - Contains `cn()` utility for className merging
+- `packages/skins/neobrutalism/src/lib/getSkinComponent.tsx` - Helper for dynamic theme selection
+- `turbo.json` - Defines build pipeline and task dependencies
+- Each package has its own `tsconfig.json` extending the root configuration

@@ -1,4 +1,7 @@
-/** @type { import('@storybook/react-vite').Preview } */
+import React from 'react';
+import '../../../packages/skins/src/styles/globals.css';
+
+/** @type { import('@storybook/react').Preview } */
 const preview = {
   parameters: {
     controls: {
@@ -8,6 +11,9 @@ const preview = {
       },
     },
   },
+  decorators: [
+    (Story) => React.createElement('div', { className: 'p-4' }, React.createElement(Story)),
+  ],
 };
 
 export default preview;
