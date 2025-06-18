@@ -1,31 +1,31 @@
 import React from 'react';
 import * as RadixDropdownMenu from '@radix-ui/react-dropdown-menu';
 
-interface DropdownMenuProps {
+export interface DropdownMenuProps {
   children: React.ReactNode;
   open?: boolean;
   onOpenChange?: (open: boolean) => void;
 }
 
-interface DropdownMenuTriggerProps extends RadixDropdownMenu.DropdownMenuTriggerProps {
+export interface DropdownMenuTriggerProps extends RadixDropdownMenu.DropdownMenuTriggerProps {
   children: React.ReactNode;
 }
 
-interface DropdownMenuContentProps extends RadixDropdownMenu.DropdownMenuContentProps {
-  children: React.ReactNode;
-  className?: string;
-}
-
-interface DropdownMenuItemProps extends RadixDropdownMenu.DropdownMenuItemProps {
+export interface DropdownMenuContentProps extends RadixDropdownMenu.DropdownMenuContentProps {
   children: React.ReactNode;
   className?: string;
 }
 
-interface DropdownMenuSeparatorProps extends RadixDropdownMenu.DropdownMenuSeparatorProps {
+export interface DropdownMenuItemProps extends RadixDropdownMenu.DropdownMenuItemProps {
+  children: React.ReactNode;
   className?: string;
 }
 
-interface DropdownMenuLabelProps extends RadixDropdownMenu.DropdownMenuLabelProps {
+export interface DropdownMenuSeparatorProps extends RadixDropdownMenu.DropdownMenuSeparatorProps {
+  className?: string;
+}
+
+export interface DropdownMenuLabelProps extends RadixDropdownMenu.DropdownMenuLabelProps {
   children: React.ReactNode;
   className?: string;
 }

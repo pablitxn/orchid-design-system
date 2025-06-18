@@ -2,6 +2,7 @@
   "name": "orchid-design-system",
   "version": "1.0.0",
   "main": "index.js",
+  "packageManager": "npm@10.9.0",
   "workspaces": [
     "apps/*",
     "packages/*"

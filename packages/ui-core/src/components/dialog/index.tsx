@@ -1,32 +1,32 @@
 import React from 'react';
 import * as RadixDialog from '@radix-ui/react-dialog';
 
-interface DialogProps {
+export interface DialogProps {
   children: React.ReactNode;
   open?: boolean;
   onOpenChange?: (open: boolean) => void;
 }
 
-interface DialogTriggerProps extends RadixDialog.DialogTriggerProps {
+export interface DialogTriggerProps extends RadixDialog.DialogTriggerProps {
   children: React.ReactNode;
 }
 
-interface DialogContentProps extends RadixDialog.DialogContentProps {
-  children: React.ReactNode;
-  className?: string;
-}
-
-interface DialogTitleProps extends RadixDialog.DialogTitleProps {
+export interface DialogContentProps extends RadixDialog.DialogContentProps {
   children: React.ReactNode;
   className?: string;
 }
 
-interface DialogDescriptionProps extends RadixDialog.DialogDescriptionProps {
+export interface DialogTitleProps extends RadixDialog.DialogTitleProps {
   children: React.ReactNode;
   className?: string;
 }
 
-interface DialogCloseProps extends RadixDialog.DialogCloseProps {
+export interface DialogDescriptionProps extends RadixDialog.DialogDescriptionProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+export interface DialogCloseProps extends RadixDialog.DialogCloseProps {
   children: React.ReactNode;
   className?: string;
 }

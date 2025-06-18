@@ -1,7 +1,7 @@
 import React from 'react';
 import { Slot as RadixSlot } from '@radix-ui/react-slot';
 
-interface SlotProps {
+export interface SlotProps {
   children: React.ReactNode;
 }
 

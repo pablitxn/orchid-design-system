@@ -1,23 +1,23 @@
 import React from 'react';
 import * as RadixTabs from '@radix-ui/react-tabs';
 
-interface TabsProps extends RadixTabs.TabsProps {
+export interface TabsProps extends RadixTabs.TabsProps {
   children: React.ReactNode;
   className?: string;
 }
 
-interface TabsListProps extends RadixTabs.TabsListProps {
+export interface TabsListProps extends RadixTabs.TabsListProps {
   children: React.ReactNode;
   className?: string;
 }
 
-interface TabsTriggerProps extends RadixTabs.TabsTriggerProps {
+export interface TabsTriggerProps extends RadixTabs.TabsTriggerProps {
   children: React.ReactNode;
   value: string;
   className?: string;
 }
 
-interface TabsContentProps extends RadixTabs.TabsContentProps {
+export interface TabsContentProps extends RadixTabs.TabsContentProps {
   children: React.ReactNode;
   value: string;
   className?: string;

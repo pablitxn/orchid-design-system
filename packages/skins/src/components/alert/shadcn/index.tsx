@@ -1,7 +1,8 @@
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
+import { Alert } from '@orchid-design-system/ui-core';
 
-import { cn } from "../orchid-webapp/src/lib/utils"
+import { cn } from "@/lib/utils"
 
 const alertVariants = cva(
   "relative w-full rounded-lg border p-4 [&>svg~*]:pl-7 [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground",
@@ -19,24 +20,23 @@ const alertVariants = cva(
   }
 )
 
-const Alert = React.forwardRef<
+const AlertRoot = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof alertVariants>
+  React.ComponentPropsWithoutRef<typeof Alert> & VariantProps<typeof alertVariants>
 >(({ className, variant, ...props }, ref) => (
-  <div
+  <Alert
     ref={ref}
-    role="alert"
     className={cn(alertVariants({ variant }), className)}
     {...props}
   />
 ))
-Alert.displayName = "Alert"
+AlertRoot.displayName = "Alert"
 
 const AlertTitle = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLHeadingElement>
+  HTMLHeadingElement,
+  React.ComponentPropsWithoutRef<typeof Alert.Title>
 >(({ className, ...props }, ref) => (
-  <h5
+  <Alert.Title
     ref={ref}
     className={cn("mb-1 font-medium leading-none tracking-tight", className)}
     {...props}
@@ -45,10 +45,10 @@ const AlertTitle = React.forwardRef<
 AlertTitle.displayName = "AlertTitle"
 
 const AlertDescription = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLParagraphElement>
+  HTMLDivElement,
+  React.ComponentPropsWithoutRef<typeof Alert.Description>
 >(({ className, ...props }, ref) => (
-  <div
+  <Alert.Description
     ref={ref}
     className={cn("text-sm [&_p]:leading-relaxed", className)}
     {...props}
@@ -56,4 +56,4 @@ const AlertDescription = React.forwardRef<
 ))
 AlertDescription.displayName = "AlertDescription"
 
-export { Alert, AlertTitle, AlertDescription }
+export { AlertRoot as Alert, AlertTitle, AlertDescription }

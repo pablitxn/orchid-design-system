@@ -1,63 +1,75 @@
-import {ReactNode, FC} from 'react';
+import React from 'react';
 import * as RadixAccordion from '@radix-ui/react-accordion';
 
-interface AccordionProps extends RadixAccordion.AccordionMultipleProps {
-  children: ReactNode;
+export interface AccordionProps extends RadixAccordion.AccordionMultipleProps {
+  children: React.ReactNode;
   className?: string;
 }
 
-interface AccordionItemProps extends RadixAccordion.AccordionItemProps {
-  children: ReactNode;
+export interface AccordionItemProps extends RadixAccordion.AccordionItemProps {
+  children: React.ReactNode;
   value: string;
   className?: string;
 }
 
-interface AccordionHeaderProps extends RadixAccordion.AccordionHeaderProps {
-  children: ReactNode;
+export interface AccordionHeaderProps extends RadixAccordion.AccordionHeaderProps {
+  children: React.ReactNode;
   className?: string;
 }
 
-interface AccordionTriggerProps extends RadixAccordion.AccordionTriggerProps {
-  children: ReactNode;
+export interface AccordionTriggerProps extends RadixAccordion.AccordionTriggerProps {
+  children: React.ReactNode;
   className?: string;
 }
 
-interface AccordionContentProps extends RadixAccordion.AccordionContentProps {
-  children: ReactNode;
+export interface AccordionContentProps extends RadixAccordion.AccordionContentProps {
+  children: React.ReactNode;
   className?: string;
 }
 
-const Accordion: FC<AccordionProps> & {
-  Item: FC<AccordionItemProps>;
-  Header: FC<AccordionHeaderProps>;
-  Trigger: FC<AccordionTriggerProps>;
-  Content: FC<AccordionContentProps>;
-} = ({children, className, ...props}) => {
+const AccordionRoot = React.forwardRef<
+  React.ElementRef<typeof RadixAccordion.Root>,
+  AccordionProps
+>(({ children, className, ...props }, ref) => {
   return (
-    <RadixAccordion.Root className={`w-full ${className}`} {...props}>
+    <RadixAccordion.Root ref={ref} className={`w-full ${className}`} {...props}>
       {children}
     </RadixAccordion.Root>
   );
-};
+});
+AccordionRoot.displayName = 'Accordion';
 
-Accordion.Item = ({children, value, className, ...props}) => (
+const AccordionItem = React.forwardRef<
+  React.ElementRef<typeof RadixAccordion.Item>,
+  AccordionItemProps
+>(({ children, value, className, ...props }, ref) => (
   <RadixAccordion.Item
+    ref={ref}
     className={`border-b border-gray-200 ${className}`}
     value={value}
     {...props}
   >
     {children}
   </RadixAccordion.Item>
-);
+));
+AccordionItem.displayName = 'Accordion.Item';
 
-Accordion.Header = ({children, className, ...props}) => (
-  <RadixAccordion.Header className={`flex ${className}`} {...props}>
+const AccordionHeader = React.forwardRef<
+  React.ElementRef<typeof RadixAccordion.Header>,
+  AccordionHeaderProps
+>(({ children, className, ...props }, ref) => (
+  <RadixAccordion.Header ref={ref} className={`flex ${className}`} {...props}>
     {children}
   </RadixAccordion.Header>
-);
+));
+AccordionHeader.displayName = 'Accordion.Header';
 
-Accordion.Trigger = ({children, className, ...props}) => (
+const AccordionTrigger = React.forwardRef<
+  React.ElementRef<typeof RadixAccordion.Trigger>,
+  AccordionTriggerProps
+>(({ children, className, ...props }, ref) => (
   <RadixAccordion.Trigger
+    ref={ref}
     className={`flex flex-1 items-center justify-between py-4 text-sm font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180 ${className}`}
     {...props}
   >
@@ -75,15 +87,29 @@ Accordion.Trigger = ({children, className, ...props}) => (
       />
     </svg>
   </RadixAccordion.Trigger>
-);
+));
+AccordionTrigger.displayName = 'Accordion.Trigger';
 
-Accordion.Content = ({children, className, ...props}) => (
+const AccordionContent = React.forwardRef<
+  React.ElementRef<typeof RadixAccordion.Content>,
+  AccordionContentProps
+>(({ children, className, ...props }, ref) => (
   <RadixAccordion.Content
+    ref={ref}
     className={`overflow-hidden text-sm ${className}`}
     {...props}
   >
     <div className="pb-4 pt-0">{children}</div>
   </RadixAccordion.Content>
-);
+));
+AccordionContent.displayName = 'Accordion.Content';
+
+// Create compound component
+const Accordion = Object.assign(AccordionRoot, {
+  Item: AccordionItem,
+  Header: AccordionHeader,
+  Trigger: AccordionTrigger,
+  Content: AccordionContent,
+});
 
 export default Accordion;

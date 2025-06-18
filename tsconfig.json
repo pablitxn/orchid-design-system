@@ -1,0 +1,19 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@orchid-design-system/ui-core": ["./packages/ui-core/src"],
+      "@orchid-design-system/ui-core/*": ["./packages/ui-core/src/*"],
+      "@orchid-design-system/neobrutalism": ["./packages/skins/src"],
+      "@orchid-design-system/neobrutalism/*": ["./packages/skins/src/*"]
+    }
+  },
+  "references": [
+    { "path": "./packages/ui-core" },
+    { "path": "./packages/skins" },
+    { "path": "./apps/storybook" }
+  ],
+  "include": [],
+  "exclude": ["node_modules", "dist", "build"]
+}

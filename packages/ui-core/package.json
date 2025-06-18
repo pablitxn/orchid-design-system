@@ -1,7 +1,111 @@
 {
   "name": "@orchid-design-system/ui-core",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./accordion": {
+      "types": "./dist/components/accordion/index.d.ts",
+      "import": "./dist/components/accordion/index.mjs",
+      "require": "./dist/components/accordion/index.js"
+    },
+    "./alert-dialog": {
+      "types": "./dist/components/alert-dialog/index.d.ts",
+      "import": "./dist/components/alert-dialog/index.mjs",
+      "require": "./dist/components/alert-dialog/index.js"
+    },
+    "./alert": {
+      "types": "./dist/components/alert/index.d.ts",
+      "import": "./dist/components/alert/index.mjs",
+      "require": "./dist/components/alert/index.js"
+    },
+    "./avatar": {
+      "types": "./dist/components/avatar/index.d.ts",
+      "import": "./dist/components/avatar/index.mjs",
+      "require": "./dist/components/avatar/index.js"
+    },
+    "./badge": {
+      "types": "./dist/components/badge/index.d.ts",
+      "import": "./dist/components/badge/index.mjs",
+      "require": "./dist/components/badge/index.js"
+    },
+    "./dialog": {
+      "types": "./dist/components/dialog/index.d.ts",
+      "import": "./dist/components/dialog/index.mjs",
+      "require": "./dist/components/dialog/index.js"
+    },
+    "./dropdown-menu": {
+      "types": "./dist/components/dropdown-menu/index.d.ts",
+      "import": "./dist/components/dropdown-menu/index.mjs",
+      "require": "./dist/components/dropdown-menu/index.js"
+    },
+    "./label": {
+      "types": "./dist/components/label/index.d.ts",
+      "import": "./dist/components/label/index.mjs",
+      "require": "./dist/components/label/index.js"
+    },
+    "./progress": {
+      "types": "./dist/components/progress/index.d.ts",
+      "import": "./dist/components/progress/index.mjs",
+      "require": "./dist/components/progress/index.js"
+    },
+    "./radio-group": {
+      "types": "./dist/components/radio-group/index.d.ts",
+      "import": "./dist/components/radio-group/index.mjs",
+      "require": "./dist/components/radio-group/index.js"
+    },
+    "./scroll-area": {
+      "types": "./dist/components/scroll-area/index.d.ts",
+      "import": "./dist/components/scroll-area/index.mjs",
+      "require": "./dist/components/scroll-area/index.js"
+    },
+    "./select": {
+      "types": "./dist/components/select/index.d.ts",
+      "import": "./dist/components/select/index.mjs",
+      "require": "./dist/components/select/index.js"
+    },
+    "./slider": {
+      "types": "./dist/components/slider/index.d.ts",
+      "import": "./dist/components/slider/index.mjs",
+      "require": "./dist/components/slider/index.js"
+    },
+    "./slot": {
+      "types": "./dist/components/slot/index.d.ts",
+      "import": "./dist/components/slot/index.mjs",
+      "require": "./dist/components/slot/index.js"
+    },
+    "./switch": {
+      "types": "./dist/components/switch/index.d.ts",
+      "import": "./dist/components/switch/index.mjs",
+      "require": "./dist/components/switch/index.js"
+    },
+    "./tabs": {
+      "types": "./dist/components/tabs/index.d.ts",
+      "import": "./dist/components/tabs/index.mjs",
+      "require": "./dist/components/tabs/index.js"
+    },
+    "./tooltip": {
+      "types": "./dist/components/tooltip/index.d.ts",
+      "import": "./dist/components/tooltip/index.mjs",
+      "require": "./dist/components/tooltip/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsup --no-dts && tsc -p tsconfig.build.json",
+    "dev": "tsup --watch --no-dts",
+    "lint": "eslint \"src/**/*.ts*\"",
+    "type-check": "tsc --noEmit"
+  },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.11",
     "@radix-ui/react-alert-dialog": "^1.1.14",
@@ -18,5 +122,17 @@
     "@radix-ui/react-switch": "^1.2.5",
     "@radix-ui/react-tabs": "^1.1.12",
     "@radix-ui/react-tooltip": "^1.2.7"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.8.3"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import * as RadixSlider from '@radix-ui/react-slider';
 
-interface SliderProps extends RadixSlider.SliderProps {
+export interface SliderProps extends RadixSlider.SliderProps {
   className?: string;
 }
 

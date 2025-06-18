@@ -1,6 +1,7 @@
 import { cva, type VariantProps } from "class-variance-authority"
 
 import * as React from "react"
+import { Alert } from '@orchid-design-system/ui-core';
 
 import { cn } from "@/lib/utils"
 
@@ -19,24 +20,28 @@ const alertVariants = cva(
   },
 )
 
-function Alert({
-                 className,
-                 variant,
-                 ...props
-               }: React.ComponentProps<"div"> & VariantProps<typeof alertVariants>) {
+const AlertRoot = React.forwardRef<
+  HTMLDivElement,
+  React.ComponentProps<typeof Alert> & VariantProps<typeof alertVariants>
+>(({ className, variant, ...props }, ref) => {
   return (
-    <div
+    <Alert
+      ref={ref}
       data-slot="alert"
-      role="alert"
       className={cn(alertVariants({ variant }), className)}
       {...props}
     />
   )
-}
+})
+AlertRoot.displayName = 'Alert'
 
-function AlertTitle({ className, ...props }: React.ComponentProps<"div">) {
+const AlertTitle = React.forwardRef<
+  HTMLHeadingElement,
+  React.ComponentProps<typeof Alert.Title>
+>(({ className, ...props }, ref) => {
   return (
-    <div
+    <Alert.Title
+      ref={ref}
       data-slot="alert-title"
       className={cn(
         "col-start-2 line-clamp-1 min-h-4 font-heading tracking-tight",
@@ -45,14 +50,16 @@ function AlertTitle({ className, ...props }: React.ComponentProps<"div">) {
       {...props}
     />
   )
-}
+})
+AlertTitle.displayName = 'AlertTitle'
 
-function AlertDescription({
-                            className,
-                            ...props
-                          }: React.ComponentProps<"div">) {
+const AlertDescription = React.forwardRef<
+  HTMLDivElement,
+  React.ComponentProps<typeof Alert.Description>
+>(({ className, ...props }, ref) => {
   return (
-    <div
+    <Alert.Description
+      ref={ref}
       data-slot="alert-description"
       className={cn(
         "col-start-2 grid justify-items-start gap-1 text-sm font-base [&_p]:leading-relaxed",
@@ -61,6 +68,7 @@ function AlertDescription({
       {...props}
     />
   )
-}
+})
+AlertDescription.displayName = 'AlertDescription'
 
-export { Alert, AlertTitle, AlertDescription }
+export { AlertRoot as Alert, AlertTitle, AlertDescription }

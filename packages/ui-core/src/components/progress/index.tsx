@@ -1,7 +1,7 @@
 import React from 'react';
 import * as RadixProgress from '@radix-ui/react-progress';
 
-interface ProgressProps extends RadixProgress.ProgressProps {
+export interface ProgressProps extends RadixProgress.ProgressProps {
   value?: number;
   max?: number;
   className?: string;

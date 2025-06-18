@@ -1,5 +1,48 @@
 {
   "name": "@orchid-design-system/neobrutalism",
   "version": "1.0.0",
-  "main": "index.js"
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./*": {
+      "import": "./dist/components/*/index.mjs",
+      "require": "./dist/components/*/index.js",
+      "types": "./dist/components/*/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsup --no-dts && tsc -p tsconfig.build.json",
+    "dev": "tsup --watch --no-dts",
+    "lint": "eslint \"src/**/*.ts*\"",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@orchid-design-system/ui-core": "^1.0.0",
+    "clsx": "^2.0.0",
+    "tailwind-merge": "^2.0.0",
+    "class-variance-authority": "^0.7.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.8.3",
+    "lucide-react": "^0.309.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
 }

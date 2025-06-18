@@ -1,24 +1,24 @@
 'use client';
 
 import * as React from 'react';
-import * as AvatarPrimitive from '@radix-ui/avatar';
+import AvatarPrimitive from '@orchid-design-system/ui-core/components/avatar';
 
-import { cn } from '../orchid-webapp/src/lib/utils';
+import { cn } from '@/lib/utils';
 
-const Index = React.forwardRef<
-  React.ElementRef<typeof AvatarPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>
+const Avatar = React.forwardRef<
+  HTMLSpanElement,
+  React.ComponentPropsWithoutRef<typeof AvatarPrimitive>
 >(({ className, ...props }, ref) => (
-  <AvatarPrimitive.Root
+  <AvatarPrimitive
     ref={ref}
     className={cn('relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full', className)}
     {...props}
   />
 ));
-Index.displayName = AvatarPrimitive.Root.displayName;
+Avatar.displayName = 'Avatar';
 
 const AvatarImage = React.forwardRef<
-  React.ElementRef<typeof AvatarPrimitive.Image>,
+  HTMLImageElement,
   React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>
 >(({ className, ...props }, ref) => (
   <AvatarPrimitive.Image
@@ -27,10 +27,10 @@ const AvatarImage = React.forwardRef<
     {...props}
   />
 ));
-AvatarImage.displayName = AvatarPrimitive.Image.displayName;
+AvatarImage.displayName = 'AvatarImage';
 
 const AvatarFallback = React.forwardRef<
-  React.ElementRef<typeof AvatarPrimitive.Fallback>,
+  HTMLSpanElement,
   React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Fallback>
 >(({ className, ...props }, ref) => (
   <AvatarPrimitive.Fallback
@@ -42,6 +42,6 @@ const AvatarFallback = React.forwardRef<
     {...props}
   />
 ));
-AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName;
+AvatarFallback.displayName = 'AvatarFallback';
 
-export { Index, AvatarImage, AvatarFallback };
+export { Avatar, AvatarImage, AvatarFallback };

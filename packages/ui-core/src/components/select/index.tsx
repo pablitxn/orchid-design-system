@@ -1,33 +1,33 @@
 import React from 'react';
 import * as RadixSelect from '@radix-ui/react-select';
 
-interface SelectProps extends RadixSelect.SelectProps {
+export interface SelectProps extends RadixSelect.SelectProps {
   children: React.ReactNode;
   placeholder?: string;
 }
 
-interface SelectTriggerProps extends RadixSelect.SelectTriggerProps {
+export interface SelectTriggerProps extends RadixSelect.SelectTriggerProps {
   children?: React.ReactNode;
   className?: string;
   placeholder?: string;
 }
 
-interface SelectContentProps extends RadixSelect.SelectContentProps {
+export interface SelectContentProps extends RadixSelect.SelectContentProps {
   children: React.ReactNode;
   className?: string;
 }
 
-interface SelectItemProps extends RadixSelect.SelectItemProps {
+export interface SelectItemProps extends RadixSelect.SelectItemProps {
   children: React.ReactNode;
   value: string;
   className?: string;
 }
 
-interface SelectGroupProps extends RadixSelect.SelectGroupProps {
+export interface SelectGroupProps extends RadixSelect.SelectGroupProps {
   children: React.ReactNode;
 }
 
-interface SelectLabelProps extends RadixSelect.SelectLabelProps {
+export interface SelectLabelProps extends RadixSelect.SelectLabelProps {
   children: React.ReactNode;
   className?: string;
 }

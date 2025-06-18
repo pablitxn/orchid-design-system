@@ -1,7 +1,7 @@
 import React from 'react';
 import * as RadixSwitch from '@radix-ui/react-switch';
 
-interface SwitchProps extends RadixSwitch.SwitchProps {
+export interface SwitchProps extends RadixSwitch.SwitchProps {
   className?: string;
 }
 

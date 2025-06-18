@@ -1,12 +1,12 @@
 import React from 'react';
 import * as RadixRadioGroup from '@radix-ui/react-radio-group';
 
-interface RadioGroupProps extends RadixRadioGroup.RadioGroupProps {
+export interface RadioGroupProps extends RadixRadioGroup.RadioGroupProps {
   children: React.ReactNode;
   className?: string;
 }
 
-interface RadioGroupItemProps extends RadixRadioGroup.RadioGroupItemProps {
+export interface RadioGroupItemProps extends RadixRadioGroup.RadioGroupItemProps {
   value: string;
   id?: string;
   className?: string;

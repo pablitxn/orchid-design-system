@@ -1,7 +1,7 @@
 import React from 'react';
 import * as RadixLabel from '@radix-ui/react-label';
 
-interface LabelProps extends RadixLabel.LabelProps {
+export interface LabelProps extends RadixLabel.LabelProps {
   children: React.ReactNode;
   className?: string;
 }

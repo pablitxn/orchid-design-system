@@ -1,7 +1,7 @@
 import React from 'react';
 import * as RadixTooltip from '@radix-ui/react-tooltip';
 
-interface TooltipProps {
+export interface TooltipProps {
   children: React.ReactNode;
   content: React.ReactNode;
   open?: boolean;
