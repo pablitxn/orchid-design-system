@@ -3,7 +3,7 @@
 import * as React from 'react';
 import * as ProgressPrimitive from '@orchid-design-system/ui-core/progress';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../../lib/utils';
 
 const Progress = React.forwardRef<
   React.ElementRef<typeof ProgressPrimitive.Root>,

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as ShadcnButton from './shadcn';
 import * as NeobrutalismButton from './neobrutalism';
-import { getSkinComponent } from '@/lib/getSkinComponent';
-import { SKINS } from '@/lib/constants';
-import type { WithSkinProps } from '@/lib/utils';
+import { getSkinComponent } from '../../lib/getSkinComponent';
+import { SKINS } from '../../lib/constants';
+import type { WithSkinProps } from '../../lib/types';
 
 const DEFAULT_SKIN = SKINS.SHADCN;
 

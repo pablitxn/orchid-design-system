@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as ShadcnInput from './shadcn';
 import * as NeobrutalismInput from './neobrutalism';
-import { getSkinComponent } from '@/lib/getSkinComponent';
-import { WithSkinProps } from '@/lib/types';
-import { SKINS, DEFAULT_SKIN } from '@/lib/constants';
+import { getSkinComponent } from '../../lib/getSkinComponent';
+import { WithSkinProps } from '../../lib/types';
+import { SKINS, DEFAULT_SKIN } from '../../lib/constants';
 
 const inputComponents = {
   [SKINS.SHADCN]: ShadcnInput,

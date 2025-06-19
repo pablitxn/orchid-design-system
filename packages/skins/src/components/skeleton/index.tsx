@@ -1,7 +1,8 @@
 import * as ShadcnSkeleton from './shadcn';
 import * as NeobrutalismSkeleton from './neobrutalism';
-import { getSkinComponent, type WithSkinProps } from '@/lib/utils';
-import { DEFAULT_SKIN, SKINS } from '@/lib/constants';
+import { getSkinComponent } from '../../lib/getSkinComponent';
+import { type WithSkinProps } from '../../lib/types';
+import { DEFAULT_SKIN, SKINS } from '../../lib/constants';
 import { type ComponentProps } from 'react';
 
 const skeletonComponents = {

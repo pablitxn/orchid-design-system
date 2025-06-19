@@ -1,20 +1,17 @@
 {
   "name": "@orchid-design-system/skins",
   "version": "1.0.0",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "style": "./dist/shadcn.css",
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "types": "./src/index.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "import": "./src/index.ts",
+      "require": "./src/index.ts",
+      "types": "./src/index.ts"
     },
-    "./styles/shadcn.css": "./dist/shadcn.css",
-    "./styles/neobrutalism.css": "./dist/neobrutalism.css",
-    "./styles/shadcn-scoped.css": "./dist/shadcn-scoped.css",
-    "./styles/neobrutalism-scoped.css": "./dist/neobrutalism-scoped.css"
+    "./styles/shadcn.css": "./src/styles/shadcn.css",
+    "./styles/neobrutalism.css": "./src/styles/neobrutalism.css"
   },
   "files": [
     "dist",

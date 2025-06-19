@@ -1,4 +1,3 @@
-import React from 'react';
 import { SKINS, type SkinType } from './constants';
 
 interface ComponentMap {

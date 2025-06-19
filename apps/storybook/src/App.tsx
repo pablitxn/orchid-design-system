@@ -1,4 +1,5 @@
-import { Alert, Button } from '@orchid-design-system/skins';
+import { Alert } from '@orchid-design-system/skins';
+import { Button } from '@orchid-design-system/skins';
 
 
 function App() {

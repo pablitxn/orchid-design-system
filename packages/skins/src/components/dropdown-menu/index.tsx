@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as ShadcnDropdownMenu from './shadcn';
 import * as NeobrutalismDropdownMenu from './neobrutalism';
-import { getSkinComponent } from '@/lib/getSkinComponent';
-import { WithSkinProps } from '@/lib/types';
-import { SKINS, DEFAULT_SKIN } from '@/lib/constants';
+import { getSkinComponent } from '../../lib/getSkinComponent';
+import { WithSkinProps } from '../../lib/types';
+import { SKINS, DEFAULT_SKIN } from '../../lib/constants';
 
 const dropdownMenuComponents = {
   [SKINS.SHADCN]: ShadcnDropdownMenu,

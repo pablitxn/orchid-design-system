@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from './index';
-
 const meta: Meta<typeof Accordion> = {
   title: 'Components/Accordion',
   component: Accordion,
@@ -43,10 +42,8 @@ const meta: Meta<typeof Accordion> = {
     },
   },
 };
-
 export default meta;
 type Story = StoryObj<typeof meta>;
-
 const AccordionExample = ({ skin, ...props }: any) => (
   <Accordion skin={skin} {...props}>
     <AccordionItem value="item-1" skin={skin}>
@@ -69,7 +66,6 @@ const AccordionExample = ({ skin, ...props }: any) => (
     </AccordionItem>
   </Accordion>
 );
-
 export const Default: Story = {
   args: {
     className: 'w-[400px]',
@@ -79,7 +75,6 @@ export const Default: Story = {
   },
   render: AccordionExample,
 };
-
 export const BothSkins: Story = {
   args: {},
   render: (args) => (
@@ -95,7 +90,6 @@ export const BothSkins: Story = {
     </div>
   ),
 };
-
 export const SingleCollapsible: Story = {
   args: {
     className: 'w-[400px]',
@@ -106,7 +100,6 @@ export const SingleCollapsible: Story = {
   },
   render: AccordionExample,
 };
-
 export const SingleNonCollapsible: Story = {
   args: {
     className: 'w-[400px]',
@@ -132,7 +125,6 @@ export const SingleNonCollapsible: Story = {
     </Accordion>
   ),
 };
-
 export const Multiple: Story = {
   args: {
     className: 'w-[400px]',
@@ -163,7 +155,6 @@ export const Multiple: Story = {
     </Accordion>
   ),
 };
-
 export const WithLongContent: Story = {
   args: {
     className: 'w-[400px]',
@@ -201,7 +192,6 @@ export const WithLongContent: Story = {
     </Accordion>
   ),
 };
-
 export const Disabled: Story = {
   args: {
     className: 'w-[400px]',
@@ -229,7 +219,6 @@ export const Disabled: Story = {
     </Accordion>
   ),
 };
-
 export const WithCustomContent: Story = {
   args: {
     className: 'w-[400px]',
@@ -273,7 +262,6 @@ export const WithCustomContent: Story = {
     </Accordion>
   ),
 };
-
 export const ControlledState: Story = {
   args: {
     className: 'w-[400px]',
@@ -281,7 +269,6 @@ export const ControlledState: Story = {
   },
   render: (args) => {
     const [value, setValue] = React.useState<string | undefined>('item-2');
-    
     return (
       <div className="space-y-4">
         <div className="flex gap-2">
@@ -304,7 +291,6 @@ export const ControlledState: Story = {
             Close All
           </button>
         </div>
-        
         <Accordion
           {...args}
           type="single"
@@ -329,7 +315,6 @@ export const ControlledState: Story = {
     );
   },
 };
-
 export const EmptyState: Story = {
   args: {
     className: 'w-[400px]',
@@ -342,7 +327,6 @@ export const EmptyState: Story = {
     </Accordion>
   ),
 };
-
 export const SingleItem: Story = {
   args: {
     className: 'w-[400px]',
@@ -361,7 +345,6 @@ export const SingleItem: Story = {
     </Accordion>
   ),
 };
-
 export const WithClassNames: Story = {
   args: {
     className: 'w-[400px] border-2 border-blue-500 p-4 rounded-lg',

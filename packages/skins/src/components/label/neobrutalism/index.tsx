@@ -4,7 +4,7 @@ import * as LabelPrimitive from "@orchid-design-system/ui-core/label"
 
 import * as React from "react"
 
-import { cn } from "@/lib/utils"
+import { cn } from '../../../lib/utils'
 
 function Label({
                  className,

@@ -1,8 +1,9 @@
 import { ComponentProps } from 'react';
 import * as ShadcnAccordion from './shadcn';
 import * as NeobrutalismAccordion from './neobrutalism';
-import { getSkinComponent, type WithSkinProps } from '@/lib/utils';
-import { SKINS, DEFAULT_SKIN } from '@/lib/constants';
+import { getSkinComponent } from '../../lib/getSkinComponent';
+import { type WithSkinProps } from '../../lib/types';
+import { SKINS, DEFAULT_SKIN } from '../../lib/constants';
 
 const accordionComponents = {
   [SKINS.SHADCN]: ShadcnAccordion,

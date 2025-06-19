@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { Avatar as AvatarPrimitive } from '@orchid-design-system/ui-core';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../../lib/utils';
 
 const Avatar = React.forwardRef<
   HTMLSpanElement,

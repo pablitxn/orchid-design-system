@@ -2,8 +2,8 @@
 import * as React from "react"
 import { AlertDialog } from "@orchid-design-system/ui-core"
 
-import { cn } from "@/lib/utils"
-import { buttonVariants } from "@/components/button/shadcn"
+import { cn } from "../../../lib/utils"
+import { buttonVariants } from "../../button/shadcn"
 
 const AlertDialogRoot = AlertDialog
 

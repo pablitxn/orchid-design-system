@@ -3,8 +3,8 @@
 import * as React from 'react';
 import { AlertDialog } from '@orchid-design-system/ui-core';
 
-import { buttonVariants } from '@/components/button/neobrutalism';
-import { cn } from '@/lib/utils';
+import { buttonVariants } from '../../button/neobrutalism';
+import { cn } from '../../../lib/utils';
 
 const AlertDialogRoot = React.forwardRef<
   React.ElementRef<typeof AlertDialog>,

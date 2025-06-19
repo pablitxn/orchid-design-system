@@ -4,7 +4,7 @@ import * as ProgressPrimitive from "@orchid-design-system/ui-core/progress"
 
 import * as React from "react"
 
-import {cn} from "@/lib/utils"
+import {cn} from "../../../lib/utils"
 
 function Progress({
                     className,

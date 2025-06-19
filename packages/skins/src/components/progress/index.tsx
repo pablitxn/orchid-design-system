@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as ShadcnProgress from './shadcn';
 import * as NeobrutalismProgress from './neobrutalism';
-import { getSkinComponent } from '@/lib/getSkinComponent';
-import { WithSkinProps } from '@/lib/utils';
-import { SKINS, DEFAULT_SKIN } from '@/lib/constants';
+import { getSkinComponent } from '../../lib/getSkinComponent';
+import { WithSkinProps } from '../../lib/types';
+import { SKINS, DEFAULT_SKIN } from '../../lib/constants';
 
 const progressComponents = {
   [SKINS.SHADCN]: ShadcnProgress,

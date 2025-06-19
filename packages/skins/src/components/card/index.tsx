@@ -1,9 +1,9 @@
 import * as ShadcnCard from './shadcn/card.tsx';
 import * as NeobrutalismCard from './neobrutalism';
-import { getSkinComponent } from '@/lib/getSkinComponent';
-import { SKINS } from '@/lib/constants';
+import { getSkinComponent } from '../../lib/getSkinComponent';
+import { SKINS } from '../../lib/constants';
 import { type ComponentProps } from 'react';
-import type { WithSkinProps } from '@/lib/utils';
+import type { WithSkinProps } from '../../lib/types';
 
 const DEFAULT_SKIN = SKINS.SHADCN;
 
