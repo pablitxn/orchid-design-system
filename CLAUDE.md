@@ -12,7 +12,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `npm run type-check` - Type check all TypeScript code
 
 ### Testing
-- `npm test` - Run tests (when configured)
+- `npm test` - Run tests (add to root package.json: `"test": "turbo run test"`)
+- `npm run test:coverage` - Run tests with coverage reports (80% threshold)
+- Tests use Vitest with jsdom environment
+- Test files follow `*.test.tsx` pattern, colocated with components
 - Tests are organized in `/tests` directory:
   - `/tests/a11y` - Accessibility tests
   - `/tests/integration` - Integration tests
@@ -51,13 +54,26 @@ apps/
 Each component follows this structure:
 ```
 component-name/
-├── index.tsx              # Base component implementation
+├── index.tsx              # Base component with skin switching logic
 ├── shadcn/               
 │   └── index.tsx         # Shadcn theme variant
 ├── neobrutalism/
 │   └── index.tsx         # Neobrutalism theme variant
 ├── component-name.stories.tsx  # Storybook stories
 └── component-name.test.tsx     # Component tests
+```
+
+The base component (index.tsx) uses this pattern:
+```typescript
+const componentVariants = {
+  [SKINS.SHADCN]: ShadcnComponent,
+  [SKINS.NEOBRUTALISM]: NeobrutalismComponent,
+} as const;
+
+export const Component = React.forwardRef(({ skin = DEFAULT_SKIN, ...props }, ref) => {
+  const components = getSkinComponent(componentVariants, skin);
+  return <components.Component ref={ref} {...props} />;
+});
 ```
 
 ### Key Patterns
@@ -70,14 +86,25 @@ component-name/
 
 ### Development Workflow
 
-1. Components are developed in `packages/skins/[skin-name]/src/components/`
-2. Each component exports both shadcn and neobrutalism variants
+1. Components are developed in `packages/skins/src/components/`
+2. Each component exports both shadcn and neobrutalism variants via the skin prop
 3. Stories are written alongside components for Storybook documentation
 4. Changes are tracked using changesets for proper versioning
+5. CSS for each skin is in `packages/skins/src/styles/[skin-name].css`
 
 ## Key Files and Utilities
 
-- `packages/skins/neobrutalism/src/lib/utils.ts` - Contains `cn()` utility for className merging
-- `packages/skins/neobrutalism/src/lib/getSkinComponent.tsx` - Helper for dynamic theme selection
+- `packages/skins/src/lib/utils.ts` - Contains `cn()` utility for className merging
+- `packages/skins/src/lib/getSkinComponent.tsx` - Helper for dynamic theme selection
+- `packages/skins/src/lib/constants.ts` - Skin type definitions (SKINS.SHADCN, SKINS.NEOBRUTALISM)
 - `turbo.json` - Defines build pipeline and task dependencies
+- `vitest.config.ts` - Test configuration with coverage thresholds
 - Each package has its own `tsconfig.json` extending the root configuration
+
+## Important Notes
+
+- The monorepo uses Turbo's caching system - if builds seem stale, run `turbo run build --force`
+- Tailwind CSS v4 is used with separate configurations for each skin
+- All components must maintain the same API surface across skins
+- Use `WithSkinProps` type when extending component props
+- Storybook runs on http://localhost:6006 and includes path aliases for clean imports

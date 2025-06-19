@@ -75,10 +75,21 @@ const config = {
       ],
     };
     
-    // Add CSS configuration
+    // Add CSS configuration with proper PostCSS processing
     config.css = {
       ...config.css,
-      postcss: resolve(__dirname, '../postcss.config.js'),
+      postcss: {
+        config: resolve(__dirname, '../postcss.config.js'),
+      },
+    };
+    
+    // Ensure proper CSS processing for packages
+    config.build = {
+      ...config.build,
+      commonjsOptions: {
+        ...config.build?.commonjsOptions,
+        transformMixedEsModules: true
+      }
     };
     
     return config;

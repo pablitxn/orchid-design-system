@@ -4,7 +4,7 @@ import * as React from 'react';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import { ChevronDown } from 'lucide-react';        // ✅ correct icon name
 import { cn } from '../../../lib/utils';
-import '../../../assets/styles/shadcn.css';
+// CSS styles are loaded globally in Storybook
 
 /**
  * Root -----------------------------------------------------------------------
