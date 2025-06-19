@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as ShadcnDropdownMenu from './shadcn';
 import * as NeobrutalismDropdownMenu from './neobrutalism';
 import { getSkinComponent } from '../../lib/getSkinComponent';
-import { WithSkinProps } from '../../lib/types';
+import { WithSkinProps } from '../../lib/utils';
 import { SKINS, DEFAULT_SKIN } from '../../lib/constants';
 
 const dropdownMenuComponents = {
@@ -31,6 +31,7 @@ export const DropdownMenu = React.forwardRef<
   DropdownMenuProps
 >(({ skin = DEFAULT_SKIN, ...props }, ref) => {
   const Component = getSkinComponent(dropdownMenuComponents, skin).DropdownMenu;
+  // @ts-ignore
   return <Component ref={ref} {...props} />;
 });
 DropdownMenu.displayName = 'DropdownMenu';

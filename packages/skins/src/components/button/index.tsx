@@ -3,7 +3,7 @@ import * as ShadcnButton from './shadcn';
 import * as NeobrutalismButton from './neobrutalism';
 import { getSkinComponent } from '../../lib/getSkinComponent';
 import { SKINS } from '../../lib/constants';
-import type { WithSkinProps } from '../../lib/types';
+import type { WithSkinProps } from '../../lib/utils';
 
 const DEFAULT_SKIN = SKINS.SHADCN;
 
@@ -17,6 +17,7 @@ export type ButtonProps = React.ComponentPropsWithRef<typeof ShadcnButton.Button
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ skin = DEFAULT_SKIN, ...props }, ref) => {
     const components = getSkinComponent(buttonComponents, skin);
+    // @ts-ignore
     return <components.Button ref={ref} {...props} />;
   }
 );
