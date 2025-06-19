@@ -19,12 +19,50 @@ import { Label } from './components/ui/label';
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuCheckboxItem, DropdownMenuRadioItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuGroup, DropdownMenuRadioGroup } from './components/ui/dropdown-menu';
 import { Input } from './components/ui/input';
 import { Progress } from './components/ui/progress';
+import { Chat } from './components/chat';
 
 import { SKINS } from './lib/constants';
 import { CheckCircle2Icon, ChevronRight, Home, Package, Settings } from 'lucide-react';
+import { useState } from 'react';
 
 
 function App() {
+  const [messages, setMessages] = useState([
+    {
+      id: 1,
+      content: 'Welcome to the Orchid Design System chat component!',
+      sender: {
+        name: 'System',
+        avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=System',
+        isCurrentUser: false,
+      },
+      timestamp: new Date(Date.now() - 10 * 60 * 1000),
+    },
+    {
+      id: 2,
+      content: 'This chat supports both shadcn and neobrutalism themes!',
+      sender: {
+        name: 'You',
+        avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=You',
+        isCurrentUser: true,
+      },
+      timestamp: new Date(Date.now() - 5 * 60 * 1000),
+    },
+  ]);
+
+  const handleSendMessage = (content: string) => {
+    const newMessage = {
+      id: Date.now(),
+      content,
+      sender: {
+        name: 'You',
+        avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=You',
+        isCurrentUser: true,
+      },
+      timestamp: new Date(),
+    };
+    setMessages([...messages, newMessage]);
+  };
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900">
       <div className="container mx-auto px-4 py-16 max-w-7xl">
@@ -1112,6 +1150,47 @@ function App() {
                 <p className="text-sm font-bold mb-2">100%</p>
                 <Progress value={100} skin={SKINS.NEOBRUTALISM} />
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="chat" className="mb-24">
+        <div className="mb-8 text-center">
+          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-2">Chat</h2>
+          <p className="text-slate-600 dark:text-slate-400">Interactive messaging interface with real-time updates</p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-8 items-start">
+          <div className="bg-white dark:bg-slate-950 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 p-8">
+            <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
+              <span className="text-2xl">✨</span>
+              Shadcn Theme
+            </h3>
+            <div className="h-[500px]">
+              <Chat 
+                skin={SKINS.SHADCN} 
+                messages={messages} 
+                onSendMessage={handleSendMessage}
+                placeholder="Type your message..."
+                sendButtonText="Send"
+              />
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-br from-purple-50 to-pink-50 dark:bg-slate-950 rounded-xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8">
+            <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
+              <span className="text-2xl">💬</span>
+              Neobrutalism Theme
+            </h3>
+            <div className="h-[500px]">
+              <Chat 
+                skin={SKINS.NEOBRUTALISM} 
+                messages={messages} 
+                onSendMessage={handleSendMessage}
+                placeholder="Type something bold..."
+                sendButtonText="Send"
+              />
             </div>
           </div>
         </div>
