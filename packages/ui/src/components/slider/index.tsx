@@ -2,7 +2,7 @@ import { ComponentProps } from 'react';
 import * as ShadcnSlider from './shadcn';
 import * as NeobrutalismSlider from './neobrutalism';
 import { getSkinComponent } from '../../lib/getSkinComponent';
-import { type WithSkinProps } from '../../lib/types';
+import { type WithSkinProps } from '../../lib/utils';
 import { SKINS, DEFAULT_SKIN } from '../../lib/constants';
 
 const sliderComponents = {

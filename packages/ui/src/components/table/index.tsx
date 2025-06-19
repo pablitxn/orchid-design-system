@@ -2,7 +2,7 @@ import { ComponentProps } from 'react';
 import * as ShadcnTable from './shadcn';
 import * as NeobrutalismTable from './neobrutalism';
 import { getSkinComponent } from '../../lib/getSkinComponent';
-import { type WithSkinProps } from '../../lib/types';
+import { type WithSkinProps } from '../../lib/utils';
 import { SKINS, DEFAULT_SKIN } from '../../lib/constants';
 
 const tableComponents = {

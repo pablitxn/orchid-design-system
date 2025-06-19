@@ -2,7 +2,7 @@ import * as ShadcnBreadcrumb from './shadcn';
 import * as NeobrutalismBreadcrumb from './neobrutalism';
 import { getSkinComponent,} from '../../lib/getSkinComponent';
 import { SKINS } from '../../lib/constants';
-import type { WithSkinProps } from '../../lib/types';
+import type { WithSkinProps } from '../../lib/utils';
 
 import { type ComponentProps } from 'react';
 

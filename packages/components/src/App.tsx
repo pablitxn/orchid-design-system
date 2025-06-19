@@ -37,10 +37,8 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '../../ui';
-import { DataTable } from './components/data-table';
-import '@orchid-design-system/skins/styles/shadcn.css';
-import '@orchid-design-system/skins/styles/neobrutalism.css';
+} from '@orchid-design-system/ui';
+import './assets/styles/globals.css';
 
 function App() {
   const [currentSkin, setCurrentSkin] = useState<'shadcn' | 'neobrutalism'>('shadcn');

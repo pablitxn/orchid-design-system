@@ -17,8 +17,8 @@ npm run docs
 
 ## 📦 Packages
 
-- **`@orchid/ui-core`** - Core Radix UI primitive components
-- **`@orchid/skins`** - Theme variants (shadcn & neobrutalism)
+- **`@orchid/primitives`** - Core Radix UI primitive components
+- **`@orchid/ui`** - Theme variants (shadcn & neobrutalism)
 - **`@orchid/components`** - Additional custom components
 
 ## 🛠️ Tech Stack

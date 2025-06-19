@@ -41,8 +41,8 @@ This is a **monorepo design system** built with:
 
 ```
 packages/
-├── ui-core/          # Core Radix UI primitive components
-├── skins/            # Theme variants (shadcn & neobrutalism)
+├── primitives/          # Core Radix UI primitive components
+├── ui/            # Theme variants (shadcn & neobrutalism)
 └── components/       # Additional custom components
 
 apps/
@@ -86,17 +86,17 @@ export const Component = React.forwardRef(({ skin = DEFAULT_SKIN, ...props }, re
 
 ### Development Workflow
 
-1. Components are developed in `packages/skins/src/components/`
+1. Components are developed in `packages/ui/src/components/`
 2. Each component exports both shadcn and neobrutalism variants via the skin prop
 3. Stories are written alongside components for Storybook documentation
 4. Changes are tracked using changesets for proper versioning
-5. CSS for each skin is in `packages/skins/src/styles/[skin-name].css`
+5. CSS for each skin is in `packages/ui/src/styles/[skin-name].css`
 
 ## Key Files and Utilities
 
-- `packages/skins/src/lib/utils.ts` - Contains `cn()` utility for className merging
-- `packages/skins/src/lib/getSkinComponent.tsx` - Helper for dynamic theme selection
-- `packages/skins/src/lib/constants.ts` - Skin type definitions (SKINS.SHADCN, SKINS.NEOBRUTALISM)
+- `packages/ui/src/lib/utils.ts` - Contains `cn()` utility for className merging
+- `packages/ui/src/lib/getSkinComponent.tsx` - Helper for dynamic theme selection
+- `packages/ui/src/lib/constants.ts` - Skin type definitions (SKINS.SHADCN, SKINS.NEOBRUTALISM)
 - `turbo.json` - Defines build pipeline and task dependencies
 - `vitest.config.ts` - Test configuration with coverage thresholds
 - Each package has its own `tsconfig.json` extending the root configuration
@@ -105,6 +105,6 @@ export const Component = React.forwardRef(({ skin = DEFAULT_SKIN, ...props }, re
 
 - The monorepo uses Turbo's caching system - if builds seem stale, run `turbo run build --force`
 - Tailwind CSS v4 is used with separate configurations for each skin
-- All components must maintain the same API surface across skins
+- All components must maintain the same API surface across ui
 - Use `WithSkinProps` type when extending component props
 - Storybook runs on http://localhost:6006 and includes path aliases for clean imports

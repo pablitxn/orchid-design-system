@@ -6,10 +6,10 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 export default defineConfig({
   resolve: {
     alias: {
-      '@orchid-design-system/skins/styles': path.resolve(__dirname, '../../../packages/ui/src/assets/styles'),
-      '@orchid-design-system/skins': path.resolve(__dirname, '../../../packages/ui/src'),
+      '@orchid-design-system/ui/styles': path.resolve(__dirname, '../../../packages/ui/src/assets/styles'),
+      '@orchid-design-system/ui': path.resolve(__dirname, '../../../packages/ui/src'),
       '@orchid-design-system/neobrutalism': path.resolve(__dirname, '../../../packages/ui/src'),
-      '@orchid-design-system/ui-core': path.resolve(__dirname, '../../../packages/primitives/src'),
+      '@orchid-design-system/primitives': path.resolve(__dirname, '../../../packages/primitives/src'),
     },
   },
   plugins: [
@@ -27,7 +27,7 @@ export default defineConfig({
       fileName: (format) => `index.${format === 'es' ? 'mjs' : 'js'}`,
     },
     rollupOptions: {
-      external: ['react', 'react-dom', '@orchid-design-system/ui-core', '@orchid-design-system/components', '@orchid-design-system/skins'],
+      external: ['react', 'react-dom', '@orchid-design-system/primitives', '@orchid-design-system/components', '@orchid-design-system/ui'],
       output: {
         globals: {
           react: 'React',

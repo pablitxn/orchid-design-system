@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ShadcnAlertDialog from './shadcn';
 import * as NeobrutalismAlertDialog from './neobrutalism';
-import { type SkinType, type WithSkinProps } from '../../lib/types';
+import { type SkinType, type WithSkinProps } from '../../lib/utils';
 import { SKINS, DEFAULT_SKIN } from '../../lib/constants';
 
 // Helper to get component based on skin

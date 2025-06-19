@@ -1,7 +1,7 @@
 import * as ShadcnSelect from './shadcn';
 import * as NeobrutalismSelect from './neobrutalism';
 import { getSkinComponent } from '../../lib/getSkinComponent';
-import { type WithSkinProps } from '../../lib/types';
+import { type WithSkinProps } from '../../lib/utils';
 import { DEFAULT_SKIN, SKINS } from '../../lib/constants';
 // @ts-ignore
 import { type ComponentProps } from 'react';

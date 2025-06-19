@@ -1,5 +1,6 @@
 /* Tailwind CSS base import */
 @import "tailwindcss";
+@import "tw-animate-css";
 
 @import "./shadcn.css";
 @import "./neobrutalism.css";

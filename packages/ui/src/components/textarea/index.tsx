@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as ShadcnTextarea from './shadcn';
 import * as NeobrutalismTextarea from './neobrutalism';
 import { getSkinComponent } from '../../lib/getSkinComponent';
-import { type WithSkinProps } from '../../lib/types';
+import { type WithSkinProps } from '../../lib/utils';
 import { SKINS, DEFAULT_SKIN } from '../../lib/constants';
 
 const textareaComponents = {

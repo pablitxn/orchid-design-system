@@ -43,19 +43,19 @@ const config = {
       alias: [
         ...(Array.isArray(config.resolve?.alias) ? config.resolve.alias : []),
         {
-          find: /^@orchid-design-system\/ui-core\/(.*)$/,
+          find: /^@orchid-design-system\/primitives\/(.*)$/,
           replacement: resolve(projectRoot, 'packages/primitives/src/components/$1/index.tsx'),
         },
         {
-          find: '@orchid-design-system/ui-core',
+          find: '@orchid-design-system/primitives',
           replacement: resolve(projectRoot, 'packages/primitives/src/index.ts'),
         },
         {
-          find: '@orchid-design-system/skins/styles',
+          find: '@orchid-design-system/ui/styles',
           replacement: resolve(projectRoot, 'packages/ui/src/assets/styles'),
         },
         {
-          find: '@orchid-design-system/skins',
+          find: '@orchid-design-system/ui',
           replacement: resolve(projectRoot, 'packages/ui/src'),
         },
         {
@@ -79,7 +79,7 @@ const config = {
       ...config.optimizeDeps,
       include: [
         ...config.optimizeDeps?.include || [],
-        '@orchid-design-system/skins',
+        '@orchid-design-system/ui',
         '@radix-ui/colors',
         '@radix-ui/react-accordion',
         '@stitches/react',

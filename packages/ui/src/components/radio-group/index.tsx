@@ -1,7 +1,7 @@
 import * as ShadcnRadioGroup from './shadcn';
 import * as NeobrutalismRadioGroup from './neobrutalism';
 import { getSkinComponent } from '../../lib/getSkinComponent';
-import { type WithSkinProps } from '../../lib/types';
+import { type WithSkinProps } from '../../lib/utils';
 import { DEFAULT_SKIN, SKINS } from '../../lib/constants';
 import { type ComponentProps } from 'react';
 

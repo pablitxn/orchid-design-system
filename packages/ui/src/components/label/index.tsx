@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as ShadcnLabel from './shadcn';
 import * as NeobrutalismLabel from './neobrutalism';
 import { getSkinComponent } from '../../lib/getSkinComponent';
-import { WithSkinProps } from '../../lib/types';
+import { WithSkinProps } from '../../lib/utils';
 import { SKINS, DEFAULT_SKIN } from '../../lib/constants';
 
 const labelComponents = {

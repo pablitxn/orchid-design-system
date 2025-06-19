@@ -24,30 +24,6 @@ import '@orchid-design-system/ui/styles/neobrutalism.css';
 
 ⚠️ **Warning**: Using both CSS files at the same time will cause style conflicts since they define the same CSS variables.
 
-### Method 2: Using Scoped CSS Files (Recommended)
-
-To use both skins in the same application, import the scoped CSS files:
-
-```tsx
-// Import both scoped CSS files
-import '@orchid-design-system/ui/styles/shadcn-scoped.css'
-import '@orchid-design-system/ui/styles/neobrutalism-scoped.css'
-```
-
-Then wrap your components with the appropriate theme class:
-
-```tsx
-// For shadcn components
-<div className="shadcn-theme">
-  <Button variant="default">Shadcn Button</Button>
-</div>
-
-// For neobrutalism components  
-<div className="neobrutalism-theme">
-  <Button variant="default">Neobrutalism Button</Button>
-</div>
-```
-
 ### Using Components
 
 Import components from the skins package:

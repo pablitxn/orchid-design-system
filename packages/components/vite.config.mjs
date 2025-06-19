@@ -12,19 +12,34 @@ export default defineConfig({
     visualizer({
       filename: './dist/stats.html',
     }),
+    {
+      name: 'copy-css-files',
+      closeBundle() {
+        // Copy CSS files after build
+        try {
+          // Copy original CSS files
+          copyFileSync(
+            resolve(__dirname, 'src/assets/styles/globals.css'),
+            resolve(__dirname, 'dist/globals.css'),
+          );
+        } catch (error) {
+          console.error('Failed to copy CSS files:', error);
+        }
+      },
+    },
   ],
   css: {
-    postcss: './postcss.config.mjs'
+    postcss: './postcss.config.mjs',
   },
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'OrchidSkins',
+      name: 'OrchidComponents',
       formats: ['es', 'cjs'],
       fileName: (format) => `index.${format === 'es' ? 'mjs' : 'js'}`,
     },
     rollupOptions: {
-      external: ['react', 'react-dom', '@orchid-design-system/ui-core'],
+      external: ['react', 'react-dom', '@orchid-design-system/ui'],
       output: {
         globals: {
           react: 'React',
