@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { cn } from '../../../lib/utils.ts';
-import { ScrollArea } from '../../ui/scroll-area';
-import { Input } from '../../ui/input';
-import { Button } from '../../ui/button';
-import { Avatar, AvatarFallback, AvatarImage } from '../../ui/avatar';
-import { SKINS } from '../../../lib/constants.ts';
+import { cn } from '../../../../lib/utils';
+import { ScrollArea } from '../../scroll-area';
+import { Input } from '../../input';
+import { Button } from '../../button';
+import { Avatar, AvatarFallback, AvatarImage } from '../../avatar';
+import { SKINS } from '../../../../lib/constants';
 
 export interface ChatProps extends React.HTMLAttributes<HTMLDivElement> {
   messages?: Message[];
@@ -40,12 +40,12 @@ export const Chat = React.forwardRef<HTMLDivElement, ChatProps>(
       <div
         ref={ref}
         className={cn(
-          'flex h-full w-full flex-col rounded-lg border bg-background',
+          'flex h-full w-full flex-col rounded-none border-4 border-black bg-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]',
           className
         )}
         {...props}
       >
-        <ScrollArea className="flex-1 p-4">
+        <ScrollArea className="flex-1 p-4" skin={SKINS.NEOBRUTALISM}>
           <div className="space-y-4">
             {messages.map((message) => (
               <ChatMessage key={message.id} message={message} />
@@ -76,9 +76,9 @@ export const ChatMessage = React.forwardRef<HTMLDivElement, ChatMessageProps>(
         )}
         {...props}
       >
-        <Avatar className="h-8 w-8">
+        <Avatar className="h-10 w-10 border-2 border-black" skin={SKINS.NEOBRUTALISM}>
           <AvatarImage src={message.sender.avatar} alt={message.sender.name} />
-          <AvatarFallback skin={SKINS.SHADCN}>
+          <AvatarFallback skin={SKINS.NEOBRUTALISM}>
             {message.sender.name.slice(0, 2).toUpperCase()}
           </AvatarFallback>
         </Avatar>
@@ -89,9 +89,9 @@ export const ChatMessage = React.forwardRef<HTMLDivElement, ChatMessageProps>(
           )}
         >
           <div className="flex items-center gap-2">
-            <span className="text-sm font-medium">{message.sender.name}</span>
+            <span className="text-sm font-bold">{message.sender.name}</span>
             {message.timestamp && (
-              <span className="text-xs text-muted-foreground">
+              <span className="text-xs font-medium">
                 {new Date(message.timestamp).toLocaleTimeString([], { 
                   hour: '2-digit', 
                   minute: '2-digit' 
@@ -101,10 +101,10 @@ export const ChatMessage = React.forwardRef<HTMLDivElement, ChatMessageProps>(
           </div>
           <div
             className={cn(
-              'rounded-lg px-3 py-2 text-sm',
+              'rounded-none border-2 border-black px-4 py-2 text-sm font-medium',
               isCurrentUser
-                ? 'bg-primary text-primary-foreground'
-                : 'bg-muted'
+                ? 'bg-yellow-300 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]'
+                : 'bg-blue-200 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]'
             )}
           >
             {message.content}
@@ -136,22 +136,23 @@ export const ChatInput = React.forwardRef<HTMLDivElement, ChatInputProps>(
     return (
       <div
         ref={ref}
-        className={cn('flex gap-2 border-t p-4', className)}
+        className={cn('flex gap-2 border-t-4 border-black bg-gray-100 p-4', className)}
         {...props}
       >
         <Input
-          skin={SKINS.SHADCN}
+          skin={SKINS.NEOBRUTALISM}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           onKeyPress={handleKeyPress}
           placeholder={placeholder}
-          className="flex-1"
+          className="flex-1 border-2 border-black font-medium"
         />
         <Button
-          skin={SKINS.SHADCN}
+          skin={SKINS.NEOBRUTALISM}
           onClick={handleSend}
           disabled={!message.trim()}
           size="default"
+          className="min-w-[80px] font-bold"
         >
           {sendButtonText}
         </Button>

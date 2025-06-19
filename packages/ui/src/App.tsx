@@ -46,7 +46,7 @@ import {
 } from './components/ui/dropdown-menu';
 import { Input } from './components/ui/input';
 import { Progress } from './components/ui/progress';
-import { Chat } from './components/chat';
+import { Chat } from './components/ui/chat';
 
 import { SKINS } from './lib/constants';
 import { CheckCircle2Icon, ChevronRight, Home, Package, Settings } from 'lucide-react';

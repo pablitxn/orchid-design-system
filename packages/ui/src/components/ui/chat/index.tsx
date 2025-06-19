@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as ShadcnChat from './shadcn';
 import * as NeobrutalismChat from './neobrutalism';
-import { getSkinComponent } from '../../lib/getSkinComponent.tsx';
-import { SKINS, DEFAULT_SKIN } from '../../lib/constants.ts';
-import type { WithSkinProps } from '../../lib/utils.ts';
+import { getSkinComponent } from '../../../lib/getSkinComponent';
+import { SKINS, DEFAULT_SKIN } from '../../../lib/constants';
+import type { WithSkinProps } from '../../../lib/utils';
 
 const chatVariants = {
   [SKINS.SHADCN]: ShadcnChat,
