@@ -1,5 +1,5 @@
 // Import styles - this ensures they're included in the build
-import './assets/styles/globals.css';
+import './assets/styles/shadcn.css';
 
 // Export all components
 export * from './components/accordion';

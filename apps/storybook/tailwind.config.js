@@ -6,7 +6,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
     "../../packages/*/src/**/*.{js,ts,jsx,tsx}",
-    join(__dirname, '../../packages/skins/src/styles/globals.css'),
+    join(__dirname, '../../packages/skins/src/styles/shadcn.css'),
   ],
   theme: {
     extend: {

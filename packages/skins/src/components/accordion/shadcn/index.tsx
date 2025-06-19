@@ -3,6 +3,7 @@ import * as React from 'react';
 import { Accordion as AccordionPrimitive } from '@orchid-design-system/ui-core';
 import { ChevronDownIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import '@/assets/styles/shadcn.css';
 
 function Accordion({
                      ...props

@@ -14,7 +14,8 @@ export interface WithSkinProps {
 
 export function getSkinComponent<T extends Record<string, any>>(
   components: Record<SkinType, T>,
-  skin: SkinType = DEFAULT_SKIN
+  skin: SkinType = DEFAULT_SKIN,
 ): T {
   return components[skin];
 }
+
