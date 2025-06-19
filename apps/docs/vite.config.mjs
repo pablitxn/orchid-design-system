@@ -12,7 +12,6 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src'),
       '@/lib/utils': path.resolve(__dirname, './src/lib/utils'),
-      '@orchid-design-system/ui/styles': path.resolve(__dirname, '../../packages/ui/src/assets/styles'),
     },
   },
 });

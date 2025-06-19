@@ -1,14 +1,8 @@
-import { join } from 'path';
-
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-    "../../packages/*/src/**/*.{js,ts,jsx,tsx}",
-    "../../packages/ui/src/components/**/*.stories.{js,jsx,ts,tsx}",
-    "../../packages/ui/src/assets/styles/*.css",
-    "./.docs/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
     extend: {
@@ -78,6 +72,11 @@ export default {
         "m-md": "var(--spacing-m-md, -16px)",
         "m-lg": "var(--spacing-m-lg, -24px)",
         "m-xl": "var(--spacing-m-xl, -32px)",
+        // Neobrutalism shadow spacing
+        boxShadowX: "var(--spacing-boxShadowX, 4px)",
+        boxShadowY: "var(--spacing-boxShadowY, 4px)",
+        reverseBoxShadowX: "var(--spacing-reverseBoxShadowX, -4px)",
+        reverseBoxShadowY: "var(--spacing-reverseBoxShadowY, -4px)",
       },
       borderRadius: {
         // Support both radius systems
@@ -90,6 +89,8 @@ export default {
       boxShadow: {
         // Neobrutalism shadow
         neo: "var(--shadow, 4px 4px 0px 0px var(--border))",
+        shadow: "var(--shadow-shadow, 4px 4px 0px 0px var(--border))",
+        none: "none",
       },
       keyframes: {
         "accordion-down": {
@@ -106,7 +107,8 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       fontWeight: {
-        base: "var(--font-weight-normal, 400)",
+        base: "var(--font-weight-base, 500)",
+        heading: "var(--font-weight-heading, 700)",
       },
       transitionDuration: {
         base: "var(--animate-duration, 250ms)",

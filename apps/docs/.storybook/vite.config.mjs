@@ -27,7 +27,7 @@ export default defineConfig({
       fileName: (format) => `index.${format === 'es' ? 'mjs' : 'js'}`,
     },
     rollupOptions: {
-      external: ['react', 'react-dom', '@orchid-design-system/primitives', '@orchid-design-system/components', '@orchid-design-system/ui'],
+      external: ['react', 'react-dom', '@orchid-design-system/primitives', '@orchid-design-system/ui'],
       output: {
         globals: {
           react: 'React',

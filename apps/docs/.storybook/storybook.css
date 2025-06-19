@@ -1,6 +1,2 @@
-/* Tailwind CSS base import */
-@import "tailwindcss";
-
-/* Import skin styles from the ui package */
-@import "@orchid-design-system/ui/styles/shadcn.css";
-@import "@orchid-design-system/ui/styles/neobrutalism.css";
+/* Import all styles from UI package - same as packages/ui does */
+@import "../src/assets/styles/globals.css";

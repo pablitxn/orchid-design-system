@@ -54,7 +54,21 @@
       "require": "./src/index.ts",
       "types": "./src/index.ts"
     },
-    "./styles/shadcn.css": "./src/assets/styles/shadcn.css",
-    "./styles/neobrutalism.css": "./src/assets/styles/neobrutalism.css"
+    "./styles/shadcn.css": {
+      "import": "./src/assets/styles/shadcn.css",
+      "require": "./src/assets/styles/shadcn.css"
+    },
+    "./styles/neobrutalism.css": {
+      "import": "./src/assets/styles/neobrutalism.css",
+      "require": "./src/assets/styles/neobrutalism.css"
+    },
+    "./styles/globals.css": {
+      "import": "./src/assets/styles/globals.css",
+      "require": "./src/assets/styles/globals.css"
+    },
+    "./styles/base.css": {
+      "import": "./src/assets/styles/base.css",
+      "require": "./src/assets/styles/base.css"
+    }
   }
 }

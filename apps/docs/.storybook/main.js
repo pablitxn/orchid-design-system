@@ -57,11 +57,7 @@ const config = {
         {
           find: '@orchid-design-system/ui',
           replacement: resolve(projectRoot, 'packages/ui/src'),
-        },
-        {
-          find: '@orchid-design-system/components',
-          replacement: resolve(projectRoot, 'packages/components/src'),
-        },
+        }
       ],
     };
 
