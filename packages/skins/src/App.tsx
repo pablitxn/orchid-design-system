@@ -1,18 +1,7 @@
 import { Alert, AlertTitle, AlertDescription } from './components/alert';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from './components/accordion';
-import {
-  AlertDialog,
-  AlertDialogTrigger,
-  AlertDialogContent,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogAction,
-  AlertDialogCancel,
-} from './components/alert-dialog';
 import { Avatar, AvatarImage, AvatarFallback } from './components/avatar';
-import { Badge } from './components/badge';
+
 import { SKINS } from './lib/constants';
 import { CheckCircle2Icon } from 'lucide-react';
 
@@ -26,36 +15,48 @@ function App() {
         <div className="space-y-6">
           <div>
             <h3 className="text-lg font-medium mb-3">Shadcn Theme</h3>
-            <Accordion type="multiple" skin={SKINS.SHADCN} className="w-full max-w-md">
-              <AccordionItem value="item-1">
-                <AccordionTrigger>Is it accessible?</AccordionTrigger>
-                <AccordionContent>
+            <Accordion type="multiple" className="w-full max-w-md" skin={SKINS.SHADCN}>
+              <AccordionItem value="item-1" skin={SKINS.SHADCN}>
+                <AccordionTrigger skin={SKINS.SHADCN}>Is it accessible?</AccordionTrigger>
+                <AccordionContent skin={SKINS.SHADCN}>
                   Yes. It adheres to the WAI-ARIA design pattern.
                 </AccordionContent>
               </AccordionItem>
-              <AccordionItem value="item-2">
-                <AccordionTrigger>Is it styled?</AccordionTrigger>
-                <AccordionContent>
+              <AccordionItem value="item-2" skin={SKINS.SHADCN}>
+                <AccordionTrigger skin={SKINS.SHADCN}>Is it styled?</AccordionTrigger>
+                <AccordionContent skin={SKINS.SHADCN}>
                   Yes. It comes with default styles that matches the other components' aesthetic.
                 </AccordionContent>
               </AccordionItem>
-              <AccordionItem value="item-3">
-                <AccordionTrigger>Is it animated?</AccordionTrigger>
-                <AccordionContent>
+              <AccordionItem value="item-3" skin={SKINS.SHADCN}>
+                <AccordionTrigger skin={SKINS.SHADCN}>Is it animated?</AccordionTrigger>
+                <AccordionContent skin={SKINS.SHADCN}>
                   Yes. It's animated by default, but you can disable it if you prefer.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
           </div>
 
-          <div>
+          <div className="space-y-6">
             <h3 className="text-lg font-medium mb-3">Neobrutalism Theme</h3>
-            <Accordion type="single" skin={SKINS.NEOBRUTALISM} className="w-full max-w-xl">
-              <AccordionItem value="item-1">
-                <AccordionTrigger>What is Neobrutalism?</AccordionTrigger>
-                <AccordionContent>
+            <Accordion type="multiple" className="w-full max-w-xl" skin={SKINS.NEOBRUTALISM}>
+              <AccordionItem value="item-1" skin={SKINS.NEOBRUTALISM}>
+                <AccordionTrigger skin={SKINS.NEOBRUTALISM}>What is Neobrutalism?</AccordionTrigger>
+                <AccordionContent skin={SKINS.NEOBRUTALISM}>
                   Neobrutalism is a modern design style characterized by bold colors, thick borders, and stark
                   contrasts.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2" skin={SKINS.NEOBRUTALISM}>
+                <AccordionTrigger skin={SKINS.NEOBRUTALISM}>Why use Neobrutalism?</AccordionTrigger>
+                <AccordionContent skin={SKINS.NEOBRUTALISM}>
+                  It creates bold, memorable interfaces that stand out from typical minimalist designs.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3" skin={SKINS.NEOBRUTALISM}>
+                <AccordionTrigger skin={SKINS.NEOBRUTALISM}>How to implement it?</AccordionTrigger>
+                <AccordionContent skin={SKINS.NEOBRUTALISM}>
+                  Use bold colors, thick black borders, stark shadows, and brutalist typography.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
