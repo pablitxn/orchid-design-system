@@ -26,15 +26,6 @@ export default defineConfig({
             resolve(__dirname, 'src/assets/styles/neobrutalism.css'),
             resolve(__dirname, 'dist/neobrutalism.css')
           );
-          // Copy scoped CSS files
-          copyFileSync(
-            resolve(__dirname, 'src/assets/styles/shadcn-scoped.css'),
-            resolve(__dirname, 'dist/shadcn-scoped.css')
-          );
-          copyFileSync(
-            resolve(__dirname, 'src/assets/styles/neobrutalism-scoped.css'),
-            resolve(__dirname, 'dist/neobrutalism-scoped.css')
-          );
         } catch (error) {
           console.error('Failed to copy CSS files:', error);
         }

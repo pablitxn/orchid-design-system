@@ -12,34 +12,6 @@ export default defineConfig({
     visualizer({
       filename: './dist/stats.html',
     }),
-    {
-      name: 'copy-css-files',
-      closeBundle() {
-        // Copy CSS files after build
-        try {
-          // Copy original CSS files
-          copyFileSync(
-            resolve(__dirname, 'src/assets/styles/shadcn.css'),
-            resolve(__dirname, 'dist/shadcn.css')
-          );
-          copyFileSync(
-            resolve(__dirname, 'src/assets/styles/neobrutalism.css'),
-            resolve(__dirname, 'dist/neobrutalism.css')
-          );
-          // Copy scoped CSS files
-          copyFileSync(
-            resolve(__dirname, 'src/assets/styles/shadcn-scoped.css'),
-            resolve(__dirname, 'dist/shadcn-scoped.css')
-          );
-          copyFileSync(
-            resolve(__dirname, 'src/assets/styles/neobrutalism-scoped.css'),
-            resolve(__dirname, 'dist/neobrutalism-scoped.css')
-          );
-        } catch (error) {
-          console.error('Failed to copy CSS files:', error);
-        }
-      }
-    }
   ],
   css: {
     postcss: './postcss.config.mjs'

@@ -1,5 +1,2 @@
 /* Tailwind CSS base import */
 @import "tailwindcss";
-
-@import "./shadcn.css";
-@import "./neobrutalism.css";
