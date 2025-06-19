@@ -171,7 +171,7 @@ export function SkinDemo() {
       }`}>
         <div className="max-w-7xl mx-auto">
           {/* Hero Section */}
-          <div className="relative overflow-hidden px-8 pt-8 pb-4">
+          <div className="relative overflow-hidden px-4 sm:px-6 lg:px-8 pt-12 pb-8">
             <div className={`absolute inset-0 ${isTransitioning ? 'animate-pulse' : ''}`}>
               <div
                 className="absolute -top-10 -right-10 w-72 h-72 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full opacity-20 blur-3xl" />
@@ -179,11 +179,11 @@ export function SkinDemo() {
                 className="absolute -bottom-10 -left-10 w-96 h-96 bg-gradient-to-tr from-blue-400 to-cyan-400 rounded-full opacity-20 blur-3xl" />
             </div>
 
-            <div className="relative z-10 text-center mb-12">
-              <div className="flex justify-center items-center gap-3 mb-6">
+            <div className="relative z-10 text-center mb-16">
+              <div className="flex justify-center items-center gap-4 mb-8">
                 <Sparkles
-                  className={`w-8 h-8 ${currentSkin === 'neobrutalism' ? 'text-pink-600' : 'text-purple-600'}`} />
-                <h1 className={`text-5xl font-bold tracking-tight ${
+                  className={`w-10 h-10 ${currentSkin === 'neobrutalism' ? 'text-pink-600' : 'text-purple-600'} animate-pulse`} />
+                <h1 className={`text-5xl md:text-6xl font-bold tracking-tight ${
                   currentSkin === 'shadcn'
                     ? 'bg-gradient-to-r from-slate-900 to-slate-700 dark:from-slate-100 dark:to-slate-300'
                     : 'bg-gradient-to-r from-pink-600 to-purple-600'
@@ -191,15 +191,15 @@ export function SkinDemo() {
                   Orchid Design System
                 </h1>
                 <Sparkles
-                  className={`w-8 h-8 ${currentSkin === 'neobrutalism' ? 'text-purple-600' : 'text-purple-600'}`} />
+                  className={`w-10 h-10 ${currentSkin === 'neobrutalism' ? 'text-purple-600' : 'text-purple-600'} animate-pulse`} />
               </div>
-              <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+              <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
                 Experience the beauty of adaptive design with two distinct visual languages
               </p>
 
               {/* Enhanced Theme Switcher */}
               <div
-                className="flex items-center justify-center gap-6 p-6 rounded-2xl bg-background/50 backdrop-blur-sm border max-w-md mx-auto">
+                className="flex items-center justify-center gap-6 p-8 rounded-2xl bg-background/80 backdrop-blur-md border-2 max-w-md mx-auto shadow-xl hover:shadow-2xl transition-all duration-300">
                 <div className="flex items-center gap-3">
                   <Sun
                     className={`w-5 h-5 ${currentSkin === 'shadcn' ? 'text-yellow-500' : 'text-muted-foreground'}`} />
@@ -227,16 +227,16 @@ export function SkinDemo() {
           </div>
 
           {/* Feature Showcase Grid */}
-          <div className="px-8 py-4">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold mb-2">Component Showcase</h2>
-              <p className="text-muted-foreground">See how each component adapts to the selected theme</p>
+          <div className="px-4 sm:px-6 lg:px-8 py-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-3">Component Showcase</h2>
+              <p className="text-muted-foreground text-lg">See how each component adapts to the selected theme</p>
             </div>
 
             {/* Interactive Demo Section */}
-            <div className="grid lg:grid-cols-3 gap-6 mb-8">
+            <div className="grid lg:grid-cols-3 gap-8 mb-12">
               {/* Chat Demo */}
-              <Card skin={currentSkin} className="lg:col-span-2 overflow-hidden">
+              <Card skin={currentSkin} className="lg:col-span-2 overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <CardHeader skin={currentSkin} className="pb-4">
                   <div className="flex items-center gap-2">
                     <MessageSquare className="w-5 h-5" />
@@ -261,7 +261,7 @@ export function SkinDemo() {
 
               {/* Quick Actions */}
               <div className="space-y-6">
-                <Card skin={currentSkin} className="overflow-hidden">
+                <Card skin={currentSkin} className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <CardHeader skin={currentSkin} className="pb-4">
                     <div className="flex items-center gap-2">
                       <Gauge className="w-5 h-5" />
@@ -304,7 +304,7 @@ export function SkinDemo() {
                 </Card>
 
                 {/* Feature Highlights */}
-                <Card skin={currentSkin}>
+                <Card skin={currentSkin} className="shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <CardContent skin={currentSkin} className="pt-6">
                     <div className="space-y-3">
                       <div className="flex items-center gap-3">
@@ -347,9 +347,9 @@ export function SkinDemo() {
             </div>
 
             {/* Component Gallery */}
-            <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 mb-12">
               {/* E-commerce Card Example */}
-              <Card skin={currentSkin} className="overflow-hidden">
+              <Card skin={currentSkin} className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <div className={`h-48 bg-gradient-to-br ${
                   currentSkin === 'shadcn'
                     ? 'from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800'
@@ -395,7 +395,7 @@ export function SkinDemo() {
               </Card>
 
               {/* Interactive Controls */}
-              <Card skin={currentSkin}>
+              <Card skin={currentSkin} className="shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <CardHeader skin={currentSkin}>
                   <div className="flex items-center gap-2">
                     <Layers className="w-5 h-5" />
@@ -440,7 +440,7 @@ export function SkinDemo() {
               </Card>
 
               {/* User Profile Card */}
-              <Card skin={currentSkin}>
+              <Card skin={currentSkin} className="shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <CardContent skin={currentSkin} className="pt-6">
                   <div className="text-center mb-4">
                     <Avatar skin={currentSkin} className="w-20 h-20 mx-auto mb-3">
@@ -487,7 +487,7 @@ export function SkinDemo() {
             </div>
 
             {/* Interactive Form Example */}
-            <Card skin={currentSkin} className="mb-8">
+            <Card skin={currentSkin} className="mb-12 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardHeader skin={currentSkin}>
                 <div className="flex items-center justify-between">
                   <div>
@@ -589,8 +589,8 @@ export function SkinDemo() {
             </Card>
 
             {/* Notifications & Feedback */}
-            <div className="grid md:grid-cols-2 gap-6 mb-8">
-              <Card skin={currentSkin}>
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              <Card skin={currentSkin} className="shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <CardHeader skin={currentSkin}>
                   <div className="flex items-center gap-2">
                     <Bell className="w-5 h-5" />
@@ -661,7 +661,7 @@ export function SkinDemo() {
               </Card>
             </div>
 
-            <Card skin={currentSkin} className="p-6">
+            <Card skin={currentSkin} className="mb-12 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardHeader skin={currentSkin}>
                 <CardTitle skin={currentSkin}>Content Organization</CardTitle>
                 <CardDescription skin={currentSkin}>
@@ -716,7 +716,7 @@ export function SkinDemo() {
             </Card>
 
             {/* Data Table Example */}
-            <Card skin={currentSkin}>
+            <Card skin={currentSkin} className="mb-12 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardHeader skin={currentSkin}>
                 <div className="flex items-center justify-between">
                   <div>
@@ -845,8 +845,9 @@ export function SkinDemo() {
           </div>
 
           {/* Loading States and Utilities */}
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            <Card skin={currentSkin}>
+          <div className="px-4 sm:px-6 lg:px-8 py-8">
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <Card skin={currentSkin} className="shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardHeader skin={currentSkin}>
                 <div className="flex items-center gap-2">
                   <Sparkles className="w-5 h-5" />
@@ -871,7 +872,7 @@ export function SkinDemo() {
               </CardContent>
             </Card>
 
-            <Card skin={currentSkin}>
+            <Card skin={currentSkin} className="shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardHeader skin={currentSkin}>
                 <div className="flex items-center gap-2">
                   <Layers className="w-5 h-5" />
@@ -901,7 +902,7 @@ export function SkinDemo() {
               </CardContent>
             </Card>
 
-            <Card skin={currentSkin}>
+            <Card skin={currentSkin} className="shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardHeader skin={currentSkin}>
                 <div className="flex items-center gap-2">
                   <Heart className="w-5 h-5" />
@@ -938,10 +939,11 @@ export function SkinDemo() {
                 </div>
               </CardContent>
             </Card>
+            </div>
           </div>
 
           {/* Footer */}
-          <div className="text-center py-8 space-y-4">
+          <div className="text-center py-16 space-y-6 px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-center gap-2">
               <Sparkles className={`w-5 h-5 ${currentSkin === 'neobrutalism' ? 'text-pink-600' : 'text-purple-600'}`} />
               <h3 className="text-lg font-semibold">Ready to build something amazing?</h3>
