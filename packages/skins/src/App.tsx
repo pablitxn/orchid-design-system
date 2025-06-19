@@ -15,10 +15,10 @@ import { RadioGroup, RadioGroupItem } from './components/radio-group';
 import { ScrollArea, ScrollBar } from './components/scroll-area';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './components/select';
 import { Skeleton } from './components/skeleton';
-// import { Label } from './components/label';
-// import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuCheckboxItem, DropdownMenuRadioItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuGroup, DropdownMenuRadioGroup } from './components/dropdown-menu';
-// import { Input } from './components/input';
-// import { Progress } from './components/progress';
+import { Label } from './components/label';
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuCheckboxItem, DropdownMenuRadioItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuGroup, DropdownMenuRadioGroup } from './components/dropdown-menu';
+import { Input } from './components/input';
+import { Progress } from './components/progress';
 
 import { SKINS } from './lib/constants';
 import { CheckCircle2Icon, ChevronRight, Home, Package, Settings } from 'lucide-react';
@@ -613,47 +613,47 @@ function App() {
         </div>
       </section>
 
-      {/*<section id="radio-groups" className="mb-12">*/}
-      {/*  <h2 className="text-xl font-semibold mb-4">Radio Groups</h2>*/}
+      <section id="radio-groups" className="mb-12">
+        <h2 className="text-xl font-semibold mb-4">Radio Groups</h2>
 
-      {/*  <div className="space-y-6">*/}
-      {/*    <div>*/}
-      {/*      <h3 className="text-lg font-medium mb-3">Shadcn Theme</h3>*/}
-      {/*      <RadioGroup defaultValue="option-1" skin={SKINS.SHADCN}>*/}
-      {/*        <div className="flex items-center space-x-2">*/}
-      {/*          <RadioGroupItem value="option-1" id="option-1" skin={SKINS.SHADCN} />*/}
-      {/*          <Label htmlFor="option-1">Option 1</Label>*/}
-      {/*        </div>*/}
-      {/*        <div className="flex items-center space-x-2">*/}
-      {/*          <RadioGroupItem value="option-2" id="option-2" skin={SKINS.SHADCN} />*/}
-      {/*          <Label htmlFor="option-2">Option 2</Label>*/}
-      {/*        </div>*/}
-      {/*        <div className="flex items-center space-x-2">*/}
-      {/*          <RadioGroupItem value="option-3" id="option-3" skin={SKINS.SHADCN} />*/}
-      {/*          <Label htmlFor="option-3">Option 3</Label>*/}
-      {/*        </div>*/}
-      {/*      </RadioGroup>*/}
-      {/*    </div>*/}
+        <div className="space-y-6">
+          <div>
+            <h3 className="text-lg font-medium mb-3">Shadcn Theme</h3>
+            <RadioGroup defaultValue="option-1" skin={SKINS.SHADCN}>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="option-1" id="option-1" skin={SKINS.SHADCN} />
+                <Label htmlFor="option-1">Option 1</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="option-2" id="option-2" skin={SKINS.SHADCN} />
+                <Label htmlFor="option-2">Option 2</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="option-3" id="option-3" skin={SKINS.SHADCN} />
+                <Label htmlFor="option-3">Option 3</Label>
+              </div>
+            </RadioGroup>
+          </div>
 
-      {/*    <div>*/}
-      {/*      <h3 className="text-lg font-medium mb-3">Neobrutalism Theme</h3>*/}
-      {/*      <RadioGroup defaultValue="option-1" skin={SKINS.NEOBRUTALISM}>*/}
-      {/*        <div className="flex items-center space-x-2">*/}
-      {/*          <RadioGroupItem value="option-1" id="neo-option-1" skin={SKINS.NEOBRUTALISM} />*/}
-      {/*          <Label htmlFor="neo-option-1">Bold Option 1</Label>*/}
-      {/*        </div>*/}
-      {/*        <div className="flex items-center space-x-2">*/}
-      {/*          <RadioGroupItem value="option-2" id="neo-option-2" skin={SKINS.NEOBRUTALISM} />*/}
-      {/*          <Label htmlFor="neo-option-2">Bold Option 2</Label>*/}
-      {/*        </div>*/}
-      {/*        <div className="flex items-center space-x-2">*/}
-      {/*          <RadioGroupItem value="option-3" id="neo-option-3" skin={SKINS.NEOBRUTALISM} />*/}
-      {/*          /!*<Label htmlFor="neo-option-3">Bold Option 3</Label>*!/*/}
-      {/*        </div>*/}
-      {/*      </RadioGroup>*/}
-      {/*    </div>*/}
-      {/*  </div>*/}
-      {/*</section>*/}
+          <div>
+            <h3 className="text-lg font-medium mb-3">Neobrutalism Theme</h3>
+            <RadioGroup defaultValue="option-1" skin={SKINS.NEOBRUTALISM}>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="option-1" id="neo-option-1" skin={SKINS.NEOBRUTALISM} />
+                <Label htmlFor="neo-option-1">Bold Option 1</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="option-2" id="neo-option-2" skin={SKINS.NEOBRUTALISM} />
+                <Label htmlFor="neo-option-2">Bold Option 2</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="option-3" id="neo-option-3" skin={SKINS.NEOBRUTALISM} />
+                {/*<Label htmlFor="neo-option-3">Bold Option 3</Label>*/}
+              </div>
+            </RadioGroup>
+          </div>
+        </div>
+      </section>
 
       <section id="scroll-areas" className="mb-12">
         <h2 className="text-xl font-semibold mb-4">Scroll Areas</h2>
@@ -767,99 +767,99 @@ function App() {
         </div>
       </section>
 
-      {/*<section id="dropdown-menus" className="mb-12">*/}
-      {/*  <h2 className="text-xl font-semibold mb-4">Dropdown Menus</h2>*/}
+      <section id="dropdown-menus" className="mb-12">
+        <h2 className="text-xl font-semibold mb-4">Dropdown Menus</h2>
 
-      {/*  <div className="space-y-6">*/}
-      {/*    <div>*/}
-      {/*      <h3 className="text-lg font-medium mb-3">Shadcn Theme</h3>*/}
-      {/*      <DropdownMenu skin={SKINS.SHADCN}>*/}
-      {/*        <DropdownMenuTrigger asChild skin={SKINS.SHADCN}>*/}
-      {/*          <Button variant="outline" skin={SKINS.SHADCN}>Open Menu</Button>*/}
-      {/*        </DropdownMenuTrigger>*/}
-      {/*        <DropdownMenuContent skin={SKINS.SHADCN}>*/}
-      {/*          <DropdownMenuLabel skin={SKINS.SHADCN}>My Account</DropdownMenuLabel>*/}
-      {/*          <DropdownMenuSeparator skin={SKINS.SHADCN} />*/}
-      {/*          <DropdownMenuItem skin={SKINS.SHADCN}>Profile</DropdownMenuItem>*/}
-      {/*          <DropdownMenuItem skin={SKINS.SHADCN}>Billing</DropdownMenuItem>*/}
-      {/*          <DropdownMenuItem skin={SKINS.SHADCN}>Team</DropdownMenuItem>*/}
-      {/*          <DropdownMenuSeparator skin={SKINS.SHADCN} />*/}
-      {/*          <DropdownMenuGroup skin={SKINS.SHADCN}>*/}
-      {/*            <DropdownMenuItem skin={SKINS.SHADCN}>Settings</DropdownMenuItem>*/}
-      {/*            <DropdownMenuItem skin={SKINS.SHADCN}>Support</DropdownMenuItem>*/}
-      {/*          </DropdownMenuGroup>*/}
-      {/*          <DropdownMenuSeparator skin={SKINS.SHADCN} />*/}
-      {/*          <DropdownMenuItem skin={SKINS.SHADCN}>Log out</DropdownMenuItem>*/}
-      {/*        </DropdownMenuContent>*/}
-      {/*      </DropdownMenu>*/}
-      {/*    </div>*/}
+        <div className="space-y-6">
+          <div>
+            <h3 className="text-lg font-medium mb-3">Shadcn Theme</h3>
+            <DropdownMenu skin={SKINS.SHADCN}>
+              <DropdownMenuTrigger asChild skin={SKINS.SHADCN}>
+                <Button variant="outline" skin={SKINS.SHADCN}>Open Menu</Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent skin={SKINS.SHADCN}>
+                <DropdownMenuLabel skin={SKINS.SHADCN}>My Account</DropdownMenuLabel>
+                <DropdownMenuSeparator skin={SKINS.SHADCN} />
+                <DropdownMenuItem skin={SKINS.SHADCN}>Profile</DropdownMenuItem>
+                <DropdownMenuItem skin={SKINS.SHADCN}>Billing</DropdownMenuItem>
+                <DropdownMenuItem skin={SKINS.SHADCN}>Team</DropdownMenuItem>
+                <DropdownMenuSeparator skin={SKINS.SHADCN} />
+                <DropdownMenuGroup skin={SKINS.SHADCN}>
+                  <DropdownMenuItem skin={SKINS.SHADCN}>Settings</DropdownMenuItem>
+                  <DropdownMenuItem skin={SKINS.SHADCN}>Support</DropdownMenuItem>
+                </DropdownMenuGroup>
+                <DropdownMenuSeparator skin={SKINS.SHADCN} />
+                <DropdownMenuItem skin={SKINS.SHADCN}>Log out</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
 
-      {/*    <div>*/}
-      {/*      <h3 className="text-lg font-medium mb-3">Neobrutalism Theme</h3>*/}
-      {/*      <DropdownMenu skin={SKINS.NEOBRUTALISM}>*/}
-      {/*        <DropdownMenuTrigger asChild skin={SKINS.NEOBRUTALISM}>*/}
-      {/*          <Button variant="outline" skin={SKINS.NEOBRUTALISM}>Bold Menu</Button>*/}
-      {/*        </DropdownMenuTrigger>*/}
-      {/*        <DropdownMenuContent skin={SKINS.NEOBRUTALISM}>*/}
-      {/*          <DropdownMenuLabel skin={SKINS.NEOBRUTALISM}>Bold Actions</DropdownMenuLabel>*/}
-      {/*          <DropdownMenuSeparator skin={SKINS.NEOBRUTALISM} />*/}
-      {/*          <DropdownMenuItem skin={SKINS.NEOBRUTALISM}>Stark Profile</DropdownMenuItem>*/}
-      {/*          <DropdownMenuItem skin={SKINS.NEOBRUTALISM}>Brutal Billing</DropdownMenuItem>*/}
-      {/*          <DropdownMenuItem skin={SKINS.NEOBRUTALISM}>Bold Team</DropdownMenuItem>*/}
-      {/*          <DropdownMenuSeparator skin={SKINS.NEOBRUTALISM} />*/}
-      {/*          <DropdownMenuGroup skin={SKINS.NEOBRUTALISM}>*/}
-      {/*            <DropdownMenuItem skin={SKINS.NEOBRUTALISM}>Striking Settings</DropdownMenuItem>*/}
-      {/*            <DropdownMenuItem skin={SKINS.NEOBRUTALISM}>Powerful Support</DropdownMenuItem>*/}
-      {/*          </DropdownMenuGroup>*/}
-      {/*          <DropdownMenuSeparator skin={SKINS.NEOBRUTALISM} />*/}
-      {/*          <DropdownMenuItem skin={SKINS.NEOBRUTALISM}>Exit Boldly</DropdownMenuItem>*/}
-      {/*        </DropdownMenuContent>*/}
-      {/*      </DropdownMenu>*/}
-      {/*    </div>*/}
-      {/*  </div>*/}
-      {/*</section>*/}
+          <div>
+            <h3 className="text-lg font-medium mb-3">Neobrutalism Theme</h3>
+            <DropdownMenu skin={SKINS.NEOBRUTALISM}>
+              <DropdownMenuTrigger asChild skin={SKINS.NEOBRUTALISM}>
+                <Button variant="outline" skin={SKINS.NEOBRUTALISM}>Bold Menu</Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent skin={SKINS.NEOBRUTALISM}>
+                <DropdownMenuLabel skin={SKINS.NEOBRUTALISM}>Bold Actions</DropdownMenuLabel>
+                <DropdownMenuSeparator skin={SKINS.NEOBRUTALISM} />
+                <DropdownMenuItem skin={SKINS.NEOBRUTALISM}>Stark Profile</DropdownMenuItem>
+                <DropdownMenuItem skin={SKINS.NEOBRUTALISM}>Brutal Billing</DropdownMenuItem>
+                <DropdownMenuItem skin={SKINS.NEOBRUTALISM}>Bold Team</DropdownMenuItem>
+                <DropdownMenuSeparator skin={SKINS.NEOBRUTALISM} />
+                <DropdownMenuGroup skin={SKINS.NEOBRUTALISM}>
+                  <DropdownMenuItem skin={SKINS.NEOBRUTALISM}>Striking Settings</DropdownMenuItem>
+                  <DropdownMenuItem skin={SKINS.NEOBRUTALISM}>Powerful Support</DropdownMenuItem>
+                </DropdownMenuGroup>
+                <DropdownMenuSeparator skin={SKINS.NEOBRUTALISM} />
+                <DropdownMenuItem skin={SKINS.NEOBRUTALISM}>Exit Boldly</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
+        </div>
+      </section>
 
-      {/*<section id="inputs" className="mb-12">*/}
-      {/*  <h2 className="text-xl font-semibold mb-4">Inputs</h2>*/}
+      <section id="inputs" className="mb-12">
+        <h2 className="text-xl font-semibold mb-4">Inputs</h2>
 
-      {/*  <div className="space-y-6">*/}
-      {/*    <div>*/}
-      {/*      <h3 className="text-lg font-medium mb-3">Shadcn Theme</h3>*/}
-      {/*      <div className="w-full max-w-md space-y-4">*/}
-      {/*        <div className="space-y-2">*/}
-      {/*          <Label htmlFor="email" skin={SKINS.SHADCN}>Email</Label>*/}
-      {/*          <Input type="email" id="email" placeholder="email@example.com" skin={SKINS.SHADCN} />*/}
-      {/*        </div>*/}
-      {/*        <div className="space-y-2">*/}
-      {/*          <Label htmlFor="password" skin={SKINS.SHADCN}>Password</Label>*/}
-      {/*          <Input type="password" id="password" placeholder="Enter your password" skin={SKINS.SHADCN} />*/}
-      {/*        </div>*/}
-      {/*        <div className="space-y-2">*/}
-      {/*          <Label htmlFor="disabled" skin={SKINS.SHADCN}>Disabled Input</Label>*/}
-      {/*          <Input id="disabled" placeholder="Disabled input" disabled skin={SKINS.SHADCN} />*/}
-      {/*        </div>*/}
-      {/*      </div>*/}
-      {/*    </div>*/}
+        <div className="space-y-6">
+          <div>
+            <h3 className="text-lg font-medium mb-3">Shadcn Theme</h3>
+            <div className="w-full max-w-md space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="email" skin={SKINS.SHADCN}>Email</Label>
+                <Input type="email" id="email" placeholder="email@example.com" skin={SKINS.SHADCN} />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="password" skin={SKINS.SHADCN}>Password</Label>
+                <Input type="password" id="password" placeholder="Enter your password" skin={SKINS.SHADCN} />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="disabled" skin={SKINS.SHADCN}>Disabled Input</Label>
+                <Input id="disabled" placeholder="Disabled input" disabled skin={SKINS.SHADCN} />
+              </div>
+            </div>
+          </div>
 
-      {/*    <div>*/}
-      {/*      <h3 className="text-lg font-medium mb-3">Neobrutalism Theme</h3>*/}
-      {/*      <div className="w-full max-w-md space-y-4">*/}
-      {/*        <div className="space-y-2">*/}
-      {/*          <Label htmlFor="neo-email" skin={SKINS.NEOBRUTALISM}>Bold Email</Label>*/}
-      {/*          <Input type="email" id="neo-email" placeholder="bold@example.com" skin={SKINS.NEOBRUTALISM} />*/}
-      {/*        </div>*/}
-      {/*        <div className="space-y-2">*/}
-      {/*          <Label htmlFor="neo-password" skin={SKINS.NEOBRUTALISM}>Strong Password</Label>*/}
-      {/*          <Input type="password" id="neo-password" placeholder="Enter bold password" skin={SKINS.NEOBRUTALISM} />*/}
-      {/*        </div>*/}
-      {/*        <div className="space-y-2">*/}
-      {/*          <Label htmlFor="neo-disabled" skin={SKINS.NEOBRUTALISM}>Disabled Bold Input</Label>*/}
-      {/*          <Input id="neo-disabled" placeholder="Disabled neobrutalist input" disabled skin={SKINS.NEOBRUTALISM} />*/}
-      {/*        </div>*/}
-      {/*      </div>*/}
-      {/*    </div>*/}
-      {/*  </div>*/}
-      {/*</section>*/}
+          <div>
+            <h3 className="text-lg font-medium mb-3">Neobrutalism Theme</h3>
+            <div className="w-full max-w-md space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="neo-email" skin={SKINS.NEOBRUTALISM}>Bold Email</Label>
+                <Input type="email" id="neo-email" placeholder="bold@example.com" skin={SKINS.NEOBRUTALISM} />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="neo-password" skin={SKINS.NEOBRUTALISM}>Strong Password</Label>
+                <Input type="password" id="neo-password" placeholder="Enter bold password" skin={SKINS.NEOBRUTALISM} />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="neo-disabled" skin={SKINS.NEOBRUTALISM}>Disabled Bold Input</Label>
+                <Input id="neo-disabled" placeholder="Disabled neobrutalist input" disabled skin={SKINS.NEOBRUTALISM} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/*<section id="labels" className="mb-12">*/}
       {/*  <h2 className="text-xl font-semibold mb-4">Labels</h2>*/}
@@ -885,33 +885,33 @@ function App() {
       {/*  </div>*/}
       {/*</section>*/}
 
-      {/*<section id="progress" className="mb-12">*/}
-      {/*  <h2 className="text-xl font-semibold mb-4">Progress Bars</h2>*/}
+      <section id="progress" className="mb-12">
+        <h2 className="text-xl font-semibold mb-4">Progress Bars</h2>
 
-      {/*  <div className="space-y-6">*/}
-      {/*    <div>*/}
-      {/*      <h3 className="text-lg font-medium mb-3">Shadcn Theme</h3>*/}
-      {/*      <div className="w-full max-w-md space-y-4">*/}
-      {/*        <Progress value={0} skin={SKINS.SHADCN} />*/}
-      {/*        <Progress value={25} skin={SKINS.SHADCN} />*/}
-      {/*        <Progress value={50} skin={SKINS.SHADCN} />*/}
-      {/*        <Progress value={75} skin={SKINS.SHADCN} />*/}
-      {/*        <Progress value={100} skin={SKINS.SHADCN} />*/}
-      {/*      </div>*/}
-      {/*    </div>*/}
+        <div className="space-y-6">
+          <div>
+            <h3 className="text-lg font-medium mb-3">Shadcn Theme</h3>
+            <div className="w-full max-w-md space-y-4">
+              <Progress value={0} skin={SKINS.SHADCN} />
+              <Progress value={25} skin={SKINS.SHADCN} />
+              <Progress value={50} skin={SKINS.SHADCN} />
+              <Progress value={75} skin={SKINS.SHADCN} />
+              <Progress value={100} skin={SKINS.SHADCN} />
+            </div>
+          </div>
 
-      {/*    <div>*/}
-      {/*      <h3 className="text-lg font-medium mb-3">Neobrutalism Theme</h3>*/}
-      {/*      <div className="w-full max-w-md space-y-4">*/}
-      {/*        <Progress value={0} skin={SKINS.NEOBRUTALISM} />*/}
-      {/*        <Progress value={25} skin={SKINS.NEOBRUTALISM} />*/}
-      {/*        <Progress value={50} skin={SKINS.NEOBRUTALISM} />*/}
-      {/*        <Progress value={75} skin={SKINS.NEOBRUTALISM} />*/}
-      {/*        <Progress value={100} skin={SKINS.NEOBRUTALISM} />*/}
-      {/*      </div>*/}
-      {/*    </div>*/}
-      {/*  </div>*/}
-      {/*</section>*/}
+          <div>
+            <h3 className="text-lg font-medium mb-3">Neobrutalism Theme</h3>
+            <div className="w-full max-w-md space-y-4">
+              <Progress value={0} skin={SKINS.NEOBRUTALISM} />
+              <Progress value={25} skin={SKINS.NEOBRUTALISM} />
+              <Progress value={50} skin={SKINS.NEOBRUTALISM} />
+              <Progress value={75} skin={SKINS.NEOBRUTALISM} />
+              <Progress value={100} skin={SKINS.NEOBRUTALISM} />
+            </div>
+          </div>
+        </div>
+      </section>
 
     </>
   );

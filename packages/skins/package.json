@@ -24,7 +24,9 @@
     "dev": "vite",
     "build": "vite build && tsc --emitDeclarationOnly --declaration --declarationDir dist",
     "lint": "eslint \"src/**/*.ts*\"",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "test": "vitest",
+    "test:ui": "vitest --ui"
   },
   "dependencies": {
     "@orchid-design-system/ui-core": "^1.0.0",

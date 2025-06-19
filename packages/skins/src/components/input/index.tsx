@@ -16,7 +16,7 @@ export const Input = React.forwardRef<
   React.ElementRef<typeof ShadcnInput.Input>,
   InputProps
 >(({ skin = DEFAULT_SKIN, ...props }, ref) => {
-  const Component = getSkinComponent(skin, inputComponents).Input;
+  const Component = getSkinComponent(inputComponents, skin).Input;
   return <Component ref={ref} {...props} />;
 });
 Input.displayName = 'Input';

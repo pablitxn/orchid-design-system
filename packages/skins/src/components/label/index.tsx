@@ -16,7 +16,7 @@ export const Label = React.forwardRef<
   React.ElementRef<typeof ShadcnLabel.Label>,
   LabelProps
 >(({ skin = DEFAULT_SKIN, ...props }, ref) => {
-  const Component = getSkinComponent(skin, labelComponents).Label;
+  const Component = getSkinComponent(labelComponents, skin).Label;
   return <Component ref={ref} {...props} />;
 });
 Label.displayName = 'Label';

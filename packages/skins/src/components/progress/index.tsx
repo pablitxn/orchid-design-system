@@ -17,7 +17,7 @@ export const Progress = React.forwardRef<
   ProgressProps
 >(({ skin = DEFAULT_SKIN, ...props }, ref) => {
   // @ts-ignore
-  const Component = getSkinComponent(skin, progressComponents).Progress;
+  const Component = getSkinComponent(progressComponents, skin).Progress;
   return <Component ref={ref} {...props} />;
 });
 Progress.displayName = 'Progress';
