@@ -1,0 +1,4 @@
+/* Import all CSS files to ensure Tailwind processes everything */
+@import "./base.css";
+@import "./shadcn.css";
+@import "./neobrutalism.css";

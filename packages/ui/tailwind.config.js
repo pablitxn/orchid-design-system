@@ -14,34 +14,34 @@ export default {
         background: "rgb(var(--background) / <alpha-value>)",
         foreground: "rgb(var(--foreground) / <alpha-value>)",
         
-        // Shadcn-specific colors (using HSL)
+        // Shadcn-specific colors (using RGB)
         primary: {
-          DEFAULT: "hsl(var(--primary) / <alpha-value>)",
-          foreground: "hsl(var(--primary-foreground) / <alpha-value>)",
+          DEFAULT: "rgb(var(--primary) / <alpha-value>)",
+          foreground: "rgb(var(--primary-foreground) / <alpha-value>)",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary) / <alpha-value>)",
-          foreground: "hsl(var(--secondary-foreground) / <alpha-value>)",
+          DEFAULT: "rgb(var(--secondary) / <alpha-value>)",
+          foreground: "rgb(var(--secondary-foreground) / <alpha-value>)",
         },
         destructive: {
-          DEFAULT: "hsl(var(--destructive) / <alpha-value>)",
-          foreground: "hsl(var(--destructive-foreground) / <alpha-value>)",
+          DEFAULT: "rgb(var(--destructive) / <alpha-value>)",
+          foreground: "rgb(var(--destructive-foreground) / <alpha-value>)",
         },
         muted: {
-          DEFAULT: "hsl(var(--muted) / <alpha-value>)",
-          foreground: "hsl(var(--muted-foreground) / <alpha-value>)",
+          DEFAULT: "rgb(var(--muted) / <alpha-value>)",
+          foreground: "rgb(var(--muted-foreground) / <alpha-value>)",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent) / <alpha-value>)",
-          foreground: "hsl(var(--accent-foreground) / <alpha-value>)",
+          DEFAULT: "rgb(var(--accent) / <alpha-value>)",
+          foreground: "rgb(var(--accent-foreground) / <alpha-value>)",
         },
         popover: {
-          DEFAULT: "hsl(var(--popover) / <alpha-value>)",
-          foreground: "hsl(var(--popover-foreground) / <alpha-value>)",
+          DEFAULT: "rgb(var(--popover) / <alpha-value>)",
+          foreground: "rgb(var(--popover-foreground) / <alpha-value>)",
         },
         card: {
-          DEFAULT: "hsl(var(--card) / <alpha-value>)",
-          foreground: "hsl(var(--card-foreground) / <alpha-value>)",
+          DEFAULT: "rgb(var(--card) / <alpha-value>)",
+          foreground: "rgb(var(--card-foreground) / <alpha-value>)",
         },
         
         // Neobrutalism-specific colors (using custom properties)
@@ -75,6 +75,11 @@ export default {
         "m-md": "var(--spacing-m-md, -16px)",
         "m-lg": "var(--spacing-m-lg, -24px)",
         "m-xl": "var(--spacing-m-xl, -32px)",
+        // Neobrutalism shadow spacing
+        boxShadowX: "var(--spacing-boxShadowX, 4px)",
+        boxShadowY: "var(--spacing-boxShadowY, 4px)",
+        reverseBoxShadowX: "var(--spacing-reverseBoxShadowX, -4px)",
+        reverseBoxShadowY: "var(--spacing-reverseBoxShadowY, -4px)",
       },
       borderRadius: {
         // Support both radius systems
@@ -87,6 +92,8 @@ export default {
       boxShadow: {
         // Neobrutalism shadow
         neo: "var(--shadow, 4px 4px 0px 0px var(--border))",
+        shadow: "var(--shadow, 4px 4px 0px 0px var(--border))",
+        none: "none",
       },
       keyframes: {
         "accordion-down": {
@@ -103,7 +110,8 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       fontWeight: {
-        base: "var(--font-weight-normal, 400)",
+        base: "var(--font-weight-base, 500)",
+        heading: "var(--font-weight-heading, 700)",
       },
       transitionDuration: {
         base: "var(--animate-duration, 250ms)",
