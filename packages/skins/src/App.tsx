@@ -50,18 +50,12 @@ function App() {
 
           <div>
             <h3 className="text-lg font-medium mb-3">Neobrutalism Theme</h3>
-            <Accordion type="multiple" skin={SKINS.NEOBRUTALISM} className="w-full max-w-md">
+            <Accordion type="single" skin={SKINS.NEOBRUTALISM} className="w-full max-w-xl">
               <AccordionItem value="item-1">
                 <AccordionTrigger>What is Neobrutalism?</AccordionTrigger>
                 <AccordionContent>
                   Neobrutalism is a modern design style characterized by bold colors, thick borders, and stark
                   contrasts.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2">
-                <AccordionTrigger>Why use it?</AccordionTrigger>
-                <AccordionContent>
-                  It creates a unique, eye-catching aesthetic that stands out from typical minimalist designs.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>

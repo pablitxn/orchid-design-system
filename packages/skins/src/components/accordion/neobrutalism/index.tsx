@@ -1,9 +1,8 @@
 'use client';
 import * as React from 'react';
 import { ChevronDown } from 'lucide-react';
-import { Accordion as AccordionPrimitive } from '@orchid-design-system/ui-core';
+import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import { cn } from '@/lib/utils';
-import '@/assets/styles/neobrutalism.css';
 
 function Accordion({
                      ...props
