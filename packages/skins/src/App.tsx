@@ -14,6 +14,7 @@ import {
 import { Avatar, AvatarImage, AvatarFallback } from './components/avatar';
 import { Badge } from './components/badge';
 import { SKINS } from './lib/constants';
+import { CheckCircle2Icon } from 'lucide-react';
 
 
 function App() {
@@ -94,15 +95,17 @@ function App() {
           <div>
             <h3 className="text-lg font-medium mb-3">Neobrutalism Theme</h3>
             <div className="space-y-3 max-w-md">
-              <Alert skin={SKINS.NEOBRUTALISM}>
-                <AlertTitle>Heads up!</AlertTitle>
-                <AlertDescription>
+              <Alert skin={SKINS.NEOBRUTALISM} className="w-100">
+                <CheckCircle2Icon />
+                <AlertTitle className="pt-1">Heads up!</AlertTitle>
+                <AlertDescription className="w-100">
                   You can add components to your app using the cli.
                 </AlertDescription>
               </Alert>
               <Alert skin={SKINS.NEOBRUTALISM} variant="destructive">
+                <CheckCircle2Icon />
                 <AlertTitle>Error</AlertTitle>
-                <AlertDescription>
+                <AlertDescription className="w-100">
                   Your session has expired. Please log in again.
                 </AlertDescription>
               </Alert>
