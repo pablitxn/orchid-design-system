@@ -1,23 +1,14 @@
-import * as React from "react";
+import * as React from 'react';
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle,
-  Button,
-  Badge,
   Input,
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
   type WithSkinProps,
   DEFAULT_SKIN,
   SKINS,
-} from "@orchid-design-system/skins";
+} from '@orchid-design-system/skins';
 
 interface DataTableProps<T = any> extends WithSkinProps {
   data: T[];
@@ -45,24 +36,24 @@ const DataTableContext = React.createContext<DataTableContextValue>({});
 const useDataTable = () => {
   const context = React.useContext(DataTableContext);
   if (!context) {
-    throw new Error("DataTable components must be used within a DataTable");
+    throw new Error('DataTable components must be used within a DataTable');
   }
   return context;
 };
 
 export const DataTable = <T extends Record<string, any>>({
-  data,
-  columns,
-  searchable = false,
-  searchPlaceholder = "Search...",
-  onRowClick,
-  className,
-  skin = DEFAULT_SKIN,
-}: DataTableProps<T>) => {
-  const [searchTerm, setSearchTerm] = React.useState("");
+                                                           data,
+                                                           columns,
+                                                           searchable = false,
+                                                           searchPlaceholder = 'Search...',
+                                                           onRowClick,
+                                                           className,
+                                                           skin = DEFAULT_SKIN,
+                                                         }: DataTableProps<T>) => {
+  const [searchTerm, setSearchTerm] = React.useState('');
   const [sortConfig, setSortConfig] = React.useState<{
     key: string;
-    direction: "asc" | "desc";
+    direction: 'asc' | 'desc';
   } | null>(null);
 
   const filteredData = React.useMemo(() => {
@@ -71,8 +62,8 @@ export const DataTable = <T extends Record<string, any>>({
     if (searchTerm) {
       filtered = filtered.filter((item) =>
         Object.values(item).some((value) =>
-          String(value).toLowerCase().includes(searchTerm.toLowerCase())
-        )
+          String(value).toLowerCase().includes(searchTerm.toLowerCase()),
+        ),
       );
     }
 
@@ -80,11 +71,11 @@ export const DataTable = <T extends Record<string, any>>({
       filtered.sort((a, b) => {
         const aValue = a[sortConfig.key];
         const bValue = b[sortConfig.key];
-        
+
         if (aValue === bValue) return 0;
-        
+
         const comparison = aValue < bValue ? -1 : 1;
-        return sortConfig.direction === "asc" ? comparison : -comparison;
+        return sortConfig.direction === 'asc' ? comparison : -comparison;
       });
     }
 
@@ -94,10 +85,10 @@ export const DataTable = <T extends Record<string, any>>({
   const handleSort = (key: string) => {
     setSortConfig((current) => {
       if (!current || current.key !== key) {
-        return { key, direction: "asc" };
+        return { key, direction: 'asc' };
       }
-      if (current.direction === "asc") {
-        return { key, direction: "desc" };
+      if (current.direction === 'asc') {
+        return { key, direction: 'desc' };
       }
       return null;
     });
@@ -184,22 +175,22 @@ interface DataTableHeaderProps extends WithSkinProps {
 }
 
 export const DataTableHeader: React.FC<DataTableHeaderProps> = ({
-  children,
-  className,
-  skin: propSkin,
-}) => {
+                                                                  children,
+                                                                  className,
+                                                                  skin: propSkin,
+                                                                }) => {
   const { skin: contextSkin } = useDataTable();
   const skin = propSkin ?? contextSkin ?? DEFAULT_SKIN;
-  
-  const baseClasses = "text-xs text-muted-foreground font-medium uppercase tracking-wider";
+
+  const baseClasses = 'text-xs text-muted-foreground font-medium uppercase tracking-wider';
   const skinClasses = {
-    [SKINS.SHADCN]: "bg-muted/50",
-    [SKINS.NEOBRUTALISM]: "bg-yellow-100 border-b-4 border-black",
+    [SKINS.SHADCN]: 'bg-muted/50',
+    [SKINS.NEOBRUTALISM]: 'bg-yellow-100 border-b-4 border-black',
   };
 
   return (
-    <thead className={`${baseClasses} ${skinClasses[skin]} ${className || ""}`}>
-      {children}
+    <thead className={`${baseClasses} ${skinClasses[skin]} ${className || ''}`}>
+    {children}
     </thead>
   );
 };
@@ -210,22 +201,22 @@ interface DataTableBodyProps extends WithSkinProps {
 }
 
 export const DataTableBody: React.FC<DataTableBodyProps> = ({
-  children,
-  className,
-  skin: propSkin,
-}) => {
+                                                              children,
+                                                              className,
+                                                              skin: propSkin,
+                                                            }) => {
   const { skin: contextSkin } = useDataTable();
   const skin = propSkin ?? contextSkin ?? DEFAULT_SKIN;
-  
-  const baseClasses = "divide-y";
+
+  const baseClasses = 'divide-y';
   const skinClasses = {
-    [SKINS.SHADCN]: "divide-border bg-background",
-    [SKINS.NEOBRUTALISM]: "divide-black bg-white",
+    [SKINS.SHADCN]: 'divide-border bg-background',
+    [SKINS.NEOBRUTALISM]: 'divide-black bg-white',
   };
 
   return (
-    <tbody className={`${baseClasses} ${skinClasses[skin]} ${className || ""}`}>
-      {children}
+    <tbody className={`${baseClasses} ${skinClasses[skin]} ${className || ''}`}>
+    {children}
     </tbody>
   );
 };
@@ -238,28 +229,28 @@ interface DataTableRowProps extends WithSkinProps {
 }
 
 export const DataTableRow: React.FC<DataTableRowProps> = ({
-  children,
-  className,
-  onClick,
-  clickable,
-  skin: propSkin,
-}) => {
+                                                            children,
+                                                            className,
+                                                            onClick,
+                                                            clickable,
+                                                            skin: propSkin,
+                                                          }) => {
   const { skin: contextSkin } = useDataTable();
   const skin = propSkin ?? contextSkin ?? DEFAULT_SKIN;
-  
-  const baseClasses = "transition-colors";
+
+  const baseClasses = 'transition-colors';
   const skinClasses = {
     [SKINS.SHADCN]: clickable
-      ? "hover:bg-muted/50 cursor-pointer"
-      : "",
+      ? 'hover:bg-muted/50 cursor-pointer'
+      : '',
     [SKINS.NEOBRUTALISM]: clickable
-      ? "hover:bg-pink-100 cursor-pointer"
-      : "",
+      ? 'hover:bg-pink-100 cursor-pointer'
+      : '',
   };
 
   return (
     <tr
-      className={`${baseClasses} ${skinClasses[skin]} ${className || ""}`}
+      className={`${baseClasses} ${skinClasses[skin]} ${className || ''}`}
       onClick={onClick}
     >
       {children}
@@ -273,32 +264,32 @@ interface DataTableHeadProps extends WithSkinProps {
   onClick?: () => void;
   sortable?: boolean;
   sorted?: boolean;
-  sortDirection?: "asc" | "desc";
+  sortDirection?: 'asc' | 'desc';
   style?: React.CSSProperties;
 }
 
 export const DataTableHead: React.FC<DataTableHeadProps> = ({
-  children,
-  className,
-  onClick,
-  sortable,
-  sorted,
-  sortDirection,
-  style,
-  skin: propSkin,
-}) => {
+                                                              children,
+                                                              className,
+                                                              onClick,
+                                                              sortable,
+                                                              sorted,
+                                                              sortDirection,
+                                                              style,
+                                                              skin: propSkin,
+                                                            }) => {
   const { skin: contextSkin } = useDataTable();
   const skin = propSkin ?? contextSkin ?? DEFAULT_SKIN;
-  
-  const baseClasses = "px-6 py-3";
+
+  const baseClasses = 'px-6 py-3';
   const skinClasses = {
-    [SKINS.SHADCN]: sortable ? "cursor-pointer select-none" : "",
-    [SKINS.NEOBRUTALISM]: sortable ? "cursor-pointer select-none font-bold" : "font-bold",
+    [SKINS.SHADCN]: sortable ? 'cursor-pointer select-none' : '',
+    [SKINS.NEOBRUTALISM]: sortable ? 'cursor-pointer select-none font-bold' : 'font-bold',
   };
 
   return (
     <th
-      className={`${baseClasses} ${skinClasses[skin]} ${className || ""}`}
+      className={`${baseClasses} ${skinClasses[skin]} ${className || ''}`}
       onClick={onClick}
       style={style}
     >
@@ -306,9 +297,9 @@ export const DataTableHead: React.FC<DataTableHeadProps> = ({
         {children}
         {sortable && (
           <span className="text-xs">
-            {sorted && sortDirection === "asc" && "↑"}
-            {sorted && sortDirection === "desc" && "↓"}
-            {!sorted && "↕"}
+            {sorted && sortDirection === 'asc' && '↑'}
+            {sorted && sortDirection === 'desc' && '↓'}
+            {!sorted && '↕'}
           </span>
         )}
       </div>
@@ -322,33 +313,33 @@ interface DataTableCellProps extends WithSkinProps {
 }
 
 export const DataTableCell: React.FC<DataTableCellProps> = ({
-  children,
-  className,
-  skin: propSkin,
-}) => {
+                                                              children,
+                                                              className,
+                                                              skin: propSkin,
+                                                            }) => {
   const { skin: contextSkin } = useDataTable();
   const skin = propSkin ?? contextSkin ?? DEFAULT_SKIN;
-  
-  const baseClasses = "px-6 py-4";
+
+  const baseClasses = 'px-6 py-4';
   const skinClasses = {
-    [SKINS.SHADCN]: "text-sm",
-    [SKINS.NEOBRUTALISM]: "text-sm font-medium",
+    [SKINS.SHADCN]: 'text-sm',
+    [SKINS.NEOBRUTALISM]: 'text-sm font-medium',
   };
 
   return (
-    <td className={`${baseClasses} ${skinClasses[skin]} ${className || ""}`}>
+    <td className={`${baseClasses} ${skinClasses[skin]} ${className || ''}`}>
       {children}
     </td>
   );
 };
 
 export const DataTableActions: React.FC<WithSkinProps & { children: React.ReactNode }> = ({
-  children,
-  skin: propSkin,
-}) => {
+                                                                                            children,
+                                                                                            skin: propSkin,
+                                                                                          }) => {
   const { skin: contextSkin } = useDataTable();
   const skin = propSkin ?? contextSkin ?? DEFAULT_SKIN;
-  
+
   return (
     <div className="flex items-center gap-2">
       {React.Children.map(children, (child) => {
