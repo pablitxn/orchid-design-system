@@ -4,8 +4,6 @@ import { TestSkins } from './TestSkins';
 function App() {
   return (
     <div>
-      <TestSkins />
-      <hr className="my-8" />
       <SkinDemo />
     </div>
   );
