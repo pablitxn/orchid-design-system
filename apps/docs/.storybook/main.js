@@ -9,6 +9,8 @@ function getAbsolutePath(value) {
 
 const config = {
   'stories': [
+    '../src/stories/**/*.stories.@(js|jsx|mjs|ts|tsx)',
+    '../src/stories/**/*.mdx',
     '../../../packages/ui/src/components/**/*.stories.@(js|jsx|mjs|ts|tsx)',
     '../../../packages/ui/src/components/**/*.mdx',
   ],
@@ -51,8 +53,8 @@ const config = {
           replacement: resolve(projectRoot, 'packages/primitives/src/index.ts'),
         },
         {
-          find: '@orchid-design-system/ui/styles',
-          replacement: resolve(projectRoot, 'packages/ui/src/assets/styles'),
+          find: '@orchid-design-system/ui/styles.css',
+          replacement: resolve(projectRoot, 'packages/ui/dist/styles.css'),
         },
         {
           find: '@orchid-design-system/ui',
