@@ -58,7 +58,7 @@ const config = {
         },
         {
           find: '@orchid-design-system/ui',
-          replacement: resolve(projectRoot, 'packages/ui/src'),
+          replacement: resolve(projectRoot, 'packages/ui/src/index.ts'),
         }
       ],
     };
