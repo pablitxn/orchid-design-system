@@ -706,139 +706,255 @@ export function SkinDemo() {
             </CardContent>
           </Card>
 
-          <Card skin={currentSkin} className="p-6">
-            <CardHeader skin={currentSkin}>
-              <CardTitle skin={currentSkin}>Data Display</CardTitle>
-              <CardDescription skin={currentSkin}>
-                Tables and structured data presentation
-              </CardDescription>
-            </CardHeader>
-            <CardContent skin={currentSkin}>
-              <div className="overflow-x-auto">
-                <Table skin={currentSkin}>
-                  <TableHeader skin={currentSkin}>
-                    <TableRow skin={currentSkin}>
-                      <TableHead skin={currentSkin}>Framework</TableHead>
-                      <TableHead skin={currentSkin}>Status</TableHead>
-                      <TableHead skin={currentSkin}>Popularity</TableHead>
-                      <TableHead skin={currentSkin} className="text-right">Stars</TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody skin={currentSkin}>
-                    <TableRow skin={currentSkin}>
-                      <TableCell skin={currentSkin} className="font-medium">React</TableCell>
-                      <TableCell skin={currentSkin}>
-                        {/*@ts-ignore*/}
-                        <Badge skin={currentSkin} variant="outline">Stable</Badge>
-                      </TableCell>
-                      <TableCell skin={currentSkin}>Very High</TableCell>
-                      <TableCell skin={currentSkin} className="text-right">220k</TableCell>
-                    </TableRow>
-                    <TableRow skin={currentSkin}>
-                      <TableCell skin={currentSkin} className="font-medium">Vue</TableCell>
-                      <TableCell skin={currentSkin}>
-                        {/* @ts-ignore */}
-                        <Badge skin={currentSkin} variant="outline">Stable</Badge>
-                      </TableCell>
-                      <TableCell skin={currentSkin}>High</TableCell>
-                      <TableCell skin={currentSkin} className="text-right">206k</TableCell>
-                    </TableRow>
-                    <TableRow skin={currentSkin}>
-                      <TableCell skin={currentSkin} className="font-medium">Angular</TableCell>
-                      <TableCell skin={currentSkin}>
-                        {/* @ts-ignore */}
-                        <Badge skin={currentSkin} variant="outline">Stable</Badge>
-                      </TableCell>
-                      <TableCell skin={currentSkin}>High</TableCell>
-                      <TableCell skin={currentSkin} className="text-right">93k</TableCell>
-                    </TableRow>
-                  </TableBody>
-                </Table>
-              </div>
-            </CardContent>
-          </Card>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card skin={currentSkin} className="p-6">
-              <CardHeader skin={currentSkin}>
-                <CardTitle skin={currentSkin}>Loading States</CardTitle>
-                <CardDescription skin={currentSkin}>
-                  Skeleton loaders for better UX
-                </CardDescription>
-              </CardHeader>
-              <CardContent skin={currentSkin} className="space-y-4">
-                <div className="space-y-2">
-                  <Skeleton skin={currentSkin} className="h-4 w-full" />
-                  <Skeleton skin={currentSkin} className="h-4 w-3/4" />
-                  <Skeleton skin={currentSkin} className="h-4 w-1/2" />
-                </div>
-                <div className="flex items-center space-x-4">
-                  <Skeleton skin={currentSkin} className="h-12 w-12 rounded-full" />
-                  <div className="space-y-2">
-                    <Skeleton skin={currentSkin} className="h-4 w-[200px]" />
-                    <Skeleton skin={currentSkin} className="h-4 w-[150px]" />
+              {/* Data Table Example */}
+              <Card skin={currentSkin}>
+                <CardHeader skin={currentSkin}>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <CardTitle skin={currentSkin}>Project Overview</CardTitle>
+                      <CardDescription skin={currentSkin}>
+                        Track your projects and their performance
+                      </CardDescription>
+                    </div>
+                    <Button skin={currentSkin} variant="outline" size="sm">
+                      <Search className="w-4 h-4 mr-2" />
+                      Filter
+                    </Button>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardHeader>
+                <CardContent skin={currentSkin}>
+                  <div className="overflow-x-auto">
+                    <Table skin={currentSkin}>
+                      <TableHeader skin={currentSkin}>
+                        <TableRow skin={currentSkin}>
+                          <TableHead skin={currentSkin}>Project</TableHead>
+                          <TableHead skin={currentSkin}>Status</TableHead>
+                          <TableHead skin={currentSkin}>Progress</TableHead>
+                          <TableHead skin={currentSkin}>Team</TableHead>
+                          <TableHead skin={currentSkin} className="text-right">Actions</TableHead>
+                        </TableRow>
+                      </TableHeader>
+                      <TableBody skin={currentSkin}>
+                        <TableRow skin={currentSkin}>
+                          <TableCell skin={currentSkin}>
+                            <div className="flex items-center gap-3">
+                              <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
+                                currentSkin === 'shadcn' ? 'bg-blue-100 dark:bg-blue-900' : 'bg-blue-200 border-2 border-black'
+                              }`}>
+                                <Package className="w-5 h-5 text-blue-700 dark:text-blue-300" />
+                              </div>
+                              <div>
+                                <p className="font-medium">E-commerce Platform</p>
+                                <p className="text-xs text-muted-foreground">Next.js + Stripe</p>
+                              </div>
+                            </div>
+                          </TableCell>
+                          <TableCell skin={currentSkin}>
+                            {/* @ts-ignore */}
+                            <Badge skin={currentSkin} variant="secondary">
+                              <div className="w-2 h-2 bg-green-500 rounded-full mr-1" />
+                              Active
+                            </Badge>
+                          </TableCell>
+                          <TableCell skin={currentSkin}>
+                            <div className="space-y-1">
+                              <Progress value={75} skin={currentSkin} className="h-2" />
+                              <p className="text-xs text-muted-foreground">75%</p>
+                            </div>
+                          </TableCell>
+                          <TableCell skin={currentSkin}>
+                            <div className="flex -space-x-2">
+                              <Avatar skin={currentSkin} className="w-8 h-8 border-2 border-background">
+                                <AvatarImage src="https://api.dicebear.com/7.x/avataaars/svg?seed=John" />
+                                <AvatarFallback>JD</AvatarFallback>
+                              </Avatar>
+                              <Avatar skin={currentSkin} className="w-8 h-8 border-2 border-background">
+                                <AvatarImage src="https://api.dicebear.com/7.x/avataaars/svg?seed=Mary" />
+                                <AvatarFallback>MJ</AvatarFallback>
+                              </Avatar>
+                              <Avatar skin={currentSkin} className="w-8 h-8 border-2 border-background bg-muted">
+                                <AvatarFallback className="text-xs">+3</AvatarFallback>
+                              </Avatar>
+                            </div>
+                          </TableCell>
+                          <TableCell skin={currentSkin} className="text-right">
+                            <Button skin={currentSkin} variant="ghost" size="sm">
+                              <ChevronRight className="w-4 h-4" />
+                            </Button>
+                          </TableCell>
+                        </TableRow>
+                        <TableRow skin={currentSkin}>
+                          <TableCell skin={currentSkin}>
+                            <div className="flex items-center gap-3">
+                              <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
+                                currentSkin === 'shadcn' ? 'bg-purple-100 dark:bg-purple-900' : 'bg-purple-200 border-2 border-black'
+                              }`}>
+                                <Palette className="w-5 h-5 text-purple-700 dark:text-purple-300" />
+                              </div>
+                              <div>
+                                <p className="font-medium">Design System</p>
+                                <p className="text-xs text-muted-foreground">React + Tailwind</p>
+                              </div>
+                            </div>
+                          </TableCell>
+                          <TableCell skin={currentSkin}>
+                            {/* @ts-ignore */}
+                            <Badge skin={currentSkin} variant="outline">
+                              <div className="w-2 h-2 bg-yellow-500 rounded-full mr-1" />
+                              In Review
+                            </Badge>
+                          </TableCell>
+                          <TableCell skin={currentSkin}>
+                            <div className="space-y-1">
+                              <Progress value={90} skin={currentSkin} className="h-2" />
+                              <p className="text-xs text-muted-foreground">90%</p>
+                            </div>
+                          </TableCell>
+                          <TableCell skin={currentSkin}>
+                            <div className="flex -space-x-2">
+                              <Avatar skin={currentSkin} className="w-8 h-8 border-2 border-background">
+                                <AvatarImage src="https://api.dicebear.com/7.x/avataaars/svg?seed=Alex" />
+                                <AvatarFallback>AC</AvatarFallback>
+                              </Avatar>
+                              <Avatar skin={currentSkin} className="w-8 h-8 border-2 border-background">
+                                <AvatarImage src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sam" />
+                                <AvatarFallback>SC</AvatarFallback>
+                              </Avatar>
+                            </div>
+                          </TableCell>
+                          <TableCell skin={currentSkin} className="text-right">
+                            <Button skin={currentSkin} variant="ghost" size="sm">
+                              <ChevronRight className="w-4 h-4" />
+                            </Button>
+                          </TableCell>
+                        </TableRow>
+                      </TableBody>
+                    </Table>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
 
-            <Card skin={currentSkin} className="p-6">
-              <CardHeader skin={currentSkin}>
-                <CardTitle skin={currentSkin}>Scrollable Content</CardTitle>
-                <CardDescription skin={currentSkin}>
-                  Custom scrollbars for overflow content
-                </CardDescription>
-              </CardHeader>
-              <CardContent skin={currentSkin}>
-                <div className="relative">
-                  <ScrollArea skin={currentSkin} className="h-[150px] w-full rounded-md border">
-                    <div className="p-4">
-                      <h4 className="mb-4 text-sm font-medium">Documentation</h4>
-                      {Array.from({ length: 30 }).map((_, i) => (
-                        <div key={i} className="text-sm py-1">
-                          Section {i + 1} - This is scrollable content that should overflow.
+            {/* Loading States and Utilities */}
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              <Card skin={currentSkin}>
+                <CardHeader skin={currentSkin}>
+                  <div className="flex items-center gap-2">
+                    <Sparkles className="w-5 h-5" />
+                    <CardTitle skin={currentSkin}>Loading States</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent skin={currentSkin} className="space-y-4">
+                  <div className="space-y-3">
+                    <div className="space-y-2">
+                      <Skeleton skin={currentSkin} className="h-4 w-full" />
+                      <Skeleton skin={currentSkin} className="h-4 w-3/4" />
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Skeleton skin={currentSkin} className="h-10 w-10 rounded-full" />
+                      <div className="space-y-2 flex-1">
+                        <Skeleton skin={currentSkin} className="h-3 w-1/3" />
+                        <Skeleton skin={currentSkin} className="h-3 w-1/2" />
+                      </div>
+                    </div>
+                    <Skeleton skin={currentSkin} className="h-32 w-full rounded-lg" />
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card skin={currentSkin}>
+                <CardHeader skin={currentSkin}>
+                  <div className="flex items-center gap-2">
+                    <Layers className="w-5 h-5" />
+                    <CardTitle skin={currentSkin}>Scrollable Areas</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent skin={currentSkin}>
+                  <ScrollArea skin={currentSkin} className="h-[200px] w-full rounded-lg border p-4">
+                    <div className="space-y-4">
+                      <h4 className="font-medium sticky top-0 bg-background pb-2">Recent Activity</h4>
+                      {[...Array(15)].map((_, i) => (
+                        <div key={i} className="flex items-start gap-3 pb-3 border-b last:border-0">
+                          <div className={`w-2 h-2 rounded-full mt-1.5 ${
+                            i % 3 === 0 ? 'bg-green-500' : i % 3 === 1 ? 'bg-blue-500' : 'bg-yellow-500'
+                          }`} />
+                          <div className="flex-1">
+                            <p className="text-sm font-medium">Activity #{i + 1}</p>
+                            <p className="text-xs text-muted-foreground">
+                              {i % 3 === 0 ? 'Deployment successful' : i % 3 === 1 ? 'New user registered' : 'File uploaded'}
+                            </p>
+                            <p className="text-xs text-muted-foreground mt-1">{i + 1} minutes ago</p>
+                          </div>
                         </div>
                       ))}
                     </div>
                   </ScrollArea>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+                </CardContent>
+              </Card>
 
-          <Card skin={currentSkin} className="p-6">
-            <CardHeader skin={currentSkin}>
-              <CardTitle skin={currentSkin}>Interactive Dialogs</CardTitle>
-              <CardDescription skin={currentSkin}>
-                Modal dialogs for important interactions
-              </CardDescription>
-            </CardHeader>
-            <CardContent skin={currentSkin}>
-              <Dialog>
-                <DialogTrigger asChild>
-                  <Button skin={currentSkin}>Open Dialog</Button>
-                </DialogTrigger>
-                <DialogContent skin={currentSkin}>
-                  <DialogHeader skin={currentSkin}>
-                    <DialogTitle skin={currentSkin}>Are you sure?</DialogTitle>
-                    <DialogDescription skin={currentSkin}>
-                      This action cannot be undone. This will permanently delete your account
-                      and remove your data from our servers.
-                    </DialogDescription>
-                  </DialogHeader>
-                  <DialogFooter skin={currentSkin}>
-                    <DialogClose asChild>
-                      <Button skin={currentSkin} variant="outline">Cancel</Button>
-                    </DialogClose>
-                    <Button skin={currentSkin}>Continue</Button>
-                  </DialogFooter>
-                </DialogContent>
-              </Dialog>
-            </CardContent>
-          </Card>
+              <Card skin={currentSkin}>
+                <CardHeader skin={currentSkin}>
+                  <div className="flex items-center gap-2">
+                    <Heart className="w-5 h-5" />
+                    <CardTitle skin={currentSkin}>Feedback</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent skin={currentSkin} className="space-y-4">
+                  <div className="text-center space-y-4">
+                    <div className="flex justify-center gap-2">
+                      {[...Array(5)].map((_, i) => (
+                        <button
+                          key={i}
+                          className={`transition-all ${i < 4 ? 'scale-110' : 'scale-100'}`}
+                        >
+                          <Star className={`w-8 h-8 ${
+                            i < 4 
+                              ? 'fill-yellow-500 text-yellow-500' 
+                              : 'text-muted-foreground hover:text-yellow-500'
+                          }`} />
+                        </button>
+                      ))}
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      How would you rate your experience?
+                    </p>
+                    <Textarea 
+                      skin={currentSkin} 
+                      placeholder="Tell us more... (optional)"
+                      className="min-h-[80px]"
+                    />
+                    <Button skin={currentSkin} className="w-full">
+                      Submit Feedback
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Footer */}
+            <div className="text-center py-8 space-y-4">
+              <div className="flex items-center justify-center gap-2">
+                <Sparkles className={`w-5 h-5 ${currentSkin === 'neobrutalism' ? 'text-pink-600' : 'text-purple-600'}`} />
+                <h3 className="text-lg font-semibold">Ready to build something amazing?</h3>
+                <Sparkles className={`w-5 h-5 ${currentSkin === 'neobrutalism' ? 'text-purple-600' : 'text-purple-600'}`} />
+              </div>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Orchid Design System provides everything you need to create beautiful, accessible, and consistent user interfaces.
+              </p>
+              <div className="flex items-center justify-center gap-4">
+                <Button skin={currentSkin} size="lg">
+                  <Code2 className="w-4 h-4 mr-2" />
+                  Get Started
+                </Button>
+                <Button skin={currentSkin} variant="outline" size="lg">
+                  View Documentation
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
     </TooltipProvider>
   );
 }

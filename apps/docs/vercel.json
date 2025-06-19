@@ -1,6 +1,0 @@
-{
-  "buildCommand": "cd ../.. && npm install && npm run build",
-  "outputDirectory": "dist",
-  "installCommand": "echo 'Install handled in buildCommand'",
-  "framework": null
-}
