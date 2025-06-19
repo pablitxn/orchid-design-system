@@ -1,6 +1,0 @@
-/* Tailwind CSS base import */
-@import "tailwindcss";
-
-/* Import skin styles - these already include Tailwind imports but we need them for the custom properties */
-@import "../src/assets/styles/shadcn.css";
-@import "../src/assets/styles/neobrutalism.css";

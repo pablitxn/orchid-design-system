@@ -37,7 +37,7 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '@orchid-design-system/skins';
+} from '../../ui';
 import { DataTable } from './components/data-table';
 import '@orchid-design-system/skins/styles/shadcn.css';
 import '@orchid-design-system/skins/styles/neobrutalism.css';

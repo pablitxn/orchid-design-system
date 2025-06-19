@@ -12,7 +12,7 @@ npm install
 npm run dev
 
 # Start Storybook
-npm run storybook
+npm run docs
 ```
 
 ## 📦 Packages

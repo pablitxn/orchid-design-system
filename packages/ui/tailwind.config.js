@@ -3,46 +3,45 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/@orchid-design-system/ui/src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       colors: {
         // Common color mappings that work with both ui
-        border: "rgb(var(--border))",
-        input: "rgb(var(--input))",
-        ring: "rgb(var(--ring))",
-        background: "rgb(var(--background))",
-        foreground: "rgb(var(--foreground))",
+        border: "rgb(var(--border) / <alpha-value>)",
+        input: "rgb(var(--input) / <alpha-value>)",
+        ring: "rgb(var(--ring) / <alpha-value>)",
+        background: "rgb(var(--background) / <alpha-value>)",
+        foreground: "rgb(var(--foreground) / <alpha-value>)",
         
         // Shadcn-specific colors (using HSL)
         primary: {
-          DEFAULT: "rgb(var(--primary))",
-          foreground: "rgb(var(--primary-foreground))",
+          DEFAULT: "hsl(var(--primary) / <alpha-value>)",
+          foreground: "hsl(var(--primary-foreground) / <alpha-value>)",
         },
         secondary: {
-          DEFAULT: "rgb(var(--secondary))",
-          foreground: "rgb(var(--secondary-foreground))",
+          DEFAULT: "hsl(var(--secondary) / <alpha-value>)",
+          foreground: "hsl(var(--secondary-foreground) / <alpha-value>)",
         },
         destructive: {
-          DEFAULT: "rgb(var(--destructive))",
-          foreground: "rgb(var(--destructive-foreground))",
+          DEFAULT: "hsl(var(--destructive) / <alpha-value>)",
+          foreground: "hsl(var(--destructive-foreground) / <alpha-value>)",
         },
         muted: {
-          DEFAULT: "rgb(var(--muted))",
-          foreground: "rgb(var(--muted-foreground))",
+          DEFAULT: "hsl(var(--muted) / <alpha-value>)",
+          foreground: "hsl(var(--muted-foreground) / <alpha-value>)",
         },
         accent: {
-          DEFAULT: "rgb(var(--accent))",
-          foreground: "rgb(var(--accent-foreground))",
+          DEFAULT: "hsl(var(--accent) / <alpha-value>)",
+          foreground: "hsl(var(--accent-foreground) / <alpha-value>)",
         },
         popover: {
-          DEFAULT: "rgb(var(--popover))",
-          foreground: "rgb(var(--popover-foreground))",
+          DEFAULT: "hsl(var(--popover) / <alpha-value>)",
+          foreground: "hsl(var(--popover-foreground) / <alpha-value>)",
         },
         card: {
-          DEFAULT: "rgb(var(--card))",
-          foreground: "rgb(var(--card-foreground))",
+          DEFAULT: "hsl(var(--card) / <alpha-value>)",
+          foreground: "hsl(var(--card-foreground) / <alpha-value>)",
         },
         
         // Neobrutalism-specific colors (using custom properties)

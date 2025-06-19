@@ -8,7 +8,7 @@ import {
   type WithSkinProps,
   DEFAULT_SKIN,
   SKINS,
-} from '@orchid-design-system/skins';
+} from '@orchid-design-system/ui';
 
 interface DataTableProps<T = any> extends WithSkinProps {
   data: T[];

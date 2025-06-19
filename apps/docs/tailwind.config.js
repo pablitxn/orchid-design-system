@@ -1,21 +1,23 @@
+import { join } from 'path';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/@orchid-design-system/ui/src/**/*.{js,ts,jsx,tsx}",
+    "../../packages/*/src/**/*.{js,ts,jsx,tsx}",
+    "../../packages/ui/src/components/**/*.stories.{js,jsx,ts,tsx}",
+    "../../packages/ui/src/assets/styles/*.css",
+    "./.docs/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
     extend: {
       colors: {
-        // Common color mappings that work with both ui
         border: "rgb(var(--border))",
         input: "rgb(var(--input))",
         ring: "rgb(var(--ring))",
         background: "rgb(var(--background))",
         foreground: "rgb(var(--foreground))",
-        
-        // Shadcn-specific colors (using HSL)
         primary: {
           DEFAULT: "rgb(var(--primary))",
           foreground: "rgb(var(--primary-foreground))",
