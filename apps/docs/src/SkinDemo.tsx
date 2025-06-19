@@ -1,5 +1,32 @@
-import { useState } from 'react';
-import { AlertCircle, Info } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { 
+  AlertCircle, 
+  Info, 
+  Sun, 
+  Moon, 
+  Sparkles, 
+  User, 
+  ShoppingCart, 
+  Heart, 
+  Star, 
+  MessageSquare,
+  Zap,
+  Package,
+  CreditCard,
+  Bell,
+  Search,
+  Menu,
+  ArrowRight,
+  Check,
+  X,
+  ChevronRight,
+  Layers,
+  Palette,
+  Code2,
+  Gauge,
+  Shield,
+  Accessibility
+} from 'lucide-react';
 import {
   Button,
   Card,
@@ -67,6 +94,11 @@ import {
 
 export function SkinDemo() {
   const [currentSkin, setCurrentSkin] = useState<'shadcn' | 'neobrutalism'>('shadcn');
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [selectedTab, setSelectedTab] = useState('overview');
+  const [sliderValue, setSliderValue] = useState([65]);
+  const [progressValue, setProgressValue] = useState(0);
+  const [selectedFramework, setSelectedFramework] = useState('react');
   const [messages, setMessages] = useState([
     {
       id: 1,
@@ -101,8 +133,20 @@ export function SkinDemo() {
   ]);
 
   const toggleSkin = () => {
-    setCurrentSkin(currentSkin === 'shadcn' ? 'neobrutalism' : 'shadcn');
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentSkin(currentSkin === 'shadcn' ? 'neobrutalism' : 'shadcn');
+      setIsTransitioning(false);
+    }, 150);
   };
+
+  // Simulate progress animation
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setProgressValue(prev => prev >= 100 ? 0 : prev + 1);
+    }, 50);
+    return () => clearInterval(timer);
+  }, []);
 
   const handleSendMessage = (content: string) => {
     const newMessage = {
@@ -120,160 +164,431 @@ export function SkinDemo() {
 
   return (
     <TooltipProvider>
-      <div
-        className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900 p-8">
-        <div className="max-w-6xl  mx-auto space-y-8">
-          <Card skin={currentSkin} className="p-4 text-center">
-            <CardHeader skin={currentSkin}>
-              <CardTitle skin={currentSkin} className="text-3xl font-bold">
-                Orchid Design System - Skin Demo
-              </CardTitle>
-              <CardDescription skin={currentSkin}>
-                Toggle between shadcn and neobrutalism themes
-              </CardDescription>
-            </CardHeader>
-            <CardContent skin={currentSkin}>
-              <div className="flex items-center justify-center gap-4">
-                <Label skin={currentSkin} htmlFor="skin-switch" className="text-lg">
-                  Current theme: <span className="font-bold">{currentSkin}</span>
-                </Label>
+      <div className={`min-h-screen transition-all duration-500 ${
+        currentSkin === 'shadcn' 
+          ? 'bg-gradient-to-br from-slate-50 via-slate-100 to-slate-200 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800'
+          : 'bg-gradient-to-br from-yellow-50 via-orange-50 to-pink-50'
+      }`}>
+        <div className="max-w-7xl mx-auto">
+          {/* Hero Section */}
+          <div className="relative overflow-hidden px-8 pt-8 pb-4">
+            <div className={`absolute inset-0 ${isTransitioning ? 'animate-pulse' : ''}`}>
+              <div className="absolute -top-10 -right-10 w-72 h-72 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full opacity-20 blur-3xl" />
+              <div className="absolute -bottom-10 -left-10 w-96 h-96 bg-gradient-to-tr from-blue-400 to-cyan-400 rounded-full opacity-20 blur-3xl" />
+            </div>
+            
+            <div className="relative z-10 text-center mb-12">
+              <div className="flex justify-center items-center gap-3 mb-6">
+                <Sparkles className={`w-8 h-8 ${currentSkin === 'neobrutalism' ? 'text-pink-600' : 'text-purple-600'}`} />
+                <h1 className={`text-5xl font-bold tracking-tight ${
+                  currentSkin === 'shadcn' 
+                    ? 'bg-gradient-to-r from-slate-900 to-slate-700 dark:from-slate-100 dark:to-slate-300' 
+                    : 'bg-gradient-to-r from-pink-600 to-purple-600'
+                } bg-clip-text text-transparent`}>
+                  Orchid Design System
+                </h1>
+                <Sparkles className={`w-8 h-8 ${currentSkin === 'neobrutalism' ? 'text-purple-600' : 'text-purple-600'}`} />
+              </div>
+              <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+                Experience the beauty of adaptive design with two distinct visual languages
+              </p>
+              
+              {/* Enhanced Theme Switcher */}
+              <div className="flex items-center justify-center gap-6 p-6 rounded-2xl bg-background/50 backdrop-blur-sm border max-w-md mx-auto">
+                <div className="flex items-center gap-3">
+                  <Sun className={`w-5 h-5 ${currentSkin === 'shadcn' ? 'text-yellow-500' : 'text-muted-foreground'}`} />
+                  <span className={`font-medium ${currentSkin === 'shadcn' ? 'text-foreground' : 'text-muted-foreground'}`}>
+                    Minimal
+                  </span>
+                </div>
                 <Switch
-                  id="skin-switch"
                   skin={currentSkin}
                   checked={currentSkin === 'neobrutalism'}
                   onCheckedChange={toggleSkin}
+                  className="data-[state=checked]:bg-pink-600"
                 />
-                <Button skin={currentSkin} onClick={toggleSkin} variant="outline">
-                  Switch to {currentSkin === 'shadcn' ? 'Neobrutalism' : 'Shadcn'}
-                </Button>
+                <div className="flex items-center gap-3">
+                  <span className={`font-medium ${currentSkin === 'neobrutalism' ? 'text-foreground' : 'text-muted-foreground'}`}>
+                    Playful
+                  </span>
+                  <Zap className={`w-5 h-5 ${currentSkin === 'neobrutalism' ? 'text-pink-500' : 'text-muted-foreground'}`} />
+                </div>
               </div>
-            </CardContent>
-          </Card>
-
-          <Card skin={currentSkin} className="p-6">
-            <CardHeader skin={currentSkin}>
-              <CardTitle skin={currentSkin} className="text-2xl">
-                Interactive Chat Component
-              </CardTitle>
-              <CardDescription skin={currentSkin}>
-                A fully functional chat interface that adapts to the current theme
-              </CardDescription>
-            </CardHeader>
-            <CardContent skin={currentSkin}>
-              <div className="h-[500px] max-w-3xl mx-auto">
-                <Chat
-                  skin={currentSkin}
-                  messages={messages}
-                  onSendMessage={handleSendMessage}
-                  placeholder={currentSkin === 'shadcn' ? 'Type a message...' : 'Type something bold...'}
-                  sendButtonText="Send"
-                />
-              </div>
-            </CardContent>
-          </Card>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card skin={currentSkin} className="p-6">
-              <CardHeader skin={currentSkin}>
-                <CardTitle skin={currentSkin}>Buttons & Controls</CardTitle>
-                <CardDescription skin={currentSkin}>
-                  Various button styles and interactive controls
-                </CardDescription>
-              </CardHeader>
-              <CardContent skin={currentSkin} className="space-y-6">
-                <div className="flex flex-wrap gap-3">
-                  <Button skin={currentSkin}>Default</Button>
-                  <Button skin={currentSkin} variant="secondary">Secondary</Button>
-                  <Button skin={currentSkin} variant="destructive">Destructive</Button>
-                  <Button skin={currentSkin} variant="outline">Outline</Button>
-                  <Button skin={currentSkin} variant="ghost">Ghost</Button>
-                  <Button skin={currentSkin} variant="link">Link</Button>
-                </div>
-
-                <div className="flex items-center gap-4">
-                  <Badge skin={currentSkin}>Default</Badge>
-                  {/* @ts-ignore */}
-                  <Badge skin={currentSkin} variant="secondary">Secondary</Badge>
-                  {/* @ts-ignore */}
-                  <Badge skin={currentSkin} variant="destructive">Destructive</Badge>
-                  {/* @ts-ignore */}
-                  <Badge skin={currentSkin} variant="outline">Outline</Badge>
-                </div>
-
-                <div className="space-y-2">
-                  <Label skin={currentSkin}>Volume Control</Label>
-                  <Slider skin={currentSkin} defaultValue={[50]} max={100} step={1} />
-                </div>
-
-                <div className="space-y-2">
-                  <Label skin={currentSkin}>Loading Progress</Label>
-                  <Progress value={66} skin={currentSkin} />
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card skin={currentSkin} className="p-6">
-              <CardHeader skin={currentSkin}>
-                <CardTitle skin={currentSkin}>Form Inputs</CardTitle>
-                <CardDescription skin={currentSkin}>
-                  Text inputs and selection controls
-                </CardDescription>
-              </CardHeader>
-              <CardContent skin={currentSkin} className="space-y-4">
-                <div className="space-y-2">
-                  <Label skin={currentSkin} htmlFor="email">Email</Label>
-                  <Input skin={currentSkin} id="email" type="email" placeholder="email@example.com" />
-                </div>
-
-                <div className="space-y-2">
-                  <Label skin={currentSkin} htmlFor="message">Message</Label>
-                  <Textarea skin={currentSkin} id="message" placeholder="Type your message here..." />
-                </div>
-
-                <div className="space-y-2">
-                  <Label skin={currentSkin}>Select Framework</Label>
-                  <Select skin={currentSkin}>
-                    <SelectTrigger skin={currentSkin}>
-                      <SelectValue skin={currentSkin} placeholder="Choose a framework" />
-                    </SelectTrigger>
-                    <SelectContent skin={currentSkin}>
-                      <SelectItem skin={currentSkin} value="react">React</SelectItem>
-                      <SelectItem skin={currentSkin} value="vue">Vue</SelectItem>
-                      <SelectItem skin={currentSkin} value="angular">Angular</SelectItem>
-                      <SelectItem skin={currentSkin} value="svelte">Svelte</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div className="space-y-2">
-                  <Label skin={currentSkin}>Choose your plan</Label>
-                  <RadioGroup defaultValue="pro" skin={currentSkin}>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="free" id="free" skin={currentSkin} />
-                      <Label htmlFor="free">Free tier</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="pro" id="pro" skin={currentSkin} />
-                      <Label htmlFor="pro">Pro tier</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="enterprise" id="enterprise" skin={currentSkin} />
-                      <Label htmlFor="enterprise">Enterprise</Label>
-                    </div>
-                  </RadioGroup>
-                </div>
-              </CardContent>
-            </Card>
+            </div>
           </div>
 
-          <Card skin={currentSkin} className="p-6">
-            <CardHeader skin={currentSkin}>
-              <CardTitle skin={currentSkin}>Feedback & Information</CardTitle>
-              <CardDescription skin={currentSkin}>
-                Alerts, tooltips, and user feedback components
-              </CardDescription>
-            </CardHeader>
-            <CardContent skin={currentSkin} className="space-y-4">
+          {/* Feature Showcase Grid */}
+          <div className="px-8 py-4">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold mb-2">Component Showcase</h2>
+              <p className="text-muted-foreground">See how each component adapts to the selected theme</p>
+            </div>
+
+            {/* Interactive Demo Section */}
+            <div className="grid lg:grid-cols-3 gap-6 mb-8">
+              {/* Chat Demo */}
+              <Card skin={currentSkin} className="lg:col-span-2 overflow-hidden">
+                <CardHeader skin={currentSkin} className="pb-4">
+                  <div className="flex items-center gap-2">
+                    <MessageSquare className="w-5 h-5" />
+                    <CardTitle skin={currentSkin}>Live Chat Interface</CardTitle>
+                  </div>
+                  <CardDescription skin={currentSkin}>
+                    Real-time messaging with theme-aware styling
+                  </CardDescription>
+                </CardHeader>
+                <CardContent skin={currentSkin} className="p-0">
+                  <div className="h-[400px]">
+                    <Chat
+                      skin={currentSkin}
+                      messages={messages}
+                      onSendMessage={handleSendMessage}
+                      placeholder={currentSkin === 'shadcn' ? 'Type a message...' : 'Type something fun! 🎨'}
+                      sendButtonText="Send"
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Quick Actions */}
+              <div className="space-y-6">
+                <Card skin={currentSkin} className="overflow-hidden">
+                  <CardHeader skin={currentSkin} className="pb-4">
+                    <div className="flex items-center gap-2">
+                      <Gauge className="w-5 h-5" />
+                      <CardTitle skin={currentSkin}>Quick Stats</CardTitle>
+                    </div>
+                  </CardHeader>
+                  <CardContent skin={currentSkin} className="space-y-4">
+                    <div>
+                      <div className="flex justify-between mb-2">
+                        <span className="text-sm">Design Progress</span>
+                        <span className="text-sm font-bold">{Math.round(progressValue)}%</span>
+                      </div>
+                      <Progress value={progressValue} skin={currentSkin} className="h-2" />
+                    </div>
+                    <div>
+                      <div className="flex justify-between mb-2">
+                        <span className="text-sm">User Satisfaction</span>
+                        <span className="text-sm font-bold">{sliderValue[0]}%</span>
+                      </div>
+                      <Slider 
+                        skin={currentSkin} 
+                        value={sliderValue} 
+                        onValueChange={setSliderValue}
+                        max={100} 
+                        step={1} 
+                        className="py-2"
+                      />
+                    </div>
+                    <div className="pt-2 space-y-2">
+                      <Button skin={currentSkin} className="w-full" size="sm">
+                        <Package className="w-4 h-4 mr-2" />
+                        Deploy Changes
+                      </Button>
+                      <Button skin={currentSkin} variant="outline" className="w-full" size="sm">
+                        <Code2 className="w-4 h-4 mr-2" />
+                        View Source
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Feature Highlights */}
+                <Card skin={currentSkin}>
+                  <CardContent skin={currentSkin} className="pt-6">
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-3">
+                        <div className={`p-2 rounded-lg ${
+                          currentSkin === 'shadcn' ? 'bg-green-100 dark:bg-green-900' : 'bg-green-200 border-2 border-black'
+                        }`}>
+                          <Accessibility className="w-4 h-4 text-green-700 dark:text-green-300" />
+                        </div>
+                        <div>
+                          <p className="font-medium text-sm">Accessible</p>
+                          <p className="text-xs text-muted-foreground">WCAG compliant</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <div className={`p-2 rounded-lg ${
+                          currentSkin === 'shadcn' ? 'bg-blue-100 dark:bg-blue-900' : 'bg-blue-200 border-2 border-black'
+                        }`}>
+                          <Shield className="w-4 h-4 text-blue-700 dark:text-blue-300" />
+                        </div>
+                        <div>
+                          <p className="font-medium text-sm">Type Safe</p>
+                          <p className="text-xs text-muted-foreground">Full TypeScript</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <div className={`p-2 rounded-lg ${
+                          currentSkin === 'shadcn' ? 'bg-purple-100 dark:bg-purple-900' : 'bg-purple-200 border-2 border-black'
+                        }`}>
+                          <Palette className="w-4 h-4 text-purple-700 dark:text-purple-300" />
+                        </div>
+                        <div>
+                          <p className="font-medium text-sm">Themeable</p>
+                          <p className="text-xs text-muted-foreground">Multiple skins</p>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+
+            {/* Component Gallery */}
+            <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+              {/* E-commerce Card Example */}
+              <Card skin={currentSkin} className="overflow-hidden">
+                <div className={`h-48 bg-gradient-to-br ${
+                  currentSkin === 'shadcn' 
+                    ? 'from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800' 
+                    : 'from-pink-200 to-purple-200 border-b-4 border-black'
+                } flex items-center justify-center`}>
+                  <Package className="w-16 h-16 text-muted-foreground/50" />
+                </div>
+                <CardContent skin={currentSkin} className="pt-4">
+                  <div className="flex justify-between items-start mb-2">
+                    <div>
+                      <h3 className="font-semibold">Premium Package</h3>
+                      <p className="text-sm text-muted-foreground">Everything you need</p>
+                    </div>
+                    {/* @ts-ignore */}
+                    <Badge skin={currentSkin} variant="secondary">
+                      <Star className="w-3 h-3 mr-1" />
+                      Popular
+                    </Badge>
+                  </div>
+                  <div className="flex items-baseline gap-1 mb-4">
+                    <span className="text-3xl font-bold">$99</span>
+                    <span className="text-muted-foreground">/month</span>
+                  </div>
+                  <div className="space-y-2 mb-4">
+                    <div className="flex items-center gap-2 text-sm">
+                      <Check className="w-4 h-4 text-green-600" />
+                      <span>Unlimited projects</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm">
+                      <Check className="w-4 h-4 text-green-600" />
+                      <span>Priority support</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm">
+                      <Check className="w-4 h-4 text-green-600" />
+                      <span>Advanced analytics</span>
+                    </div>
+                  </div>
+                  <Button skin={currentSkin} className="w-full">
+                    <CreditCard className="w-4 h-4 mr-2" />
+                    Subscribe Now
+                  </Button>
+                </CardContent>
+              </Card>
+
+              {/* Interactive Controls */}
+              <Card skin={currentSkin}>
+                <CardHeader skin={currentSkin}>
+                  <div className="flex items-center gap-2">
+                    <Layers className="w-5 h-5" />
+                    <CardTitle skin={currentSkin}>UI Controls</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent skin={currentSkin} className="space-y-4">
+                  <div className="space-y-3">
+                    <Label skin={currentSkin}>Button Variants</Label>
+                    <div className="grid grid-cols-2 gap-2">
+                      <Button skin={currentSkin} size="sm">Primary</Button>
+                      <Button skin={currentSkin} size="sm" variant="secondary">Secondary</Button>
+                      <Button skin={currentSkin} size="sm" variant="outline">Outline</Button>
+                      <Button skin={currentSkin} size="sm" variant="ghost">Ghost</Button>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <Label skin={currentSkin}>Status Badges</Label>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge skin={currentSkin}>New</Badge>
+                      {/* @ts-ignore */}
+                      <Badge skin={currentSkin} variant="secondary">Updated</Badge>
+                      {/* @ts-ignore */}
+                      <Badge skin={currentSkin} variant="destructive">Hot</Badge>
+                      {/* @ts-ignore */}
+                      <Badge skin={currentSkin} variant="outline">Beta</Badge>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label skin={currentSkin}>Notification Settings</Label>
+                    <div className="flex items-center justify-between p-3 rounded-lg border">
+                      <div className="flex items-center gap-3">
+                        <Bell className="w-4 h-4" />
+                        <span className="text-sm">Push Notifications</span>
+                      </div>
+                      <Switch skin={currentSkin} defaultChecked />
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* User Profile Card */}
+              <Card skin={currentSkin}>
+                <CardContent skin={currentSkin} className="pt-6">
+                  <div className="text-center mb-4">
+                    <Avatar skin={currentSkin} className="w-20 h-20 mx-auto mb-3">
+                      <AvatarImage src="https://github.com/shadcn.png" />
+                      <AvatarFallback>JD</AvatarFallback>
+                    </Avatar>
+                    <h3 className="font-semibold">Jane Doe</h3>
+                    <p className="text-sm text-muted-foreground">Product Designer</p>
+                  </div>
+                  
+                  <div className="space-y-3 mb-4">
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-muted-foreground">Projects</span>
+                      <span className="font-medium">24</span>
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-muted-foreground">Team Size</span>
+                      <span className="font-medium">8 members</span>
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-muted-foreground">Rating</span>
+                      <div className="flex items-center gap-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className={`w-3 h-3 ${
+                            i < 4 ? 'fill-yellow-500 text-yellow-500' : 'text-muted-foreground'
+                          }`} />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-2 gap-2">
+                    <Button skin={currentSkin} variant="outline" size="sm">
+                      <User className="w-4 h-4 mr-1" />
+                      Profile
+                    </Button>
+                    <Button skin={currentSkin} size="sm">
+                      <MessageSquare className="w-4 h-4 mr-1" />
+                      Message
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Interactive Form Example */}
+            <Card skin={currentSkin} className="mb-8">
+              <CardHeader skin={currentSkin}>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <CardTitle skin={currentSkin} className="text-2xl">Contact Support</CardTitle>
+                    <CardDescription skin={currentSkin}>
+                      Experience our form components in action
+                    </CardDescription>
+                  </div>
+                  <div className={`p-3 rounded-lg ${
+                    currentSkin === 'shadcn' 
+                      ? 'bg-primary/10' 
+                      : 'bg-yellow-200 border-2 border-black'
+                  }`}>
+                    <MessageSquare className="w-6 h-6" />
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent skin={currentSkin}>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label skin={currentSkin}>First Name</Label>
+                        <Input skin={currentSkin} placeholder="Jane" />
+                      </div>
+                      <div className="space-y-2">
+                        <Label skin={currentSkin}>Last Name</Label>
+                        <Input skin={currentSkin} placeholder="Doe" />
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <Label skin={currentSkin}>Email</Label>
+                      <div className="relative">
+                        <Input skin={currentSkin} type="email" placeholder="jane@example.com" className="pl-8" />
+                        <User className="w-4 h-4 absolute left-2.5 top-3 text-muted-foreground" />
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <Label skin={currentSkin}>Department</Label>
+                      <Select skin={currentSkin} value={selectedFramework} onValueChange={setSelectedFramework}>
+                        <SelectTrigger skin={currentSkin}>
+                          <SelectValue skin={currentSkin} />
+                        </SelectTrigger>
+                        <SelectContent skin={currentSkin}>
+                          <SelectItem skin={currentSkin} value="technical">Technical Support</SelectItem>
+                          <SelectItem skin={currentSkin} value="billing">Billing</SelectItem>
+                          <SelectItem skin={currentSkin} value="general">General Inquiry</SelectItem>
+                          <SelectItem skin={currentSkin} value="enterprise">Enterprise</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <div className="space-y-2">
+                      <Label skin={currentSkin}>Priority Level</Label>
+                      <RadioGroup defaultValue="normal" skin={currentSkin}>
+                        <div className="grid grid-cols-3 gap-3">
+                          <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="low" id="low" skin={currentSkin} />
+                            <Label htmlFor="low" className="text-sm">Low</Label>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="normal" id="normal" skin={currentSkin} />
+                            <Label htmlFor="normal" className="text-sm">Normal</Label>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="high" id="high" skin={currentSkin} />
+                            <Label htmlFor="high" className="text-sm">High</Label>
+                          </div>
+                        </div>
+                      </RadioGroup>
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <Label skin={currentSkin}>Message</Label>
+                      <Textarea 
+                        skin={currentSkin} 
+                        placeholder="Describe your issue or question..." 
+                        className="min-h-[120px]"
+                      />
+                    </div>
+                    
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-2">
+                        <Switch skin={currentSkin} id="updates" />
+                        <Label htmlFor="updates" className="text-sm">Email me updates</Label>
+                      </div>
+                      <Button skin={currentSkin}>
+                        Send Message
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Notifications & Feedback */}
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
+              <Card skin={currentSkin}>
+                <CardHeader skin={currentSkin}>
+                  <div className="flex items-center gap-2">
+                    <Bell className="w-5 h-5" />
+                    <CardTitle skin={currentSkin}>Notifications</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent skin={currentSkin} className="space-y-3">
               <Alert skin={currentSkin}>
                 <Info className="h-4 w-4" />
                 <div className="flex-1">
@@ -335,10 +650,11 @@ export function SkinDemo() {
               </div>
             </CardContent>
           </Card>
+        </div>
 
-          <Card skin={currentSkin} className="p-6">
-            <CardHeader skin={currentSkin}>
-              <CardTitle skin={currentSkin}>Content Organization</CardTitle>
+        <Card skin={currentSkin} className="p-6">
+          <CardHeader skin={currentSkin}>
+            <CardTitle skin={currentSkin}>Content Organization</CardTitle>
               <CardDescription skin={currentSkin}>
                 Tabs, accordions, and content layouts
               </CardDescription>
@@ -520,9 +836,9 @@ export function SkinDemo() {
               </Dialog>
             </CardContent>
           </Card>
-
         </div>
       </div>
+    </div>
     </TooltipProvider>
   );
 }
