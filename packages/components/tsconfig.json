@@ -1,19 +1,11 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "files": [],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"]
     }
   },
-  "include": [
-    ".storybook/**/*"
-  ],
-  "exclude": [
-    "node_modules"
-  ],
   "references": [
     {
       "path": "./tsconfig.app.json"
