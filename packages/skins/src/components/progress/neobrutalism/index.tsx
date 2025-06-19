@@ -1,6 +1,6 @@
 "use client"
 
-import * as ProgressPrimitive from "@radix-ui/react-progress"
+import * as ProgressPrimitive from "@orchid-design-system/ui-core/progress"
 
 import * as React from "react"
 

@@ -1,6 +1,6 @@
 "use client"
 
-import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu"
+import * as DropdownMenuPrimitive from "@orchid-design-system/ui-core/dropdown-menu"
 import {Check, ChevronRight, Circle} from "lucide-react"
 
 import * as React from "react"

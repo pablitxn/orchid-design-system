@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
-const Index = React.forwardRef<HTMLTextAreaElement, React.ComponentProps<'textarea'>>(
+const Textarea = React.forwardRef<HTMLTextAreaElement, React.ComponentProps<'textarea'>>(
   ({ className, ...props }, ref) => {
     return (
       <textarea
@@ -16,6 +16,6 @@ const Index = React.forwardRef<HTMLTextAreaElement, React.ComponentProps<'textar
     );
   },
 );
-Index.displayName = 'Index';
+Textarea.displayName = 'Textarea';
 
-export { Index };
+export { Textarea };

@@ -27,7 +27,6 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@orchid-design-system/skins": "^1.0.0",
     "@orchid-design-system/ui-core": "^1.0.0",
     "@radix-ui/colors": "^3.0.0",
     "@radix-ui/react-accordion": "^1.2.11",

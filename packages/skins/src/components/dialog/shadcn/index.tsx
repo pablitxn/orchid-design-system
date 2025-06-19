@@ -6,7 +6,7 @@ import { X } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 
-const Index = DialogPrimitive.Root;
+const Dialog = DialogPrimitive.Root;
 
 const DialogTrigger = DialogPrimitive.Trigger;
 
@@ -92,7 +92,7 @@ const DialogDescription = React.forwardRef<
 DialogDescription.displayName = DialogPrimitive.Description.displayName;
 
 export {
-  Index,
+  Dialog,
   DialogPortal,
   DialogOverlay,
   DialogTrigger,

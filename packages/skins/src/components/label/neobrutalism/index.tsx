@@ -1,6 +1,6 @@
 "use client"
 
-import * as LabelPrimitive from "@radix-ui/react-label"
+import * as LabelPrimitive from "@orchid-design-system/ui-core/label"
 
 import * as React from "react"
 
