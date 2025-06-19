@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react-swc';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import { visualizer } from 'rollup-plugin-visualizer';
 import { resolve } from 'path';
+import { copyFileSync } from 'fs';
 
 export default defineConfig({
   plugins: [
@@ -11,6 +12,34 @@ export default defineConfig({
     visualizer({
       filename: './dist/stats.html',
     }),
+    {
+      name: 'copy-css-files',
+      closeBundle() {
+        // Copy CSS files after build
+        try {
+          // Copy original CSS files
+          copyFileSync(
+            resolve(__dirname, 'src/assets/styles/shadcn.css'),
+            resolve(__dirname, 'dist/shadcn.css')
+          );
+          copyFileSync(
+            resolve(__dirname, 'src/assets/styles/neobrutalism.css'),
+            resolve(__dirname, 'dist/neobrutalism.css')
+          );
+          // Copy scoped CSS files
+          copyFileSync(
+            resolve(__dirname, 'src/assets/styles/shadcn-scoped.css'),
+            resolve(__dirname, 'dist/shadcn-scoped.css')
+          );
+          copyFileSync(
+            resolve(__dirname, 'src/assets/styles/neobrutalism-scoped.css'),
+            resolve(__dirname, 'dist/neobrutalism-scoped.css')
+          );
+        } catch (error) {
+          console.error('Failed to copy CSS files:', error);
+        }
+      }
+    }
   ],
   css: {
     postcss: './postcss.config.mjs'
@@ -29,16 +58,10 @@ export default defineConfig({
           react: 'React',
           'react-dom': 'ReactDOM',
         },
-        assetFileNames: (assetInfo) => {
-          if (assetInfo.name === 'style.css') return 'style.css';
-          return assetInfo.name;
-        },
       },
     },
-    // Ensure CSS is extracted
-    cssCodeSplit: false,
-    // Extract CSS to a separate file
-    cssTarget: 'chrome61',
+    // Disable CSS extraction since we're copying files directly
+    cssCodeSplit: true,
   },
   test: {
     environment: 'jsdom',

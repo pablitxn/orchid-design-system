@@ -4,14 +4,17 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "style": "./dist/style.css",
+  "style": "./dist/shadcn.css",
   "exports": {
     ".": {
       "import": "./dist/index.mjs",
       "require": "./dist/index.js",
       "types": "./dist/index.d.ts"
     },
-    "./styles.css": "./dist/style.css"
+    "./styles/shadcn.css": "./dist/shadcn.css",
+    "./styles/neobrutalism.css": "./dist/neobrutalism.css",
+    "./styles/shadcn-scoped.css": "./dist/shadcn-scoped.css",
+    "./styles/neobrutalism-scoped.css": "./dist/neobrutalism-scoped.css"
   },
   "files": [
     "dist",

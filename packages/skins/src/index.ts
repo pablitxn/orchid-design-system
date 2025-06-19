@@ -1,5 +1,8 @@
-// Import styles - this ensures they're included in the build
-import './assets/styles/shadcn.css';
+// NOTE: CSS files should be imported by the consumer based on the skin they want to use
+// This prevents style conflicts between different skins
+// Example usage:
+// import '@orchid/skins/styles/shadcn.css' // for shadcn skin
+// import '@orchid/skins/styles/neobrutalism.css' // for neobrutalism skin
 
 // Export all components
 export * from './components/accordion';
