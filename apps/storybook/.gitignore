@@ -14,3 +14,4 @@ node_modules/
 dist/
 tsconfig.build.json
 tsconfig.stories.tsbuildinfo
+storybook-static/

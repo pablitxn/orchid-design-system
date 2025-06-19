@@ -21,8 +21,17 @@ const config = {
   async viteFinal(config) {
     const { resolve } = await import('path');
     const { fileURLToPath } = await import('url');
+    const tailwindcss = await import('@tailwindcss/vite');
     const __dirname = fileURLToPath(new URL('.', import.meta.url));
     const projectRoot = resolve(__dirname, '../../../');
+    
+    // Add Tailwind CSS plugin
+    config.plugins = [
+      ...config.plugins,
+      tailwindcss.default({
+        configPath: resolve(__dirname, '../tailwind.config.js'),
+      })
+    ];
     
     // Ensure proper module resolution for monorepo
     config.resolve = {
@@ -36,6 +45,10 @@ const config = {
         {
           find: '@orchid-design-system/ui-core',
           replacement: resolve(projectRoot, 'packages/ui-core/src/index.ts'),
+        },
+        {
+          find: '@orchid-design-system/skins/styles',
+          replacement: resolve(projectRoot, 'packages/skins/src/assets/styles'),
         },
         {
           find: '@orchid-design-system/skins',

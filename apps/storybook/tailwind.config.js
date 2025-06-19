@@ -6,6 +6,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
     "../../packages/*/src/**/*.{js,ts,jsx,tsx}",
+    "../../packages/skins/src/components/**/*.stories.{js,jsx,ts,tsx}",
     "../../packages/skins/src/assets/styles/*.css",
     "./.storybook/**/*.{js,jsx,ts,tsx}",
   ],

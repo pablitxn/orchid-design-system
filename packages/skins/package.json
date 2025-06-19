@@ -10,8 +10,10 @@
       "require": "./src/index.ts",
       "types": "./src/index.ts"
     },
-    "./styles/shadcn.css": "./src/styles/shadcn.css",
-    "./styles/neobrutalism.css": "./src/styles/neobrutalism.css"
+    "./styles/shadcn.css": "./src/assets/styles/shadcn.css",
+    "./styles/neobrutalism.css": "./src/assets/styles/neobrutalism.css",
+    "./styles/shadcn-scoped.css": "./src/assets/styles/shadcn-scoped.css",
+    "./styles/neobrutalism-scoped.css": "./src/assets/styles/neobrutalism-scoped.css"
   },
   "files": [
     "dist",

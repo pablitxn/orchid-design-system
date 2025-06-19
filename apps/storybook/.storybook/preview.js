@@ -1,7 +1,6 @@
 import React from 'react';
-// Import global styles that include everything
-import '../src/assets/styles/shadcn.css';
-import '../src/assets/styles/neobrutalism.css';
+// Import Storybook styles
+import './storybook.css';
 
 /** @type { import('@storybook/react').Preview } */
 const preview = {

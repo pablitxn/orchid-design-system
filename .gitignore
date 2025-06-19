@@ -12,3 +12,4 @@ node_modules/
 tsconfig.build.json
 tsconfig.stories.tsbuildinfo
 .turbo/
+**/storybook-static/**

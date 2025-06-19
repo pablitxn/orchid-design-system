@@ -10,8 +10,9 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, '../src'),
-      '@/lib/utils': path.resolve(__dirname, '../src/lib/utils')
+      '@': path.resolve(__dirname, './src'),
+      '@/lib/utils': path.resolve(__dirname, './src/lib/utils'),
+      '@orchid-design-system/skins/styles': path.resolve(__dirname, '../../packages/skins/src/assets/styles')
     }
   }
 })
