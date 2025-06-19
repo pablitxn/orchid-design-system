@@ -1,7 +1,7 @@
 import * as ShadcnAvatar from './shadcn';
 import * as NeobrutalismAvatar from './neobrutalism';
 import { getSkinComponent } from '../../lib/getSkinComponent';
-import { type SkinType, type WithSkinProps } from '../../lib/types';
+import { type WithSkinProps } from '../../lib/utils';
 import { SKINS, DEFAULT_SKIN } from '../../lib/constants';
 
 const avatarComponents = {
