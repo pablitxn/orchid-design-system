@@ -5,7 +5,7 @@
   "tsx": true,
   "tailwind": {
     "config": "tailwind.config.js",
-    "css": "node_modules/@orchid-design-system/skins/src/assets/styles/neobrutalism.css",
+    "css": "./.storybook/storybook.css",
     "baseColor": "neutral",
     "cssVariables": true,
     "prefix": ""

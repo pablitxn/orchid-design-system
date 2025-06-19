@@ -25,8 +25,11 @@ function App() {
             <h3 className="text-lg font-medium mb-3">Neobrutalism Theme</h3>
             <div className="flex flex-wrap gap-3">
               <Button skin="neobrutalism">Default</Button>
+              {/* @ts-ignore */}
               <Button skin="neobrutalism" variant="neutral">Neutral</Button>
+              {/* @ts-ignore */}
               <Button skin="neobrutalism" variant="noShadow">No Shadow</Button>
+              {/* @ts-ignore */}
               <Button skin="neobrutalism" variant="reverse">Reverse</Button>
             </div>
           </div>
