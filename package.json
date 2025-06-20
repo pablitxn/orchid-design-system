@@ -14,7 +14,9 @@
     "type-check": "turbo run type-check",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "release": "turbo run build --filter=./packages/* && changeset publish"
+    "release": "turbo run build --filter=./packages/* && changeset publish",
+    "storybook": "turbo run storybook --filter=@orchid-design-system/docs",
+    "build-storybook": "turbo run build --filter=@orchid-design-system/ui && turbo run build-storybook --filter=@orchid-design-system/docs"
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.4",

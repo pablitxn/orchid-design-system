@@ -1,5 +1,5 @@
 {
-  "buildCommand": "cd ../.. && npm install && npm run build-storybook --workspace=@orchid-design-system/docs",
+  "buildCommand": "cd ../.. && npm install && npm run build --filter=@orchid-design-system/ui && npm run build-storybook --workspace=@orchid-design-system/docs",
   "outputDirectory": "storybook-static",
   "installCommand": "echo 'Install handled in buildCommand'",
   "framework": null
