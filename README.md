@@ -310,6 +310,8 @@ MIT © [Orchid Labs](https://github.com/orchid-labs-xyz)
 
 - [GitHub Repository](https://github.com/orchid-labs-xyz/orchid-design-system)
 - [Storybook Documentation](http://localhost:6006) (when running locally)
+- [Design System Documentation](https://orchid-design-system-docs.vercel.app/)
+- [Design System Demo App](https://orchid-design-system-docs-demo-app.vercel.app/)
 - [NPM Package](https://www.npmjs.com/package/@orchid-design-system/ui)
 
 ---
