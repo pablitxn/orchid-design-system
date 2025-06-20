@@ -15,7 +15,6 @@ const config = {
     '../../../packages/ui/src/components/**/*.mdx',
   ],
   'addons': [
-    '@chromatic-com/docs',
     '@storybook/addon-docs',
     '@storybook/addon-a11y',
     // '@docs/addon-vitest',
